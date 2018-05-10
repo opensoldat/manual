@@ -1,0 +1,1686 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>Soldat - Manual</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body class="changelog">
+    <nav>
+        <img src="images/logo.png">
+        <ul>
+            <li><a href="manual.html#intro">Introduction</a></li>
+            <li><a href="manual.html#req">Requirements</a></li>
+            <li><a href="manual.html#start">Getting Started</a></li>
+            <li><a href="manual.html#controls">Default Controls</a></li>
+            <li><a href="manual.html#modes">Game Modes</a></li>
+            <li><a href="manual.html#options">In-Game Settings</a></li>
+            <li><a href="manual.html#config">Config.exe Settings</a></li>
+            <li><a href="manual.html#screen">Game Screen</a></li>
+            <li><a href="manual.html#weapons">Weapons</a></li>
+            <li><a href="manual.html#bonuses">Bonuses</a></li>
+            <li><a href="manual.html#commands">Commands</a></li>
+            <li><a href="manual.html#chat">Chat</a></li>
+            <li><a href="manual.html#server">Dedicated Server</a></li>
+            <li>
+                <a href="#guides">Community Guides</a>
+                <ul>
+                    <li><a href="https://wiki.soldat.pl/index.php/First_Server" target="_blank">Run your first server!</a></li>
+                    <li><a href="https://wiki.soldat.pl/index.php/Soldat%27s_Comprehensive_Movement_Tutorial" target="_blank">Movement Tutorial</a></li>
+                    <li><a href="https://wiki.soldat.pl/index.php/Soldat%27s_Comprehensive_Competitive_CTF_Tutorial" target="_blank">Competitive CTF Tutorial</a></li>
+                    <li><a href="http://www.sctfl.net/forums/index.php?topic=56550.0" target="_blank">Advanced CTF Tutorial</a></li>
+                    <li><a href="https://wiki.soldat.pl/index.php/Soldat_on_macOS_and_Linux" target="_blank">Running Soldat on MacOS or Linux</a></li>
+                    <li><a href="https://wiki.soldat.pl/index.php/Creating_Modifications" target="_blank">Creating Modifications for Soldat</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#changelog">Version History</a>
+                <ul>
+                    <li><a href="#changelog_0">1.7.1</a></li>
+                    <li><a href="#changelog_1">1.7.0</a></li>
+                    <li><a href="#changelog_2">1.6.9</a></li>
+                    <li><a href="#changelog_3">1.6.8</a></li>
+                    <li><a href="#changelog_4">1.6.7</a></li>
+                    <li><a href="#changelog_5">1.6.6</a></li>
+                    <li><a href="#changelog_6">1.6.5</a></li>
+                    <li><a href="#changelog_7">1.6.4</a></li>
+                    <li><a href="#changelog_8">1.6.3</a></li>
+                    <li><a href="#changelog_9">1.6.2</a></li>
+                    <li><a href="#changelog_10">1.6.1</a></li>
+                    <li><a href="#changelog_11">1.6.0</a></li>
+                    <li><a href="#changelog_12">1.5.0</a></li>
+                    <li><a href="#changelog_13">1.4.2</a></li>
+                    <li><a href="#changelog_14">1.4.1</a></li>
+                    <li><a href="#changelog_15">1.4.0</a></li>
+                    <li><a href="#changelog_16">1.3.1</a></li>
+                    <li><a href="#changelog_17">1.3.0</a></li>
+                    <li><a href="#changelog_18">1.2.1</a></li>
+                    <li><a href="#changelog_19">1.2.0</a></li>
+                    <li><a href="#changelog_20">1.1.5 fix</a></li>
+                    <li><a href="#changelog_21">1.1.5</a></li>
+                    <li><a href="#changelog_22">1.1.4</a></li>
+                    <li><a href="#changelog_23">1.1.3</a></li>
+                    <li><a href="#changelog_24">1.1.2</a></li>
+                    <li><a href="#changelog_25">1.1.1</a></li>
+                    <li><a href="#changelog_26">1.1.0</a></li>
+                    <li><a href="#changelog_27">1.0.5b</a></li>
+                    <li><a href="#changelog_28">1.0.4b</a></li>
+                    <li><a href="#changelog_29">1.0.3b</a></li>
+                    <li><a href="#changelog_30">1.0.2b</a></li>
+                    <li><a href="#changelog_31">1.0.1b</a></li>
+                    <li><a href="#changelog_32">1.0.0b</a></li>
+                    <li><a href="#changelog_33">0.9.9b (3rd public beta)</a></li>
+                    <li><a href="#changelog_34">0.9.7b (2nd public beta)</a></li>
+                    <li><a href="#changelog_35">0.9.4b (1st public beta)</a></li>
+                    <li><a href="#changelog_36">0.0.0 (Soldat doesn't exist)</a></li>
+                </ul>
+            </li>
+            <li><a href="manual.html#license">License and Distribution</a></li>
+            <li><a href="manual.html#credits">Credits</a></li>
+            <li><a href="manual.html#tools">Development Tools</a></li>
+            <li><a href="manual.html#contact">Contact</a></li>
+        </ul>
+        <div>SOLDAT 1.7.1 © 2001-2018 Michal Marcinkowski</div>
+    </nav>
+    <script type="text/javascript">
+        Array.prototype.forEach.call(document.querySelectorAll("body>nav>ul>li>a"), function(element) {
+            element.addEventListener("click", function() {
+                Array.prototype.forEach.call(document.querySelectorAll("body>nav>ul>li>a.active"), function(active) {
+                    if (active !== element)
+                        active.classList.remove("active");
+                });
+                element.classList.toggle("active");
+            });
+        });
+
+        var active = document.querySelector("body>nav>ul>li>a[href='" + window.location.hash + "']");
+        if (active)
+            active.classList.add("active");
+    </script>
+
+    <h3 id="changelog">Version History</h3>
+    <h4>Current version:</h4>
+    <strong id="changelog_0">1.7.1 (01.07.2016)</strong>
+    <ul>
+        <li>Modified optimized bullet collisions</li>
+        <li>Modified optimized object collisions</li>
+        <li>Modified removed infinite saw ammo</li>
+        <li>Modified disabled client-side taunt anti-flood protection if taunt is a command</li>
+        <li>Modified damage calculations to use hitbox modifiers now provided by WM  file (previously it was dividing some values to give more precision in a quirky and artificial way)</li>
+        <li>Modified WM file values are now not altered by soldat in any way</li>
+        <li>Modified WM file now supports decimal values</li>
+        <li>Modified stop rendering when soldat window isn't active</li>
+        <li>Modified Health and Vest are now stored as decimal values</li>
+        <li>Modified Bullet time is now disabled by default</li>
+        <li>Fixed bots using kill taunt on selfkill</li>
+        <li>Fixed console showing less lines than actually fit on screen while open</li>
+        <li>Fixed off by one bug in radio menu</li>
+        <li>Fixed client WM checksum checks</li>
+        <li>Removed splashscreen</li>
+    </ul>
+    <br>
+    <h4>Previous public versions:</h4>
+    <strong id="changelog_1">1.7.0 (01.02.2016)</strong>
+    <ul>
+        <li>Added new OpenGL renderer that replaces old D3D8 one</li>
+        <li>Added error message for opengl initialization failure</li>
+        <li>Added interpolation between frames for smooth rendering</li>
+        <li>Added high resolution text rendering support</li>
+        <li>Added support for higher definition images</li>
+        <li>Added support for windowed fullscreen (Fullscreen=2)</li>
+        <li>Added Render_Width and Render_Height options to set internal render resolution</li>
+        <li>Added Optimize_Textures config which will resize textures depending resolution for lower GPU memory usage</li>
+        <li>Added Mipmap_Bias and GL_Finish experimental configs</li>
+        <li>Added Low_Power and Sleep configs to have better control over CPU usage vs timing precision</li>
+        <li>Added file logging for graphics related stuff</li>
+        <li>Added high resolution map textures</li>
+        <li>Added 4K UHD objects-gfx</li>
+        <li>Added 4K UHD default interface</li>
+        <li>Added 4K UHD sceneries</li>
+        <li>Added 4K UHD soldier graphics</li>
+        <li>Added 4K UHD weapon graphics</li>
+        <li>Added 4K UHD medkit, vest kit and grenade kits</li>
+        <li>Added overlay.png to interface-gfx which is now used for bonus kit screen effect</li>
+        <li>Added setup.sif is missing error message #614</li>
+        <li>Added link to credits for inactive developers</li>
+        <li>Added patch warn if trying to install over non compatible soldat version</li>
+        <li>Added /reloadgraphics command</li>
+        <li>Added desktop resolution config setting</li>
+        <li>Added windowed fullscreen config option via combobox</li>
+        <li>Modified rotated grenade kits 90* clockwise as a temporary fix for incorrect spawning angle</li>
+        <li>Modified weapon menu icons based off weapons-gfx until proper HD icons are made</li>
+        <li>Modified screenshots to be saved as png instead of bmp</li>
+        <li>Modified scale down sprites that exceed size constraints instead of stopping game with an error</li>
+        <li>Modified alignment for new default interface elements</li>
+        <li>Modified converted images to png</li>
+        <li>Modified bonus overlay to use a separate overlay.png image</li>
+        <li>Modified default explosions, fire and smoke: slightly better quality + transparency</li>
+        <li>Modified weapon icons, weapons-gfx and sparks-gfx: removed green screen, upscaled by 4.5x</li>
+        <li>Modified custom interface loading to fallback to default images when they are missing</li>
+        <li>Modified resolution setting to use desktop resolution when it's set to 0x0</li>
+        <li>Modified map textures and edges to be loaded from png file if available</li>
+        <li>Modified screenshots to be taken with internal render resolution instead of final resized one</li>
+        <li>Modified soldier head, hands and Mr.T hairstyle graphics are now grayscale for better customization</li>
+        <li>Modified skin colors to match new soldier graphics</li>
+        <li>Modified removed unused graphics from interface-gfx, objects-gfx, gostek-gfx and weapons-gfx</li>
+        <li>Modified map isn't reloaded when restarting same map</li>
+        <li>Modified spin direction of knife and cluster grenade when facing left</li>
+        <li>Modified gostek rendering code adding tweakable sprite alignment through mod.ini</li>
+        <li>Modified reverted to 1.6.8 netcode for client</li>
+        <li>Modified updated micro1 interface</li>
+        <li>Modified do not show installer welcome page</li>
+        <li>Modified patch do not show icon and group icon install option</li>
+        <li>Modified switched to Play font</li>
+        <li>Modified replaced FontHeightScale config with Font1ScaleX and Font2ScaleX with 125 as default</li>
+        <li>Modified removed DirectX checks</li>
+        <li>Modified removed AntiCheat API</li>
+        <li>Modified removed Force Software option</li>
+        <li>Modified removed none and anisortropic res filters</li>
+        <li>Modified removed none and anisortropic texture filter options</li>
+        <li>Modified removed backbuffer setting</li>
+        <li>Modified disabled bitrate option</li>
+        <li>Modified disabled refresh rate option</li>
+        <li>Modified disabled antialiasing option</li>
+        <li>Modified removed window resize setting</li>
+        <li>Modified removed unused adapter config setting</li>
+        <li>Modified disabled gamma setting from options</li>
+        <li>Fixed frame timing code</li>
+        <li>Fixed texture loading error on -dedicated mode</li>
+        <li>Fixed incorrect health bar position when it's &quot;vertical&quot;</li>
+        <li>Fixed position of vote menu when &quot;scale interface&quot; is disabled</li>
+        <li>Fixed alignment of kill console text</li>
+        <li>Fixed alignment of version text inside esc ingame menu</li>
+        <li>Fixed big texts on bottom covered by bullet time wide screen cut</li>
+        <li>Fixed bad flag initialization code</li>
+        <li>Fixed invalid array index access</li>
+        <li>Fixed animations initialized to wrong index</li>
+        <li>Fixed alpha value outside allowed value for sparks</li>
+        <li>Fixed zero index access for bot AI</li>
+        <li>Fixed error message when choosing an uninitialized custom color from color dialog</li>
+        <li>Fixed ping dot ignoring its coordinates</li>
+        <li>Fixed parachute so it doesn't break in half after being dropped</li>
+        <li>Fixed missing Adapter setting in soldat.ini breaks config</li>
+        <li>Fixed patch installer cannot be applied manually</li>
+        <li>Fixed spawn &quot;teleport&quot; when map takes too long to load</li>
+        <li>Fixed DrawText scaling issues</li>
+        <li>Fixed parachute rope alignment</li>
+        <li>Fixed weapon aim jerkiness</li>
+        <li>Fixed soldat blocks installation directory #641</li>
+        <li>Fixed free fonts after closing soldat normally</li>
+    </ul>
+    <strong id="changelog_2">1.6.9 (31.10.2015)</strong>
+    <ul>
+        <li>Added allow camera switching in demos while paused #274</li>
+        <li>Added Survival_Clear_Weapons option in GAME section of soldat.ini</li>
+        <li>Added NumPad taunts #515</li>
+        <li>Added new GUI theme</li>
+        <li>Added new ping time images in serverlist</li>
+        <li>Added new default mod</li>
+        <li>Modified changed update button to yellow</li>
+        <li>Fixed spiderman bug</li>
+        <li>Fixed starting single player game a few times causes high CPU usage (#160 #323 #333 #520)</li>
+        <li>Fixed alt and altgr don't work for assigned keys and suppress input like shooting (#309, #530)</li>
+        <li>Fixed Soldat (not responding) when trying to find servers without having internet #463</li>
+        <li>Fixed star and flag icon in the scoreboard are scaled down #601</li>
+        <li>Fixed SetWeaponActive bugs weapons of a player on spawn #603</li>
+        <li>Fixed wrong window height on startup</li>
+        <li>Fixed player names with 24 chars result in HWID fail</li>
+        <li>Fixed survival capping when everybody is alive results in a not ending round</li>
+        <li>Fixed survival flag grabbing in multiplayer should not work after round end</li>
+        <li>Fixed invisible shield where a player died</li>
+        <li>Fixed survival mode respawning if out of map after round end results in a never ending round</li>
+        <li>Fixed survival mode dead body outside map respawn bug</li>
+        <li>Fixed survival mode team switch respawn bug</li>
+        <li>Fixed broken nagscreen banner system</li>
+        <li>Fixed freeze on wrong map #608</li>
+        <li>Fixed knives should pass through dead bodies in non realistic #542</li>
+        <li>Fixed nick completion shouldn't trigger without writing any letter</li>
+        <li>Fixed respawn issues in survival when player falls outside of the map #286</li>
+        <li>Fixed taunts triggering some actions undesirebly #215</li>
+        <li>Fixed bot created by SC3 has no bot icon but ping 0</li>
+    </ul>
+    <strong id="changelog_3">1.6.8 (26.10.2014)</strong>
+    <ul>
+        <li>Modified command /votemap to show the message &quot;cannot vote&quot; when applicable</li>
+        <li>Modified vote results to happen immediately if the required percentage is achieved</li>
+        <li>Modified voice taunt menu key to also hide the menu</li>
+        <li>Modified translations to not print empty lines in the chat console</li>
+        <li>Modified freecam to not have the camera shake when heavy weapons are fired</li>
+        <li>Modified the chat's nickname Tab-completion to cycle through names</li>
+        <li>Modified the chat's nickname Tab-completion can be used without even typing anything, or with a substring in the middle of the nick</li>
+        <li>Fixed health bar shows empty if health health exceeds limit #491</li>
+        <li>Fixed ban on bots in singleplayer mode should return a kick message</li>
+        <li>Fixed chat message displayed above the wrong player #417</li>
+        <li>Fixed Player ID for team 0 displayed incorrectly #205</li>
+        <li>Fixed the chat's nickname Tab-completion can complete a nickname mid-sentence</li>
+        <li>Fixed knife colliding against position where someone had died #390</li>
+        <li>Fixed some keys couldn't be assigned to the scroll wheel</li>
+        <li>Fixed asymmetry in walking down slopes depending on facing direction and movement direction</li>
+        <li>Fixed the character vibrating when standing still on flat polygons, which would trigger MovementAcc</li>
+        <li>Fixed previous song playback on start being out of bounds</li>
+        <li>Fixed the LAW's startup delay to be a bit less unreliable</li>
+        <li>Fixed scoreboard not shown at the end of a demo playback when the map changed</li>
+        <li>Fixed freecam key could be held down to make the cursor jerky</li>
+        <li>Fixed rolling to quicker and less awkwardly transition into crouching</li>
+        <li>Fixed throwing the flag could be difficult when close to polygons #166</li>
+        <li>Fixed some possible memory leaks</li>
+        <li>Fixed unable to get a ban reason in case of HWID ban #143</li>
+        <li>Fixed server's possible cheating vote kicks no longer permanently ban players #246</li>
+        <li>Fixed vote kick turning into a permanent ban #478</li>
+        <li>Fixed kicking player when vote percentage is above 100% #522</li>
+        <li>Fixed vote exploitable by leaving the game #204</li>
+    </ul>
+    <strong id="changelog_4">1.6.7 (02.05.2014)</strong>
+    <ul>
+        <li>Added new background polygon types: &quot;Background&quot; and &quot;Background Transition&quot;</li>
+        <li>Added visualization of the player's MovementAcc by scaling the cursor</li>
+        <li>Modified the lobby's player count column to not include bots</li>
+        <li>Modified bullets to now take into account the weapons' BulletPush when pushing objects (flags, kits, loose guns)</li>
+        <li>Modified removed TeamSpeak 2 support</li>
+        <li>Modified vertical jumps by making it easier to do smaller jumps by letting go early</li>
+        <li>Modified pressing Jump quickly followed by a direction should side jump you if the vertical jump hadn't yet begun</li>
+        <li>Modified side jump speed to be the fastest when facing the direction you're moving in #170</li>
+        <li>Modified behavior when changing movement direction to hopefully not mess up advanced moves possible in 1.6.5, yet behave consistently in both directions</li>
+        <li>Modified the two spent Desert Eagle shells to be ejected with different velocities</li>
+        <li>Modified the player's current MovementAcc to be more intuitive to predict</li>
+        <li>Modified spectator and demo view to hide the inactive parts of the interface</li>
+        <li>Modified demo playback to allow freecam by default</li>
+        <li>Modified decreased the freecam deadzone again to make the sudden speed jump less abrupt #277</li>
+        <li>Modified accumulated bink and selfbink to get diminishing returns faster, making it harder to reach ridiculous amounts</li>
+        <li>Modified cursor scaling from inaccuracy effects to grow faster between smaller values, and slower between higher values</li>
+        <li>Modified BulletSpread to have less effect when crouched and moving, and even less when proned and moving</li>
+        <li>Modified player looking direction to be sent to the server more frequently</li>
+        <li>Modified cursor to be visible during game pause #460</li>
+        <li>Fixed bullets could only push one object (flags, kits, loose guns) at once</li>
+        <li>Fixed bullets could push an object (flags, kits, loose guns) multiple times in an instant, giving huge push</li>
+        <li>Fixed HTF incorrectly used some INF flag messages (referring to the Objective instead of the Yellow Flag)</li>
+        <li>Fixed finishing a roll animation while airborne and with the crouch key still pressed, you would air-squat awkwardly and not be able to throw grenades</li>
+        <li>Fixed ctrl+tab and ctrl+shift+tab active tab highlighting issue #451</li>
+        <li>Fixed an animation glitch when holding Jump while a backflip animation ends</li>
+        <li>Fixed players with bink weapons couldn't bink themselves</li>
+        <li>Fixed explosives could bink team mates #398</li>
+        <li>Fixed bink didn't work in non-team based game modes</li>
+        <li>Fixed team mates could bink each other with explosives even though FriendlyFire was off</li>
+        <li>Fixed the player's current MovementAcc being erratic when the player was transitioning between animations and grounded/in-air</li>
+        <li>Fixed sniper scope cooldown could be bypassed by triggering an overriding animation</li>
+        <li>Fixed camera jumping back and forth between the cursor and the map's center when looking outside map bounds</li>
+        <li>Fixed camera not resetting to center when joining a new game</li>
+        <li>Fixed freecam camera wasn't completely still when the cursor was inside the center deadzone #277</li>
+        <li>Fixed camera not resetting to center when viewing above map bounds</li>
+        <li>Fixed empty server_info setting in servers soldat.ini makes client display weird chars in F1 menu</li>
+        <li>Fixed team menu keyboard input blocked if opening it using the cursor #428</li>
+        <li>Fixed pressing an unmapped number when selecting a team causes no team to be joined and the menu disappears #388</li>
+        <li>Fixed unable to toggle the weapon menu when carrying less than two weapons #181</li>
+        <li>Fixed custom values of MovementAcc and BulletSpread didn't show differences properly in the weapon selection menu</li>
+        <li>Fixed flags in CTF and INF game modes weren't using their flag texture</li>
+        <li>Fixed clients' keys would act slightly &quot;sticky&quot; in online games, not resetting the controls every tick</li>
+        <li>Fixed server didn't notify players about all key events from other players</li>
+        <li>Fixed flag was thrown in a direction that was at least 16 milliseconds old #132</li>
+        <li>Fixed side jump speed was slightly lower when facing right #170</li>
+        <li>Fixed reloading Spas-12 when gun is empty now waits for fire interval delay to finish first #161 #365</li>
+        <li>Fixed no longer able to simultaneously fire and reload Spas-12 while prone #474</li>
+        <li>Fixed /victory sound only plays once at the end of a round in survival DM/RM #291</li>
+        <li>Fixed cannot delete server with two pipe chars from favorites</li>
+        <li>Fixed players that needed to download the upcoming map spawned using the previous map's spawn points, as well as seeing other glitches #239</li>
+        <li>Fixed players that needed to download the upcoming map would be disconnected before seeing the final scoreboard</li>
+        <li>Fixed incorrectly spawning with/without a parachute after going outside map bounds</li>
+        <li>Fixed readonly.txt didn't do what it advertised #279</li>
+        <li>Fixed readonly.txt didn't contain an updated list of maps and sceneries #95</li>
+    </ul>
+    <strong id="changelog_5">1.6.6 (13.10.2013)</strong>
+    <ul>
+        <li>Added the ability to roll out of prone when on ground</li>
+        <li>Added scale interface option to config</li>
+        <li>Modified made self-bink halve accumulation rate anytime when crouched or proned, and not only when staying still</li>
+        <li>Modified the unprone animation to be &quot;slippery&quot; so you don't lose momentum when touching ground with it</li>
+        <li>Modified decreased the freecam movement deadzone so the sudden speed change won't be as abrupt</li>
+        <li>Modified jumping and side-jumping out the unprone animation to be quicker and smoother</li>
+        <li>Modified the unprone animation to only take half as long</li>
+        <li>Fixed pressing both [left] and [right] movement keys should move you in the first direction pressed #380</li>
+        <li>Fixed incompatible test and release versions are visible when requesting lobby</li>
+        <li>Fixed your own player name being displayed below you when your cursor is at the edge of the screen</li>
+        <li>Fixed pressing multiple conflicting keys (reload, throw grenade, throw weapon, change weapon) should only perform the latest key pressed</li>
+        <li>Fixed players appearing to be in a prone position when they weren't #326</li>
+        <li>Fixed player's momentum often vanishing when coming out of a roll #369</li>
+        <li>Fixed proning and unproning would interrupt the Spas' reload #379</li>
+        <li>Fixed unproning would interrupt the weapon throwing animation</li>
+        <li>Fixed unproning would interrupt the knife throwing animation #307</li>
+        <li>Fixed proning and unproning would interrupt the weapon switching animation #317</li>
+        <li>Fixed faster weapon switching glitch when pressing both [change weapon] and [throw weapon] keys</li>
+        <li>Fixed camera for spectators moved to top-left on map change #31 #373</li>
+        <li>Fixed spectator camera still trying to follow kicked player #33</li>
+        <li>Fixed spectator camera still trying to follow player that switched to spectator #34</li>
+        <li>Fixed spectator camera defaulting to top-left in single player</li>
+        <li>Fixed spectator camera defaulting to top-left when looking outside map bounds</li>
+        <li>Fixed freecam didn't move smoothly in widescreen #277</li>
+        <li>Fixed player names weren't centered in spectator mode</li>
+        <li>Fixed off-screen teammate names weren't positioned correctly</li>
+        <li>Fixed player indicator visible in the map's top-left corner when you're spectating</li>
+        <li>Fixed OSX servers are displayed as Windows servers in Servers List</li>
+        <li>Fixed team mates could be binked under some circumstances #398</li>
+        <li>Fixed cannot join spectator team through ESC menu on Windows servers #408</li>
+        <li>Fixed controls momentarily locking when throwing knife in online games #383</li>
+        <li>Fixed knife throw while airborne would make it impossible to do a subsequent backflip in online games #314</li>
+        <li>Fixed grenades couldn't be thrown when inside &quot;only team player collides&quot; polygons #123</li>
+        <li>Fixed grenades couldn't be thrown when inside &quot;flagger collides&quot;, &quot;non-flagger collides&quot; and &quot;flag collides&quot; polygons</li>
+        <li>Fixed momentum being lost or not being able to immediately sidejump as a roll or backflip animation ends</li>
+        <li>Fixed momentum being lost or not being able to immediately sidejump as an unprone animation ends</li>
+        <li>Fixed not being able to immediately sidejump out of crouch</li>
+    </ul>
+    <strong id="changelog_6">1.6.5 (04.08.2013)</strong>
+    <ul>
+        <li>Added workaround for black window in fullscreen mode on Windows 8 and later</li>
+        <li>Modified Scale_Interface=0 in soldat.ini can now also be used by unregistered players #338</li>
+        <li>Modified Scale_Interface to be enabled by default</li>
+        <li>Modified piercing kill shots' exit speed changed from 90% to 75%</li>
+        <li>Fixed flags and kits becoming black in windowed mode when tabbing out of the game and back in</li>
+        <li>Fixed cant see through bullet collide polygon in realistic #348</li>
+        <li>Fixed range errors caused by too small admin and remote ip arrays in client server</li>
+        <li>Fixed scaling of crosshair and player indicator even though Scale_Interface=0 was set #336</li>
+        <li>Fixed missing bonus power-up countdown texts #351</li>
+        <li>Fixed wrong player getting hit by bullet when players are standing close to each other</li>
+        <li>Fixed hit detection issue immediately after a bullet pierces</li>
+        <li>Fixed big event messages weren't size-adjusted for resolutions other than 4:3 #174</li>
+        <li>Fixed player and flag positions on the minimap were slightly off #221</li>
+        <li>Fixed access violations caused by parachutes #340</li>
+        <li>Fixed 24th character in player name being cut off #140</li>
+        <li>Fixed controls momentarily locking when throwing knife #287</li>
+        <li>Fixed esc menu 1,2,3,4 shortcuts work while writing kick vote message #349</li>
+        <li>Fixed !,@,#,$ (keys on 1,2,3,4) work with esc menu</li>
+        <li>Fixed the escape menu's team selection hotkey not working in non-team based modes #366</li>
+        <li>Fixed the escape menu's team selection hotkey instantly assigning you to Delta Team in TDM</li>
+    </ul>
+    <strong id="changelog_7">1.6.4 (23.07.2013)</strong>
+    <ul>
+        <li>Added BulletSpread WM attribute which controls bullet/pellet spread on Deagles and Spas, and base inaccuracy on other weapons</li>
+        <li>Added Checks for Movement packets being out of order to smooth out movement of players</li>
+        <li>Added FiltersBox position changes depending on the window size</li>
+        <li>Added FormatFloat to script functions which fixes bug #15</li>
+        <li>Added Join Game tab controls resize/reposition horizontally</li>
+        <li>Added Join Game tab controls resize/reposition vertically</li>
+        <li>Added Push WM attribute which together with a bullet's velocity on impact decides how much it pushes the target</li>
+        <li>Added copy soldat:// link when clicking Game Server IP: label on Join game tab</li>
+        <li>Added drawing rows in alternating colors for Serverslist</li>
+        <li>Added flagger collides, non-flagger collides and flag collides polygon types</li>
+        <li>Added keyboard shortcuts (1, 2, 3, 4) for the escape menu</li>
+        <li>Added nondefault gamemode names are drawn with gray color in Serverslist</li>
+        <li>Added options for kill sort to OldScoreBoard: 2 for old style and 3 for new style</li>
+        <li>Added wait time for bullet and explosion push to avoid eating #234</li>
+        <li>Added numbers to exit menu</li>
+        <li>Added InheritedVelocity WM attribute which controls how much of the player's velocity the projectile inherits</li>
+        <li>Modified Chainsaw to deal damage in a line all along its blade instead of just at the tip</li>
+        <li>Modified Desert Eagles' and Spas' networking by re-creating the same pseudo-random pellet spread on all machines #260</li>
+        <li>Modified WM loading to better support partial modding</li>
+        <li>Modified WM loading with unparsable values gives helpful error messages</li>
+        <li>Modified accumulating bink &amp; self-bink to get diminishing returns as they reach higher values proportional to their configured value</li>
+        <li>Modified adding broken bots gives helpful error messages</li>
+        <li>Modified autodemo to record everything</li>
+        <li>Modified bink to stack instead of resetting when being hit</li>
+        <li>Modified bots can also do idle animations</li>
+        <li>Modified bullet collision checks to scale their granularity proportionally with the bullet's current speed</li>
+        <li>Modified bullets to not get a damage penalty after they pierce a body</li>
+        <li>Modified chainsaw is able to fire and reload while rolling, backflipping and changing weapons</li>
+        <li>Modified chainsaw to only shake screen when you're hitting flesh</li>
+        <li>Modified client and server to use packet rate adjusting based on current player count by default</li>
+        <li>Modified client is also able to create Dummy bots with a &quot;Dummy=1&quot; attribute</li>
+        <li>Modified client-server sync method for bullets to be a bit more accurate</li>
+        <li>Modified cursor is now centered properly when cursor.bmp is another size than 16x16 (still needs to be in power-of-two)</li>
+        <li>Modified disabled HotTrack functionaly for Serverslist (selecting of servers when on hover)</li>
+        <li>Modified disabled screen shaking in freecam and demo mode</li>
+        <li>Modified holding the grenade key to only throw one grenade in order to reduce accidents #180</li>
+        <li>Modified inaccuracy effects to spread out more evenly instead of choosing &quot;set paths&quot;</li>
+        <li>Modified minimum time required to hold the grenade key before it being thrown increased by about 7% to reduce accidents</li>
+        <li>Modified moved FiltersBox so that it has enough space to the left and top</li>
+        <li>Modified reduced wait time when requesting servers list</li>
+        <li>Modified removed &quot;This option will be available after registering&quot; label from graphics tab in config.exe</li>
+        <li>Modified removed lobby blacklisting support</li>
+        <li>Modified removed resolution restriction for unregistered players</li>
+        <li>Modified renamed Mp3List ini setting to MusicList</li>
+        <li>Modified renamed mp3 folder to music folder</li>
+        <li>Modified renamed mp3list.txt to musiclist.txt</li>
+        <li>Modified screenshot and demo names are now YYYY-MM-DD_HH-NN-SS_MAPNAME_TYPE</li>
+        <li>Modified self-bink to also work on semi autos #261</li>
+        <li>Modified self-bink to be applied on 2nd bullet fired instead of on the 4th</li>
+        <li>Modified spent bullet shells have a slight randomness in their velocity</li>
+        <li>Modified spent bullet shells inherit the velocity of the player when fired</li>
+        <li>Modified team collider polygon types do not longer collide with flaggers #192</li>
+        <li>Modified texts and positions of the Alt+F3 connection info</li>
+        <li>Modified thrown weapons inherit the player's velocity</li>
+        <li>Modified thrown weapons to be thrown in the direction you look</li>
+        <li>Modified allowed both bink/self-bink and moveacc to be applied</li>
+        <li>Modified updated intro demo</li>
+        <li>Fixed Alpha and Bravo flags not being placed symmetrically (flipped alpha flag)</li>
+        <li>Fixed Chat-Flood ban lasts 5 min, says 20 #244</li>
+        <li>Fixed DirectX Graphics error when using Soldat Clicker #201</li>
+        <li>Fixed FireInterval values being shown as ten times too high in the weapon menu when a custom WM is used</li>
+        <li>Fixed I/O 103 Error when logs folder is missing and file logging is enabled #240</li>
+        <li>Fixed Invisible player bug</li>
+        <li>Fixed Lobby server connections stay open after requesting server list #254</li>
+        <li>Fixed Lost Team packet error</li>
+        <li>Fixed PacketRate_Adjusting=1 not adjusting much at all and making you lag worse for everyone</li>
+        <li>Fixed RayCast returns false if both the start and end points are inside a polygon #119</li>
+        <li>Fixed Soldat &quot;crash&quot; if playback device is missing and registered</li>
+        <li>Fixed Soldat fails to display interface images when starting the game with a mod #198</li>
+        <li>Fixed Spas always firing its first pellet straight</li>
+        <li>Fixed StartUpTime bypass by keeping the fire button held down during reload #264</li>
+        <li>Fixed StartUpTime bypass from the roll, weapon change and melee animations #264</li>
+        <li>Fixed access violation if playback device is missing and not registered</li>
+        <li>Fixed being able to throw weapon while in the weapon switching animation #129</li>
+        <li>Fixed bug #49 with caps not being showed in the scoreboard</li>
+        <li>Fixed bullet collision checks assumed the bullet's speed was the same as that of the equipped weapon</li>
+        <li>Fixed bullet push now behaves correctly in the vertical direction</li>
+        <li>Fixed bullets not hitting player if another spawning player is close</li>
+        <li>Fixed bullets not necessarily pushing ragdolls in the bullets' direction</li>
+        <li>Fixed bullets piercing bodies even though their speed was tiny</li>
+        <li>Fixed cigar animation flooding server</li>
+        <li>Fixed crosshair not centered when binked</li>
+        <li>Fixed crosshair not resized correctly while binked and using sniper line</li>
+        <li>Fixed crosshair not resized while binked when aiming on teammates or enemies</li>
+        <li>Fixed cursor is resized smoothly when binked while using sniper line</li>
+        <li>Fixed entered player name resetting to Major when left-trim was needed #208</li>
+        <li>Fixed error sound when starting demos with enter #271</li>
+        <li>Fixed firing animation firing in a wonky direction for some values of FireIntarval</li>
+        <li>Fixed flag not being thrown in the direction you aim at #176</li>
+        <li>Fixed grenades sometimes being thrown in wrong direction due to ongoing animations</li>
+        <li>Fixed idle animation sometimes stop occurring</li>
+        <li>Fixed idle animations locking movement controls #206</li>
+        <li>Fixed massive self-bink after reload</li>
+        <li>Fixed missing Flagthrow ini key shouldn't be assigned to G but to Jump+Crouch</li>
+        <li>Fixed missing Installer additional tasks icon text</li>
+        <li>Fixed normal mode weapons being used for comparisons in weapon selection menu in realistic mode when WM is changed #262</li>
+        <li>Fixed not allowed weapon spam</li>
+        <li>Fixed not being able to move while proned and reloading #188</li>
+        <li>Fixed number keys not working in weapon menu on map start if weapon menu is disabled #270</li>
+        <li>Fixed piercing bullets not hitting other players in the same tick</li>
+        <li>Fixed players and dropped weapons warp inside team collide polygons #191</li>
+        <li>Fixed players randomly rejoining server #85</li>
+        <li>Fixed possible hit detection issue for Desert Eagles due to server slightly misrepresenting one bullet's horizontal speed</li>
+        <li>Fixed possible to throw grenades through thin walls #163</li>
+        <li>Fixed second Desert Eagle bullet not synchronized properly between clients</li>
+        <li>Fixed self-bink being applied on the bullet that caused it</li>
+        <li>Fixed shots not firing in the direction of the crosshair due to ongoing animations #210</li>
+        <li>Fixed shots ricocheting or not firing when head is in ceiling #186</li>
+        <li>Fixed some hit detection issues due to bullets from certain angles being able to slink through and miss every hitbox</li>
+        <li>Fixed some sound popping under heavy CPU load</li>
+        <li>Fixed some weapons not expelling a clip on reload</li>
+        <li>Fixed weapons firing with FireInterval &lt;= 5 not immediately propagating their status to the server #141</li>
+        <li>Fixed while playing CTF scoreboard is not showing each team players number #20</li>
+        <li>Fixed your secondary weapon not getting updated stats after /loadwep command</li>
+        <li>Fixed demo music keeps playing when intro couldn't be opened</li>
+        <li>Fixed start game tab active while join game tab is visible when demo opening failed</li>
+        <li>Fixed smoother cursor movement on higher resolutions</li>
+        <li>Fixed mouse cursor not resizing with higher resolutions</li>
+        <li>Fixed mouse cursor prevented from completely reaching the screen edge</li>
+        <li>Fixed player indicator not being centered and scaled at higher resolutions</li>
+        <li>Fixed objects like flags, kits and loose weapons flying in almost random directions or accumulating huge speeds when hit by bullets</li>
+        <li>Fixed power knife throwing glitch</li>
+        <li>Fixed flags to less likely get stuck in polygons</li>
+        <li>Fixed power flag throwing glitch</li>
+        <li>Fixed flag throwing to more accurately transfer the player's velocity</li>
+        <li>Fixed a death sfx was played when it shouldn't #284</li>
+        <li>Fixed pressing shift+7 to enter a command on some keyboards layouts would also select a weapon if the weapon menu was shown #243</li>
+        <li>Fixed M79, LAW and Flame Arrow played grenade explosion sfx when hitting a collider #153</li>
+        <li>Fixed game mode names are not linked to the translations in server filtering options</li>
+        <li>Fixed scope not zooming as much horizontally with wider screen resolutions #165</li>
+        <li>Fixed partially how initiating prone resets the throw weapon animation #268</li>
+        <li>Fixed recording demo line goes over other lines in F1 menu</li>
+        <li>Fixed winning team result line goes over other lines in F1 menu</li>
+        <li>Fixed bullets fired immediately after grenade boosting not registering</li>
+        <li>Fixed untranslated bonus-name strings next to bonus timer #321</li>
+    </ul>
+    <strong id="changelog_8">1.6.3 (09.05.2012)</strong>
+    <ul>
+        <li>Added missing translations in Soldat.exe</li>
+        <li>Added missing translations in soldat config #105, #173</li>
+        <li>Added clicking &quot;default: 23073&quot; changes the port field to 23073</li>
+        <li>Added 'Change team' menu for non-team based modes</li>
+        <li>Added changing team when joining as spectator</li>
+        <li>Added auto reload spas when possible support to bots</li>
+        <li>Added checks for common injection dlls</li>
+        <li>Added Soldat tries to disable injection dlls</li>
+        <li>Added Ukrainian installation language</li>
+        <li>Added error message with missing textures</li>
+        <li>Added Greek language to soldat</li>
+        <li>Added missing translation in soldat config #173</li>
+        <li>Added new map ctf_Crucifix</li>
+        <li>Modified clicking &quot;Cancel&quot; makes progress bar invisible</li>
+        <li>Modified spectator teamchat is not possible in all game modes</li>
+        <li>Modified requesting game on Join Game tab to be faster</li>
+        <li>Modified volume controls to scale decibels exponentially #75</li>
+        <li>Modified Anti-Cheat directory is now %APPDATA%\Roaming\Soldat\anti-cheat</li>
+        <li>Modified changed position of some labels and controls on start tab to begin at same y pos</li>
+        <li>Modified removed unused sceneries</li>
+        <li>Modified removed ugly custom interface which was added by accident</li>
+        <li>Modified weapon balance for normal and realistic mode</li>
+        <li>Modified updated config dialog to work with longer text</li>
+        <li>Modified improved options tab position and size of controls</li>
+        <li>Modified Admin can only be kicked by Anti-Cheat and from console</li>
+        <li>Modified default hint on the flag throwing button to show jump and crouch keys</li>
+        <li>Fixed non transparent dot on flag.bmp and noflag.bmp #171</li>
+        <li>Fixed throwing knife while standing on weapon throws the just picked up weapon #130</li>
+        <li>Fixed cursor isn't clipped to window when playing #147</li>
+        <li>Fixed hint message for ForceBG gets assigned to caption</li>
+        <li>Fixed missing translations and small labels in Soldat.exe #104</li>
+        <li>Fixed problems with Soldat Servers having a &quot;|&quot; in their name #131</li>
+        <li>Fixed error for some ppl with hardwareids</li>
+        <li>Fixed Volume in intro too doesn't respect settings #66</li>
+        <li>Fixed F9 doesn't minimize soldat to tray #145</li>
+        <li>Fixed Lobby request - List index out of bounds (4) bug #54</li>
+        <li>Fixed Multiple too long identical ingame player names #146</li>
+        <li>Fixed issue caused by monsoonix.com expiring #152</li>
+        <li>Fixed Deaths count bug in Survival mode when joining spectator team and then non-spectator team #73</li>
+        <li>Fixed clicking on download button in Updatepopup makes Soldat inaccessible #100</li>
+        <li>Fixed Soldat alt+tab bug</li>
+        <li>Fixed Updatepopup not visible when alt tabbing out and then back into Soldat in fullscreen mode</li>
+        <li>Fixed Updatepopup window too large in fullscreen mode #101</li>
+        <li>Fixed window not centered on screen with 768x480 and 854x480 resolutions</li>
+        <li>Fixed Alt + R sometimes triggers a weapon reload #72</li>
+        <li>Fixed AntiSpy chat didn't work for all input methods</li>
+        <li>Fixed window controls don't adapt to larger window resolutions on exit tab</li>
+        <li>Fixed wrong tab active when map cannot be loaded in offline game</li>
+        <li>Fixed Spas reloads itself even when player doesn't click &quot;reload&quot; button #149</li>
+        <li>Fixed volume level too loud after install #74</li>
+        <li>Fixed wrong dialog background colors in controls</li>
+        <li>Fixed Titlebar button font didn't change color on active and inactive window</li>
+        <li>Fixed delay before window text is visible when starting Soldat</li>
+        <li>Fixed access violation on missing textures in gostek-gfx\ranny folder</li>
+        <li>Fixed too many bots error message in non team mode when adding too many team players</li>
+        <li>Fixed JoinDefault23073Label OnClick event was missing</li>
+        <li>Fixed trying to load files from wrong folder before loading them from the correct folder</li>
+        <li>Fixed issues with too long translated labels</li>
+        <li>Fixed issues with labels get smaller and multiline while text would fit in single line</li>
+        <li>Fixed scoreboard doesn't draw bot icon for spectator bots</li>
+        <li>Fixed non team players in team game modes are drawn wrong in new scoreboard</li>
+        <li>Fixed Index out of bounds error on map change - Fixed untranslated bonus-name strings next to bonus timer #321</li>
+    </ul>
+    <strong id="changelog_9">1.6.2 (12.10.2011)</strong>
+    <ul>
+        <li>Fixed spas reload bug</li>
+        <li>Fixed weapon stats hits counter doesn't work</li>
+        <li>Fixed too small interface in fullscreen for certain resolutions</li>
+        <li>Fixed Missing translations and small labels</li>
+    </ul>
+    <strong id="changelog_10">1.6.1 (10.10.2011)</strong>
+    <ul>
+        <li>Added when spectating followed player dot is white in the Minimap</li>
+        <li>Added font texture error logging</li>
+        <li>Modified increased jet multiplier on maps to account for the loss of jets due to a previous bug fix</li>
+        <li>Modified do not create unnecessary file C:\logwmemory.bin on startup</li>
+        <li>Fixed DX8 can't be initialized bug with 640x480 fullscreen</li>
+        <li>Fixed custom resolution shows 640x480 always when config is opened</li>
+        <li>Fixed window resize resizing by the wrong dimension</li>
+        <li>Fixed wrong highlighted tab after starting Soldat with -demo</li>
+        <li>Fixed Soldat.exe icon issue</li>
+        <li>Fixed Chinese text when minimized Soldat from fullscreen</li>
+        <li>Fixed stationary gun bullet hits added to currently held weapon's hit count</li>
+        <li>Fixed only having one usable secondary selected gives you another weapon as secondary</li>
+        <li>Fixed pressing F2 and then F1 shows both weapon and player stats at the same time</li>
+        <li>Fixed Soldat doesn't start when a dll is missing in system32 folder</li>
+        <li>Fixed A tooltip changes for the prone-key assignation button</li>
+        <li>Fixed config.exe still shows 1.6.0rc2 as productversion</li>
+        <li>Fixed Running Soldat.exe -mod &lt;ModName&gt; -demo &lt;demoName&gt; &lt;freecam&gt; &lt;speed&gt; options causes 'invalid integer' error</li>
+        <li>Fixed Querying for local games will give stacking error-messages</li>
+        <li>Fixed Spas Reload button not working when you press it while you can't shoot (shooting delay)</li>
+        <li>Fixed chainsaw making sounds when shooting stationary gun</li>
+        <li>Fixed passwords longer than 15 characters not working</li>
+        <li>Fixed jets being wasted in single player when pausing the game by opening the ESC-menu</li>
+        <li>Fixed Camera location jumps to top left corner when there are no playing players after joining spectator team</li>
+        <li>Fixed following enemies when dead</li>
+        <li>Fixed Throwing a nade and keeping the button pressed, makes shooting with any weapon spread-less</li>
+        <li>Fixed knife not being able to throw right after spawn</li>
+        <li>Fixed Access Violation on start of Soldat when rendering or loading Bank Gothic Light BT font is broken</li>
+    </ul>
+    <strong id="changelog_11">1.6.0 (04.09.2011)</strong>
+    <ul>
+        <li>Added new AntiCheat API</li>
+        <li>Added support for up to 8 mouse buttons</li>
+        <li>Added support for widescreen resolutions</li>
+        <li>Added support for setting custom resolution in the config</li>
+        <li>Added OldScoreBoard option in soldat.ini which can be used to render the scoreboard like it was before 1.6</li>
+        <li>Added text to the change key buttons' hints to show the currently assigned key</li>
+        <li>Added second weapon choose with ctrl+1, ... , ctrl+4</li>
+        <li>Added weapon gets automatically selected when there's only one available weapon in the category</li>
+        <li>Added tab toggles next respawn weapons menu show state when not dead</li>
+        <li>Added tab hides weapons menu when weapons are chosen</li>
+        <li>Added speedhack detection</li>
+        <li>Added a check for loaded third party DLLs</li>
+        <li>Added widescreen resolutions to config for unregged users</li>
+        <li>Added teamspeak support to clientserver</li>
+        <li>Added anti-anti votekick support to clienteserver</li>
+        <li>Added /votekick command to server</li>
+        <li>Added custom update popup</li>
+        <li>Added developer credits to Exit tab</li>
+        <li>Added Scale_Interface option in soldat.ini which allows to scale interface with resolution</li>
+        <li>Added Option to Force Background Colors in maps to one defined by the player</li>
+        <li>Added Option to enable/disable FPSLimit as well as option to enable/disable high resolution timers</li>
+        <li>Added missing translations in gui</li>
+        <li>Added 3 new CTF maps: Campeche, Triumph, Scorpion</li>
+        <li>Added 4 new HTF maps: Feast, Dorothy, Mossy, Tower</li>
+        <li>Added 6 new INF maps: April, Belltower, Changeling, Motheaten, Warlock, Flute</li>
+        <li>Added Fuzzy Hashed HardwareIDs</li>
+        <li>Added ability to paste IP:Port/Pass formatted strings into the IP field of the Join Game tab. soldat:// URL's are also supported</li>
+        <li>Added 9 new Polygon types: Only (Team Colour) collide Polygons, and Only (Team Colour) + Enemy Team Bullets collide Polygons. Carrying a flag will disallow the player passing through any of these Polygon types</li>
+        <li>Added Polygon type: Exploding Polygon. Touching an Exploding Polygon will instantly blow up the player and throw their limbs around like confetti</li>
+        <li>Added Polygon type: Hurt Flaggers. Touching this kind of Polygon while holding a flag will periodically do damage (double 'hurt' poly damage)</li>
+        <li>Added Polygon type: Only flaggers collide. Anyone carrying a flag will be unable to pass through this type of Polygon</li>
+        <li>Added Polygon type: Bounce polygon (polygon normal magnitude determines bounciness)</li>
+        <li>Added 'End of round...' text will display to Spectators in Survival Mode. Appears above 'Following ' text</li>
+        <li>Added Score Board (F1) will now display the current Server Name at the top left corner</li>
+        <li>Added Score Board (F1) will now display the &quot;Server Info&quot; message under the server name</li>
+        <li>Added Option to disable rendering of background scenery for improving performance on low end systems</li>
+        <li>Added FPS Limiter</li>
+        <li>Added top right label color changes on inactive/active window - like it was in good old Soldat</li>
+        <li>Added option for minimum respawn time for team based games</li>
+        <li>Added bots now have a unique icon appear in place of their ping in the scoreboard</li>
+        <li>Added ingame Weapon Statistics for Registered players (Press F2)</li>
+        <li>Added &quot;Offline/LAN Mode&quot; for playing Soldat multiplayer with no connection to the Internet. To join a server in Offline/LAN mode, the server must have &quot;Connection=LAN&quot; set in its soldat.ini, or started with the -lan parameter</li>
+        <li>Added &quot;Spectators can only use Team Chat in Survival Mode while a round is active&quot; can be enabled with AntiSpy_Chat=1 in soldat.ini</li>
+        <li>Added Join_Password line in soldat.ini - Modified can't send empty chat messages, can send chat messages only containing spaces</li>
+        <li>Modified the link to the forums to point to http://forums.soldat.pl</li>
+        <li>Modified changed default window fonts in Config to Arial</li>
+        <li>Modified changed fontsize of checkboxes to be more readable</li>
+        <li>Modified RayCast to use line intersection tests instead of checking several points on the line</li>
+        <li>Modified removed bot seeing quality options from Config.exe (no longer needed)</li>
+        <li>Modified weapons menu can now be disabled when alive</li>
+        <li>Modified removed Raycasting_quality setting from soldat.ini</li>
+        <li>Modified improved readme</li>
+        <li>Modified updated translations</li>
+        <li>Modified enabled minimap for non-registered users</li>
+        <li>Modified ESC menu is now centered in the screen always</li>
+        <li>Modified ingame keys - ALT + F1 is now hide player names, F2 is weapon stats, F3 is minimap on/off and ALT + F3 is FPS</li>
+        <li>Modified replaced many of default maps with remakes: Veoto, ctf_Kampf, ctf_Lanubya, ctf_Maya2, ctf_Ruins, ctf_Run, ctf_Snakebite, ctf_Viet, inf_Argy, inf_Fortress, inf_Outpost</li>
+        <li>Modified renamed maps: ctf_Maya2 as ctf_Mayapan, ctf_Death2 as ctf_Death, ctf_Dropdown2 as ctf_Dropdown, ctf_MFM2 as ctf_MFM</li>
+        <li>Modified changing mouse sensitivy ingame now increases/decreases by 1% per button press rather than 5%</li>
+        <li>Modified players can no longer grab the flag when a round of Survival has already ended. You can still capture or return</li>
+        <li>Modified Spectators can only use Team Chat in Survival Mode while a round is active. Only applies to Spectator team</li>
+        <li>Modified Dead/Spectator players in Realistic mode can only see enemies the player they are following can see</li>
+        <li>Modifier players can not see enemy team chat in Realistic mode if the enemy player is not visible</li>
+        <li>Modified Team Bink is now reduced by 50% when Friendly Fire is disabled. You will get no Team Bink at all if you are not moving</li>
+        <li>Modified Score Board (F1) has been redesigned for team-based game modes</li>
+        <li>Modified Score Board (F1) can now be scrolled up/down (only if required) by using the Page Up/Down keys. An arrow will appear on the right-center side of the board if scrolling is available</li>
+        <li>Modified Score Board (F1) is now sorted by caps/kills/deaths</li>
+        <li>Modified Weapons Menu will now only display non-default values (on Mouse Over) if joining a Weapon Mod server</li>
+        <li>Modified complete rewrite of start.exe</li>
+        <li>Modified profile box menuitem selection is visible on startup and tabchange</li>
+        <li>Modified window tabmenu look is the same like in old Soldat 1.3.1</li>
+        <li>Modified Config.exe has a Soldat gui theme</li>
+        <li>Modified did some small Soldat.exe gui changes</li>
+        <li>Modified calculations of checksums for weaponmod/maps</li>
+        <li>Modified inactive tabtextcolor to be easier to read</li>
+        <li>Modified pressing escape while typing will now clear chat buffer</li>
+        <li>Modified Auto Updater will pause Soldat while updating</li>
+        <li>Modified dead/spectator players in Realistic mode can not use freecam.</li>
+        <li>Modified dead players can not spectate other dead players in Realistic+Survival</li>
+        <li>Modified Setup, Config, and Soldat executables to use higher quality icons with alpha transparency</li>
+        <li>Modified Big Text message (DrawText) on-screen limit is now 3 instead of 1 (Script devs: See Script Core changelog)</li>
+        <li>Modified improved Jungle</li>
+        <li>Fixed mouse buttons getting &quot;stuck&quot;</li>
+        <li>Fixed &quot;is not a valid integer&quot; error when starting Soldat</li>
+        <li>Fixed empty or very short (1 character) taunts not working</li>
+        <li>Fixed a bug making it possible to get the flag instantly after switching teams</li>
+        <li>Fixed bouncing issues with layered polygons</li>
+        <li>Fixed flag being throwable through thin polygons</li>
+        <li>Fixed Remote Admin could join server with 32 players</li>
+        <li>Fixed player doesn't get SERVER_FULL server message when server is full (e.g. 32 bots)</li>
+        <li>Fixed mouse is not visible until clicking when player was kicked out of the game</li>
+        <li>Fixed adminlog exploit</li>
+        <li>Fixed labels overlap in vote box when using languages with longer text</li>
+        <li>Fixed saved Game Password doesn't get put into the Game Password input field on startup (Join_Password in soldat.ini)</li>
+        <li>Fixed wrong message when mousewheel is used for toggling weapons menu show state</li>
+        <li>Fixed mouse is not affected by in game events while escape menu is open</li>
+        <li>Fixed issues with sending unicode text</li>
+        <li>Fixed minigun and chainsaw being able to shoot while reloading</li>
+        <li>Fixed intentional warp bug (wasting jets and jumping left/right)</li>
+        <li>Fixed switching between reloading weapons being faster than switching between fully loaded weapons</li>
+        <li>Fixed canceling file download not working</li>
+        <li>Fixed client not automatically downloading files and rejoining server</li>
+        <li>Fixed nondedi servers 'register with lobby' code</li>
+        <li>Fixed access violation while registering to lobbyserver</li>
+        <li>Fixed server removes player/bot with slot 32 on mapchange and players can't join then</li>
+        <li>Fixed index out of bounds error in profiles list when pressing pagedown key</li>
+        <li>Fixed main window hiding after ok is clicked on splash window in windows vista</li>
+        <li>Fixed message box appearing after assigning the space key to an action</li>
+        <li>Fixed Config opening up between the screens in a dual monitor setup</li>
+        <li>Fixed controls sometimes being freed after they are read (causing jets to act differently while playing online)</li>
+        <li>Fixed broken unicode input ingame</li>
+        <li>Fixed Soldat window is not centered when using 640x480 with 2 screens</li>
+        <li>Fixed the context menu in the nag screen window opens with an offset</li>
+        <li>Fixed able to see enemy team players behind player when spectating while dead in realistic mode</li>
+        <li>Fixed vote player and vote map in ESC menu cannot be clicked when Playerlist window is visible</li>
+        <li>Fixed Weaponmenu is not visible when Playerlist window is visible</li>
+        <li>Fixed clientserver decreases bullets too fast for certain weapons</li>
+        <li>Fixed too small buttons for translation text in control group box in Player tab</li>
+        <li>Fixed attempting to download files from server even if they don't exist</li>
+        <li>Fixed intended warp bug caused by holding F4 key</li>
+        <li>Fixed very slow window restoring (disabled semi helpful cheat detection)</li>
+        <li>Fixed access violation on game termination after directx initialization fails</li>
+        <li>Fixed tab order in all tabs</li>
+        <li>Fixed Soldat not being centered in active desktop</li>
+        <li>Fixed missing collision poly on Airpirates</li>
+        <li>Fixed various bugs in maps, see maps/changelog.txt for details</li>
+        <li>Fixed Vsync to work for windowed mode</li>
+        <li>Fixed alt+number taunt chooses weapon when weapons menu is visible</li>
+        <li>Fixed alt+number taunt chooses team when team menu is visible</li>
+        <li>Fixed tabmenu delay on tabchange</li>
+        <li>Fixed flicker on switch to first tab</li>
+        <li>Fixed alt + tab changes weaponsmenu visibility when dead</li>
+        <li>Fixed Wrong Map Version Errors</li>
+        <li>Fixed player names being invisible on F1 list</li>
+        <li>Fixed custom maps not downloading Textures or Edges from server</li>
+        <li>Fixed Computer Time in F1 menu being frozen</li>
+        <li>Fixed lobby frequently stopping while retrieving server list</li>
+        <li>Fixed splash screen will now display in the center of primary desktop when using multiple monitors (Instead of middle of both monitors)</li>
+        <li>Fixed graphics freeze caused by the Vista/Win7 logon screen (ctrl+alt+del) or UAC</li>
+        <li>Fixed Jetpack sparks appearing in Realistic mode when the enemy player is not visible</li>
+        <li>Fixed lobby list items 'Yes' &amp; 'No' not reading from translation file</li>
+        <li>Fixed Tab ordering in the Join Game menu</li>
+        <li>Fixed LAN lobby server scan. Will not work for servers on the same computer</li>
+        <li>Fixed online bots flying up into the air when spawning with a Parachute</li>
+        <li>Fixed a bunch of corrupt network packets, resulting in them being dropped or doing funky things</li>
+        <li>Fixed Change Team menu randomly appearing and other weird things happening for no reason</li>
+        <li>Fixed Access Violations and Corrupt Data occuring when recording/playing demo's recorded with Soldat 1.5.0</li>
+        <li>Fixed names with a trailing space character resetting to 'Major'</li>
+        <li>Fixed Players with Predator being visible to new players that join after they obtained the Bonus</li>
+        <li>Fixed Weapon Bink not resetting correctly after reloading weapon and not releasing the Fire button</li>
+        <li>Fixed Bot Team frame not appearing when exiting a single player game</li>
+        <li>Fixed 'Too many bots' message counting Charlie/Delta Bot Count when Teammatch is not selected</li>
+        <li>Fixed background music not stopping when Intro demo has finished playing</li>
+        <li>Fixed server timeleft countdown not pausing on map change/restart (via Commands or reaching score limit)</li>
+        <li>Fixed Spas12 reloading while firing no longer allows infinite shots</li>
+        <li>Fixed Raycasting for bots so that they dont try to walk through a opc and grab a flag grenade etc.</li>
+        <li>Fixed buggy head collision with the first polygon on a map</li>
+        <li>Fixed scaled window is below taskbar</li>
+        <li>Fixed spelling errors in english.txt</li>
+        <li>Fixed respawn timer sometimes exceeding the maximum respawn time in team based games</li>
+        <li>Fixed empty or missing ini keys destroy your ini settings</li>
+        <li>Fixed kickplayer bans when it should kick (when bantime is 0)</li>
+        <li>Fixed &quot;Crouch Float&quot; bug</li>
+        <li>Fixed InterfaceText/Image custom resolution scaling</li>
+        <li>Fixed IP field being selected after exiting a game in fullscreen</li>
+        <li>Fixed Survival/Realistic game freezes</li>
+        <li>Fixed Registered/Bot icons not working correctly when joining</li>
+        <li>Fixed Soldat being unable to run while having ingame dedicated server running</li>
+        <li>Fixed massive FPS lag</li>
+        <li>Fixed scoreboard will show Charlie/Delta team players in CTF</li>
+        <li>Fixed Auto Updater when running in Fullscreen</li>
+        <li>Fixed pressing escape with Change Team menu open being annoying</li>
+        <li>Fixed CTF tooltip with points error</li>
+        <li>Fixed console text overlapping Respawn Timer and other Survival messages</li>
+        <li>Fixed WorldText Scale parameter not working</li>
+        <li>Fixed Access Violations when using an ItemID higher than 10</li>
+        <li>Fixed registration star appearing for bots and players who aren't actually registered</li>
+        <li>Fixed registration Star on F1 menu not appearing while using default jet flame colour</li>
+        <li>Fixed Soldat Installer will set correct file write permissions under Windows Vista / 7</li>
+        <li>Fixed editing a maps background colours and not getting kicked for wrong map version.</li>
+        <li>Fixed the Auto Update feature corrupting Soldat.exe when downloading other updated files that already exist</li>
+        <li>Fixed blank profiles after clicking 'Add' and cancelling it.</li>
+        <li>Fixed Spectators no longer have the &quot;dead&quot; player marker next to their name</li>
+        <li>Fixed console chat messages not being transparent while F1 is open</li>
+        <li>Fixed players losing control of their sprite when someone joins Spectator team</li>
+        <li>Fixed Berserk bonus no longer does 4x damage to self</li>
+        <li>Fixed Flame Thrower not being able to drop in multiplayer</li>
+        <li>Fixed missing local /say command output on nondedicated server</li>
+        <li>Fixed polybugs in ctf_Laos</li>
+    </ul>
+    <strong id="changelog_12">1.5.0 (16.04.2009)</strong>
+    <ul>
+        <li>Added CTF Maps: ctf_Blade, ctf_Hormone, ctf_IceBeam, ctf_MFM2, ctf_Raspberry, ctf_Rotten, ctf_X, ctf_Guardian</li>
+        <li>Added DM Maps: Aero, CrackedBoot, Unlim</li>
+        <li>Added INF Maps: inf_Biologic, inf_Rise, inf_Rescue</li>
+        <li>Added HTF Maps: htf_Niall, htf_Star, htf_Vortex</li>
+        <li>Added Ban Reason + Duration displayed above Join Game button.</li>
+        <li>Added volume can be adjusted ingame by pressing Shift and +/- (increase/decrease).</li>
+        <li>Added '/mute all' can be used to mute all players. Type '/mute all' again to unmute all.</li>
+        <li>Added current computer time is displayed under map timeleft in F1 menu</li>
+        <li>Added completely new File Downloading code</li>
+        <li>Added text can be pasted using ctrl+v in chat input</li>
+        <li>Added last line in console is displayed in join game tab when you get kicked (Last 2 lines if BattlEye kick)</li>
+        <li>Added players head explodes sometimes(50% chance) if killed by a headshot from Barrett/Ruger (Bloooood!).</li>
+        <li>Added players invulnerable to damage from Flamegod now spout out tiny flames</li>
+        <li>Added ActionSnap feature - Press F5 after Killing/Dying and you can view+save that special moment! (Disabled in 16bit Bitrate)</li>
+        <li>Added current demo filename is displayed at the bottom center of the frags menu (F1)</li>
+        <li>Added number of Flag captures to the frags menu next to a player's name (F1)</li>
+        <li>Added TeamSpeak2 Integration. An icon will display above players who speak and are on the same Teamspeak server as you. (NOTE: You still need to have Teamspeak running in the background).</li>
+        <li>Added Animated GIF Scenery (You can disable the animations by unchecking 'Animated Scenery' in Config.exe)</li>
+        <li>Added Lobby Chat. Click the 'Chat' tab next to Join Game to participate. Various options can be found in /Txt/chat.ini</li>
+        <li>Added Ingame Radio Commands! If in CTF, INF, or HTF you can issue Voice Radio commands to your teammates! Default Key: V (Dont stress! The Voices are pre-recorded and found in /Sfx/radio/)</li>
+        <li>Added Checkbox to start Soldat after exiting the Config.exe program</li>
+        <li>Added Mouse Sensitivity can be adjusted ingame by pressing Ctrl Alt and +/- (increase/decrease).</li>
+        <li>Added &quot;&lt;name&gt; has dropped the Red/Blue Flag&quot; to the console. If the player that died with the flag is on your team, there will be a Big Text message, and a warning sound will play.</li>
+        <li>Modified pressing enter while in the IP/Port/Pass textbox now requests the server</li>
+        <li>Modified Spectators Interface now displays stats for the current player being watched. (Ammo/health etc). Servers can disable this option by setting Advanced_Spectate=0 in server.ini</li>
+        <li>Modified Join Game button is disabled for 1 second after clicking to prevent flooding.</li>
+        <li>Modified players dont get binked by team mates bullets if Friendly Fire is disabled (Explosions will still bink)</li>
+        <li>Modified Soldat now uses FMOD Version 3.75</li>
+        <li>Modified Players no longer gain 20 points when they Capture the Flag</li>
+        <li>Fixed various annoyances regarding Forward Join popup.</li>
+        <li>Fixed cmd menu appearing for players with / at start of their name</li>
+        <li>Fixed changing team from Spectator during pause will correctly repause the game</li>
+        <li>Fixed Access Violation when adding too many bots</li>
+        <li>Fixed 'Bot Team' frame not appearing when restarting Soldat</li>
+        <li>Fixed players who join as spectator are unable to select Change Team menu</li>
+        <li>Fixed massive FPS lag when players catch fire</li>
+        <li>Fixed Spas-12 reload cancelling when rolling forwards/backwards</li>
+        <li>Fixed CTF Maps: ctf_Nuubia, ctf_Laos, ctf_Division, ctf_Dropdown2, ctf_Voland, ctf_Viet, ctf_B2b, ctf_Snakebite, ctf_Kampf, ctf_Maya, ctf_Run</li>
+        <li>Fixed AutoDemo only working once</li>
+        <li>Fixed Grenades/Bullets not appearing on screen in realistic mode when owner is behind a polygon</li>
+        <li>Fixed player indicator showing during spawn while Player_Indicator=0</li>
+        <li>Fixed Explosions that are in your Line of Sight not appearing when the attacker is not in sight</li>
+        <li>Fixed Bullets in Realistic mode now have dynamic visibility</li>
+        <li>Fixed various &quot;%s&quot; formatting errors in some strings</li>
+        <li>Fixed Corrupt Weapon Mod bug</li>
+        <li>Fixed RM servers using default Realistic Weapon Mod appearing as Custom</li>
+        <li>Fixed 'C' 'V' error message dialog. Now displays the intended error message</li>
+        <li>Fixed Weapon/Flag Random Drop bug</li>
+    </ul>
+    <strong id="changelog_13">1.4.2 (11.08.2007)</strong>
+    <ul>
+        <li>Added new DM map Veoto, new INF maps inf_Industrial, inf_Argy</li>
+        <li>Added compatibility for pre 1.4 weapon mods</li>
+        <li>Added bullets from high ping players are rendered appropriately</li>
+        <li>Added password to join url - soldat://IP:PORT/PASSWORD/</li>
+        <li>Added seamless server support</li>
+        <li>Modified most of the maps fixed and improved by Keron Cyst</li>
+        <li>Modified htf_Void tripped over 90 degrees</li>
+        <li>Modified logs and screenshots naming convention (first file ends with date and &quot;01&quot;, second ends with &quot;02&quot; ...)</li>
+        <li>Modified video compatibility is always on on Vista (no Unicode for Vista)</li>
+        <li>Fixed extreme player warping with decent ping</li>
+        <li>Fixed time passing by on game pause</li>
+        <li>Fixed auto-updater bug</li>
+        <li>Fixed knife could be thrown while invincible after respawn</li>
+        <li>Fixed middle map respawn</li>
+        <li>Fixed Vista Battleye bug when installed under &quot;Program Files&quot;</li>
+    </ul>
+    <strong id="changelog_14">1.4.1 (02.06.2007)</strong>
+    <ul>
+        <li>Added auto patch downloading</li>
+        <li>Added /unpause command (/pause works only for pausing now)</li>
+        <li>Modified yellow player left message changed to team color</li>
+        <li>Modified bullet graphics</li>
+        <li>Modified improved anti-lag</li>
+        <li>Modified better netcode for high latency players</li>
+        <li>Modified if minimap is disabled server-side no icons are shown on minimap</li>
+        <li>Modified increased particle limit</li>
+        <li>Modified console and kill console doesn't fade when players list is shown on higher resolutions</li>
+        <li>Modified same taunt cannot be sent for 5 seconds</li>
+        <li>Modified spectator can see all on minimap</li>
+        <li>Modified removed greater self explosion damage</li>
+        <li>Modified improved pinging servers, works with progress bar</li>
+        <li>Modified parachutes can be dropped right after respawn</li>
+        <li>Modified respawn counter is drawn behind console</li>
+        <li>Modified default console font smaller (10 -&gt; 9)</li>
+        <li>Modified minigun has less recoil when crouching and prone, more when standing</li>
+        <li>Modified minor adjustments to weapons.ini and weapons_realistic.ini</li>
+        <li>Fixed more map bugs</li>
+        <li>Fixed Airpirates wrong map version bug</li>
+        <li>Fixed network player bullets appearing correctly according to ping</li>
+        <li>Fixed errors when starting game (no need for compatibility mode)</li>
+        <li>Fixed resolution change and minimap not working (minimap won't have background on old video cards)</li>
+        <li>Fixed lobby error messages</li>
+        <li>Fixed unicode fonts display under Windows 98/SE</li>
+        <li>Fixed killconsole graphics not aligned properly</li>
+        <li>Fixed killconsole space between names is adjusted according to font size</li>
+        <li>Fixed no secondary on server join</li>
+        <li>Fixed kicking on servers with disabled weapons</li>
+        <li>Fixed flamer flooding and ban</li>
+        <li>Fixed team menu box dissapearing when players list show (now box is seen without text)</li>
+        <li>Fixed minimap transparency set by soldat.ini &quot;MiniMap_Transparency=&quot;</li>
+        <li>Fixed survival mode alive players counter</li>
+        <li>Fixed add bot text in singleplayer</li>
+        <li>Fixed spectator cam on team change</li>
+        <li>Fixed disconnect button now works while file downloading</li>
+        <li>Fixed cancel button now works properly with server downloading and pinging</li>
+        <li>Fixed taunts working with profiles</li>
+        <li>Fixed spawning without secondary weapon on team change</li>
+        <li>Fixed kits, flags and weapons reserving by players with higher ID (now closest one picks it up)</li>
+        <li>Fixed survival mode spectator join and return alive</li>
+        <li>Fixed length of console after pressing chat key with fonts height scale greater than 125</li>
+        <li>Fixed unicode chars typing in fullscreen</li>
+        <li>Fixed &quot;&amp;&quot; causing underline</li>
+        <li>Fixed nade throw distance</li>
+    </ul>
+    <strong id="changelog_15">1.4.0 (29.04.2007)</strong>
+    <ul>
+        <li>Added new maps: ctf_Cobra, Island2k5, Leaf, inf_Messner, htf_Zajacz, htf_Prison, htf_Erbium, Factory, ctf_Steel, ctf_Ruins, ctf_Division, ctf_Conquest</li>
+        <li>Added BattlEye anti-cheat engine integrated (&quot;BattlEye_Anti_Cheat=&quot; soldat.ini option)</li>
+        <li>Added game screen resolution change (for registered players)</li>
+        <li>Added minimap (F2 key; for registered players; &quot;Disable_Minimap=&quot; server-side option;   &quot;MiniMap_...&quot; position and transparency options )</li>
+        <li>Added new Soldat intro starring the Soldat ghost</li>
+        <li>Added completely new lobby server uses reliable TCP/IP connection (http://rr.soldat.pl)</li>
+        <li>Added color icons for server ping in servers list</li>
+        <li>Added country flags in server list</li>
+        <li>Added unicode support (for all menus; taunts)</li>
+        <li>Added chatting with IME composition (for East Asian fonts)</li>
+        <li>Added fonts size change option (more info: Soldat\Txt\fonts-help.txt)</li>
+        <li>Added shadows under console and chat text</li>
+        <li>Added font can be changed in menus through Soldat\Txt\font.ini (or language specific e.g. english.ini)</li>
+        <li>Added default game keys shown in escape menu during the first 3 run times</li>
+        <li>Added separate file &quot;weapons_realistic.ini&quot; for realistic mode weapon settings</li>
+        <li>Added window resize option in Config (windowed mode can be stretched to fullscreen)</li>
+        <li>Added transparency of bullet depends on bullet strength (the stronger it is, the more visible)</li>
+        <li>Added team colored kill console</li>
+        <li>Added team colored chat messages</li>
+        <li>Added flags and weapons start blinking 5 seconds before disappearing</li>
+        <li>Added suicide weapon shown in kill console</li>
+        <li>Added recoil setting to weapon modifications (works in non-realistic mode)</li>
+        <li>Added F9 hides Soldat to tray (Alt+Tab also)</li>
+        <li>Added player catches on fire from lava polys</li>
+        <li>Added transparency enabled on polygons</li>
+        <li>Added server address added at end of gamestat.txt</li>
+        <li>Added gamma brightness adjustment option (works only in fullscreen; right mouse button sets default value)</li>
+        <li>Added PNG loading - if BMP not found in folder PNG is used</li>
+        <li>Modified weapon balance (more info in Soldat\weapons.ini)</li>
+        <li>Modified reworked and fixed maps (more info in file Soldat\Maps\Maps Change-log.txt)</li>
+        <li>Modified bullets (except Barret, M79, LAW, Knife) lose 50% of power after screen distance and another 50% after 2 screens</li>
+        <li>Modified bullet graphics for better visibility (files use PNG, but extension is BMP for mod compatibility)</li>
+        <li>Modified new random texture used instead of blank.bmp (to prevent scenery delete cheating)</li>
+        <li>Modified flamer does not kill owner</li>
+        <li>Modified Alt+F3 hides player names on screen, F2 reserved for minimap</li>
+        <li>Modified increased visibility of grenade trail</li>
+        <li>Modified player does not lose points after team change</li>
+        <li>Modified gun recoil behaviour in realistic mode (thx to Ramirez)</li>
+        <li>Modified parachute cannot be dropped for 2 seconds after respawn</li>
+        <li>Modified all suicides displayed as &quot;Selfkill&quot; in kill logs</li>
+        <li>Modified grenades cause 50% more damage to owner</li>
+        <li>Modified players can't unpause game if server is paused</li>
+        <li>Modified log and screenshot filenames are timestamped now</li>
+        <li>Modified picked up weapon doesn't have to be reloaded</li>
+        <li>Modified weapons are higher and more visible when lying on ground</li>
+        <li>Modified crouch and prone position give less recoil</li>
+        <li>Modified players menu does not appear after kicking from server</li>
+        <li>Modified registration restriction taken off font changing</li>
+        <li>Modified grenade bink works on weapons with grenade throwing</li>
+        <li>Modified flames behaviour and power</li>
+        <li>Modified knife throw delay is slightly shorter</li>
+        <li>Modified respawn counter background overlaps console text</li>
+        <li>Modified faster server pinging</li>
+        <li>Modified killconsole look; added spaces between kills; long names render smaller</li>
+        <li>Modified taunts can be scrolled only after pressing chat button and not typing anything</li>
+        <li>Modified Config program; added Troubleshooting FAQ button link</li>
+        <li>Fixed Alt+Tab problems, Soldat now always minimizes to tray</li>
+        <li>Fixed weapons mod MovementAcc hack</li>
+        <li>Fixed &quot;wrong map version&quot; error when scenery count was less than 5</li>
+        <li>Fixed hits not registering while player near collider and on ground shot at certain angle</li>
+        <li>Fixed flooding server with taunt messages (only 3 the same can be sent)</li>
+        <li>Fixed instant shot; avoiding startup time (for Barret and LAW) when weapons fire bar is reloaded</li>
+        <li>Fixed Soldat starting suspended or page popping out when ad server down</li>
+        <li>Fixed team change bug</li>
+        <li>Fixed gun jamming when standing on dropped weapon and changing weapon</li>
+        <li>Fixed mouse cursor display with sensitivity other than 100%</li>
+        <li>Fixed &quot;no bots&quot; filter saving</li>
+        <li>Fixed idle kicking during paused game</li>
+        <li>Fixed Soldat resizer screen hack</li>
+        <li>Fixed parachute network problems</li>
+        <li>Fixed flames in network bug</li>
+        <li>Fixed flooding server with taunt messages (only 3 the same can be sent)</li>
+        <li>Fixed chat text reappearing after erasing whole text</li>
+        <li>Fixed not being able to vote for 2:00 minutes after team change</li>
+        <li>Fixed map sector bug (when more than 255 polys in sector)</li>
+        <li>Fixed textures not loading from Mod directory</li>
+        <li>Fixed weapon and gostek graphic restrictions (weapons no larger than 64x64, gostek 16x16).</li>
+        <li>Fixed player weapons settings in hand not changing after loading new weapon mod</li>
+        <li>Fixed messed up menu graphics on first installation and game start</li>
+        <li>Fixed Barrett typo (not changed in weapons.ini for compatibility)</li>
+        <li>Fixed explosion damage not calculated using anti-lag (like bullets)</li>
+        <li>Fixed player colors using transparency (no-head exploit)</li>
+        <li>Fixed weather effect sound not working with sound volume</li>
+        <li>Fixed grenade and M79 trail position</li>
+        <li>Fixed file download exploit</li>
+    </ul>
+    <strong id="changelog_16">1.3.1 (09.12.2005)</strong>
+    <ul>
+        <li>Added join spectator team button in team select menu</li>
+        <li>Added new maps: DesertWind, htf_Rubik, ctf_Maya2, ctf_Lanubya (winner of ESL mapping contest) (by grand_diablo), Blox, ctf_Snakebite, ctf_Ash (by chakapoko maker), htf_Dusk (by Michal), htf_Muygen (by The Geologist), remakes: ctf_Death2 (by grand_diablo, NuZZ and MM), ctf_Dropdown2 (by Boxo, wp's by Keron Cyst)</li>
+        <li>Added new secret ownage command</li>
+        <li>Added file readonly.txt to prevent downloading certain files (original maps and sceneries cannot be downloaded)</li>
+        <li>Added new anti-cheat solutions</li>
+        <li>Added new command: /loadlist X (loads maplist from file X.txt);</li>
+        <li>Added new command: /lobby (reregisters the server in the lobby server)</li>
+        <li>Added log files split after reaching 512KB of size</li>
+        <li>Added png and jpg files are supported by the file download system</li>
+        <li>Modified default gostek graphics changed to EVO Gostek (by Michal)</li>
+        <li>Modified fixes in maps: ctf_Equinox, ctf_Voland, ctf_B2b + all maps recompiled with PolyWorks</li>
+        <li>Modified weapon balance (check weapons.ini for details)</li>
+        <li>Modified all maps can be changed or voted in the in-game map change menu</li>
+        <li>Modified all weapons must be reloaded after pick-up (prevents reload exploits)</li>
+        <li>Modified can't vote until 2 minutes pass after server join</li>
+        <li>Modified grenades don't explode on corpses (prevents lag bugs)</li>
+        <li>Modified if texture can't be downloaded for map default one is loaded</li>
+        <li>Modified all weapons bullets (except Barret, M79 and LAW) lose power after long distance (1 or more screens, to prevent blind spraying)</li>
+        <li>Modified weapon can't be reloaded if is fully loaded</li>
+        <li>Modified Barret has more movement speed aim penalty and has short wait time before firing</li>
+        <li>Modified M79 gives 30% more self damage</li>
+        <li>Modified knife throwing - speed of knife depends on how long you hold the throw button</li>
+        <li>Fixed extreme bink on respawn</li>
+        <li>Fixed lobby registering errors in non-dedicated server game</li>
+        <li>Fixed yellow player name still after thrown away flag</li>
+        <li>Fixed flame whizz sound</li>
+        <li>Fixed players using the same file for headgear</li>
+        <li>Fixed Spas-12 reload exploit</li>
+        <li>Fixed grenade not exploding in close hit</li>
+        <li>Fixed invisible LAW bug</li>
+        <li>Fixed Soldat not compatible with some background programs</li>
+        <li>Fixed blue team caps worth 20 instead of 25 points</li>
+        <li>Fixed mp5 clip falling out</li>
+        <li>Fixed killing through wall</li>
+        <li>Fixed flames hit colliders</li>
+        <li>Fixed various game and manual typing mistakes</li>
+        <li>Fixed when player joined paused game his game wasn't paused</li>
+        <li>Fixed server does not send messages to non-authenticated admin clients</li>
+        <li>Fixed two grenades being thrown on server when player had a chainsaw</li>
+        <li>Fixed autorecording start on map change</li>
+    </ul>
+    <strong id="changelog_17">1.3.0 (05.08.2005)</strong>
+    <ul>
+        <li>Added new gamemode: Hold the Flag</li>
+        <li>Added new maps: htf_Mare (by Demonic/Legend), Daybreak, inf_Moonshine (by chakapoko maker), htf_Void (by MM), ctf_Nuubia (by Troskal) htf_Boxed, htf_Futura, htf_Nuclear (by grand_diablo), htf_Arch (by Sticky), htf_Desert (by DeMonIc), Airpirates (by Ville)</li>
+        <li>Added possibility to throw away flag (press jump + crouch buttons at once, default W + S)</li>
+        <li>Added dodge move - pressing the jets button while jumping backwards makes the player do a back-flip</li>
+        <li>Added flames from flamer stick to victim and make him die slowly in pain, flames can stick to other people</li>
+        <li>Added team player names appear on screen borders (F2 key turns this on/off)</li>
+        <li>Added bullet statistics after kill (distance of shot, airtime and number of ricochets)</li>
+        <li>Added add, delete to favourite servers list buttons. List holds now server names, IPs, ports and passwords.</li>
+        <li>Added reason and voter displayed on map or kick vote</li>
+        <li>Added when playing on a weapons mod server all weapon statistics are shown in weapons menu</li>
+        <li>Added when selecting weapons little help messages appear (for new players, dissappears after few runs of game)</li>
+        <li>Added autocomplete button (Tab), when you type the beginning of someones name and hit Tab it will auto complete</li>
+        <li>Added more chat text can be typed and shown (long texts are scaled so they fit screen)</li>
+        <li>Added spectator can use free cam by pressing jump button (default W button)</li>
+        <li>Added names appear next to players when in spectator mode</li>
+        <li>Added menu option to specify amount of kills/deaths to win/lose weapon in advance mode</li>
+        <li>Added selection of No weapon for secondary</li>
+        <li>Added penalty time in Infiltration and HTF when teams are uneven (points are added every 5 seconds + 2 seconds for every uneven team member)</li>
+        <li>Added penalty for capture points in Infiltration when teams are uneven (30 points for capture - 5 points for every red team member more)</li>
+        <li>Added full weapons modifications (edited in a file 'weapons.ini'), servers with weapons mods have a prefix '(WM)' in their name</li>
+        <li>Added Infiltration and HTF options in soldat.ini: Blue_Points_Time (time for blue team to get point in seconds); Red_Points_Capture (amount of points for capture); HTF_Points_Time (time to get point in seconds)</li>
+        <li>Added soldat.ini options Max_Flood_Warnings, Max_Ping_Warnings, (warnings until kick), MaxConnections (max file server connections, tweak this if server crashes on map download), Disable_AntiCheat_Kick (basicly disables anti-cheat), TooMuch_Packets_*, Flooding_Packets_* (specifies amount of packets from client when flooding occurs)</li>
+        <li>Added soldat.ini options for setting packet send rate T1_*, works when connection type is set to T1 (Internet_Connection=3)<br>example: T1_Snapshot=40, sends this packet every 40 ticks (60 ticks = 1 second).</li>
+        <li>Added KillConsole_Length and MainConsoleLength value to soldat.ini</li>
+        <li>Added running Soldat mods through &quot;-mod&quot; parameter ex. &quot;Soldat.exe -mod HarryPotter&quot; - loads all graphics, sounds and txt files from folders in Soldat\Mods\HarryPotter</li>
+        <li>Added file &quot;Soldat\Txt\font.ini&quot;, allows to change in-game font (useful for mods and translations)</li>
+        <li>Added flame animations are now in different files than explosion (for mod-makers)</li>
+        <li>Added files &quot;m2-2.bmp&quot; and &quot;bow-2.bmp&quot; so these weapons don't have to be symmetrical (for mod-makers)</li>
+        <li>Added client command &quot;/info&quot; - displays info from server about address, timelimit, nextmap etc.</li>
+        <li>Added command &quot;/loadwep&quot; for reloading 'weapons.ini', useful for tweaking settings</li>
+        <li>Added /loadwep command works with other files eg. /loadwep weapons121 (loads weapons121.ini settings)</li>
+        <li>Added command &quot;/loadcon&quot; for reloading the config file (soldat.ini) while in-game, useful for tweaking network settings</li>
+        <li>Added command &quot;/gamemode X&quot; for changing gamemodes (X = 0 DM, 1 PM, 2 TM, 3 CTF, 4 RM, 5 INF, 6, HTF)</li>
+        <li>Added commands: &quot;/advance 0-1&quot;, &quot;/realistic 0-1&quot;, &quot;/survival 0-1&quot;, for changing server game settings (eg. /realistic 1)</li>
+        <li>Added command &quot;/unbanlast&quot; unbans last vote/server/admin ban</li>
+        <li>Added command &quot;/banlast&quot; (similar to /kicklast, bans the last person that entered the server, ban works for 1 hour)</li>
+        <li>Added command &quot;/kill X&quot; (X can be player's number or name) (of course this is an admin command)</li>
+        <li>Added packet send rate adjusting depending on number of players (smoother play with few players, less bandwidth cost for lots of players, can be turned off in soldat.ini 'PacketRate_Adjusting=0')</li>
+        <li>Added working pause for server and players</li>
+        <li>Added if player which is being voted on leaves the game then he gets temporarily banned</li>
+        <li>Added different files of gostek for second team (for mods, possibility of two different looking teams)</li>
+        <li>Added different files for weapon muzzle fires (for mods)</li>
+        <li>Added F8 button for fast forwarding demo playing</li>
+        <li>Added new anti-cheat detection methods</li>
+        <li>Added self-bink on auto weapons - gun becomes innacurate while auto-firing</li>
+        <li>Modified all weapons rebalanced</li>
+        <li>Modified weapons: shotgun has more kickback, less horizontal boost for minigun</li>
+        <li>Modified LAW has startup time, hold fire for about 0.3 seconds to fire</li>
+        <li>Modified bodies preserve velocity after death</li>
+        <li>Modified survival mode round ends when everybody on team is killed in CTF and capture point is added for winners</li>
+        <li>Modified in survival mode all players and flags respawn after round end</li>
+        <li>Modified player joining a survival mode game is dead until end of round</li>
+        <li>Modified flame god mode time is shorter (10 seconds) and works on all gamemodes</li>
+        <li>Modified flamer is not lost after flame god mode, can be thrown away after but dissapears</li>
+        <li>Modified increased radius of pick up (flags, boxes, weapons) slightly</li>
+        <li>Modified cursor gets bigger when bink effect occurs (eg. when hit by bullet holding Barret)</li>
+        <li>Modified when calling a vote you need to type the reason for the vote</li>
+        <li>Modified can't call a vote for 2 minutes after previous vote</li>
+        <li>Modified chat taunts are automaticly sent after pressing Alt+key, after pressing the chat button they can be selected the old way</li>
+        <li>Modified music volume is independent from sound volume</li>
+        <li>Modified console is more transparent when weapons and team menu show up</li>
+        <li>Modified disabled &quot;/adminpass&quot; command in dedicated server, for security reasons</li>
+        <li>Modified &quot;mapslist.txt&quot; is reloaded every map change</li>
+        <li>Modified flags are dropped not respawned after player disconnect</li>
+        <li>Modified ricochet angle is slightly larger</li>
+        <li>Modified rambomatch: players can't kill each other if someone is rambo</li>
+        <li>Modified bullet hit damage ratio for head, 5% less damage (current ratios: legs 90%, torso 100%, head 115%)</li>
+        <li>Modified network bullet start position according to player ping and bullet owners ping</li>
+        <li>Modified spectator cam is faster</li>
+        <li>Modified flood kick ban is 20 minutes now</li>
+        <li>Modified capture points for player = 20 points</li>
+        <li>Modified game admins cannot be kicked</li>
+        <li>Modified server is automaticly unpaused if all players disconnect</li>
+        <li>Modified idle kick time lowered to 3 minutes</li>
+        <li>Modified &quot;/setteam5&quot; works on all game modes</li>
+        <li>Modified automatic ping sort works only after whole list is downloaded or cancel pressed</li>
+        <li>Modifed or fixed maps Arena2, ctf_B2b, ctf_Viet</li>
+        <li>Fixed grenade selfkilling</li>
+        <li>Fixed chainsaw collision so it is possible to massacre bodies</li>
+        <li>Fixed not being able to chat on map change</li>
+        <li>Fixed time does not flow if game is paused</li>
+        <li>Fixed Advance mode cheat allowing to pick a disabled weapon with the keyboard</li>
+        <li>Fixed server host bullet hit boost effect</li>
+        <li>Fixed LAW exploit (dropped LAW must be reloaded)</li>
+        <li>Fixed alt+F4 doesn't make a screenshot</li>
+        <li>Fixed server-client time synchronization</li>
+        <li>Fixed friendly fire for clients (team players don't bleed if it is off)</li>
+        <li>Fixed if holding two weapons of the same kind - losing both when throwing one away</li>
+        <li>Fixed bug when dead guys bullet didn't do any damage</li>
+        <li>Fixed kills console fades when showing players menu</li>
+        <li>Fixed M79 wall bug</li>
+        <li>Fixed fast shot piercing wall bug</li>
+        <li>Fixed causes of weapon jamming after reload</li>
+        <li>Fixed causes of mute bug</li>
+        <li>Fixed causes of invisible bullets in multiplayer</li>
+        <li>Fixed wave respawn in dedicated server (if there are few players it takes less seconds to respawn)</li>
+        <li>Fixed &quot;biodro.bmp&quot;, &quot;biodro2.bmp&quot; and &quot;reka.bmp&quot;</li>
+        <li>Fixed player does not join same team if chosen from change team menu (can be used for canceling the menu)</li>
+        <li>Fixed paused server can be joined</li>
+        <li>Fixed modified animations bug</li>
+        <li>Fixed no respawn time showing after changing team from spectator</li>
+        <li>Fixed changing video mode when joining server with wrong password</li>
+        <li>Fixed soldat.ini value &quot;Record_Time=&quot;, time in minutes of the autodemo rerecording</li>
+        <li>Fixed all filelogs are now updated every minute only (can be specified in soldat.ini &quot;LogFilesUpdate=&quot;)</li>
+        <li>Fixed realistic mode visibility point, so players with head in ceiling are visible</li>
+    </ul>
+    <strong id="changelog_18">1.2.1 (26.10.2004)</strong>
+    <ul>
+        <li>Added Auto map downloading from server</li>
+        <li>Added Bullet and missile ricochets</li>
+        <li>Added New Advance Mode</li>
+        <li>Added Bullet time effect</li>
+        <li>Added Auto recording feature</li>
+        <li>Added Mute player option (commands: /mute, /unmute)</li>
+        <li>Added Option to take screenshot on final score</li>
+        <li>Added Bots aim better with Barret and Ruger on Impossible level</li>
+        <li>Added Weapons aim is affected by bullet hits (the bink effect)</li>
+        <li>Added Aim is affected more by player speed</li>
+        <li>Added In CTF health and grenade boxes spawn on players team side, player can pick up enemy boxes and &quot;steal&quot; them on his side</li>
+        <li>Added Players get kicked from server after 5 minute idle time</li>
+        <li>Added Console messages are transparent after pressing F1</li>
+        <li>Added Option to disable sniper line server-side in soldat.ini</li>
+        <li>Added New map anti-hack system</li>
+        <li>Added New voting system with menu for selecting &quot;yes&quot; or &quot;no&quot;</li>
+        <li>Added Server makes an automatic kick vote if cheating is detected to prevent unfortunate bans</li>
+        <li>Added Weapon muzzle collision detection with polygons and colliders to prevent hidden camping</li>
+        <li>Added Grenade and medikit boxes can be hit by bullets on LAN</li>
+        <li>Added Parachute drops off after pressing jets button</li>
+        <li>Added /maxplayers to commands list in manual</li>
+        <li>Added New buttons for music playing: F6 - Previous song; F7 - Next Song</li>
+        <li>Added New DM maps: remake of old HH, Bigfalls, Tropiccave</li>
+        <li>Added New CTF maps: ctf_Chernobyl, ctf_Crashed, ctf_Dropdown, ctf_Equinox, ctf_Maya</li>
+        <li>Added New INF map: inf_Invasion</li>
+        <li>Modified Minigun has less bullet spray</li>
+        <li>Modified Ak-74 has slightly more power</li>
+        <li>Modified Cursor is 2 times smaller with sniper line</li>
+        <li>Modified Kill console is longer</li>
+        <li>Modified Death ambient sound</li>
+        <li>Modified Guns stay 5 seconds longer</li>
+        <li>Modified Maps: ctf_B2b, ctf_Voland, Arena2 and other minor map changes</li>
+        <li>Modified No limit for unregistered version demo recordings</li>
+        <li>Modified More recoil in realistic mode for Ruger 77</li>
+        <li>Modified Survival mode enabled in Pointmatch and CTF</li>
+        <li>Modified Servers list sorts by ping after request</li>
+        <li>Modified Health and grenade box don't spawn at the same place after picking up</li>
+        <li>Modified Explosions have less impact on flags</li>
+        <li>Fixed Double shooting law exploit</li>
+        <li>Fixed Server filter options not saved</li>
+        <li>Fixed Flag collisions with map and player</li>
+        <li>Fixed wrong music playing during intro</li>
+        <li>Fixed Spectators being kicked for cheating</li>
+        <li>Fixed Soldat window showing on the center of desktop instead of screen (for multi-monitor systems)</li>
+        <li>Fixed Space button could not be assigned to keys</li>
+        <li>Fixed Soldier shivering on horizontal polygons</li>
+    </ul>
+    <strong id="changelog_19">1.2.0 (21.01.2004)</strong>
+    <ul>
+        <li>Added demo recording (F8 key)</li>
+        <li>Added new gameplay intro</li>
+        <li>Added smooth polygon edges</li>
+        <li>Added spectator mode</li>
+        <li>Added player jet flames color can be changed for registered players</li>
+        <li>Added registered players will have a star next to their name on the players list</li>
+        <li>Added fast bullets pierce soldiers body</li>
+        <li>Added close and fast bullet shots are more brutal</li>
+        <li>Added grenades, M79 bullets and LAW missiles explode from each other</li>
+        <li>Added remakes of old maps: Arena3 and ctf_Death</li>
+        <li>Added smoke after explosion</li>
+        <li>Added new explosion effects</li>
+        <li>Added small effect on flag capture</li>
+        <li>Added new secret animation</li>
+        <li>Added sound when time appears in console</li>
+        <li>Added stationary gun use sound</li>
+        <li>Added every weapon has different bullet and shell graphics</li>
+        <li>Added total game texts localisation, localised files placed in Soldat\Txt\Languages</li>
+        <li>Added in-game statistics in Logs\GameStat.txt (updated every 30 seconds)</li>
+        <li>Added log.txt and consolelog.txt saved in Logs directory with numbers (for dedicated server)</li>
+        <li>Added custom profile taunts saved in Soldat\Profiles</li>
+        <li>Added players number display in non-team games in players list</li>
+        <li>Added network compression (if causes lag on slower machines can be disabled in Soldat.ini)</li>
+        <li>Added network code optimisation (less server bandwidth)</li>
+        <li>Added LAW and M79 grenade explode if hit player but lag does not show it</li>
+        <li>Added more anti-cheat solutions</li>
+        <li>Added remote admins can always join server even if full</li>
+        <li>Added spectator can switch to the previous player with jets button (default: right mouse click)</li>
+        <li>Added game can be joined from parameter with password ex. Soldat.exe 127.0.0.1 23073 password</li>
+        <li>Added server joining through URL address ex. type in browser soldat://127.0.0.1:23073/</li>
+        <li>Added protection against invalid characters in name (only keyboard chars allowed)</li>
+        <li>Added names cannot be empty or have spaces in the end</li>
+        <li>Added two players can't have the same name (player name changes by server)</li>
+        <li>Added double pressing the command key '/' enters the last typed command</li>
+        <li>Added pressing the command key '/' displays corresponding player numbers in players menu (F1)</li>
+        <li>Added /Kick and /Ban commands can work with player numbers or names now ex. /Kick 2 or /Kick Loser</li>
+        <li>Added new server commands:<br>/addbot1 [name], /addbot2, /addbot3, /addbot4 - for adding team bots<br>/setteam1 [number], setteam2, setteam3, setteam4 - forces the player to join team<br>/kicklast - kicks the player that last joined the server<br>/respawntime [seconds] - changes the respawn time<br>/maxrespawntime [seconds] - changes the maximum respawn time in team games<br>/limit [number] - changes the current game limit (kills/points/captures)<br>/timelimit [minutes] - changes the current time limit<br>/bonus [number] - changes the frequency of bonuses<br>/friendlyfire [0/1] - changes friendly fire settings<br>/vote% [0-100] - changes the percentage of players needed to vote on a map or kick<br>/password [word] - changes temporarily the server password<br>/adminpass [word] - changes the remote admin password<br>/adminlog [password] - for client, logs in as a remote admin on the server using password</li>
+        <li>Fixed player-map collision, no more sliding, less polygon holes</li>
+        <li>Fixed flag collision bugs</li>
+        <li>Fixed player can't move with no weapon if prone</li>
+        <li>Fixed idle animations not to interrupt firing</li>
+        <li>Fixed various map polygon bugs</li>
+        <li>Fixed some joining server issues</li>
+        <li>Fixed pick-up medikit health lag on client</li>
+        <li>Fixed LAW not disappearing bug</li>
+        <li>Fixed pinging servers with the same IP</li>
+        <li>Fixed &quot;lobby forward&quot; join and ping issues</li>
+        <li>Fixed flag appearing in wrong places on client</li>
+        <li>Fixed player getting kicked if didn't choose weapon and USSOCOM was disabled</li>
+        <li>Fixed two bows bug when one bow was knocked out</li>
+        <li>Fixed warp effect on client if player stood still and was shot</li>
+        <li>Fixed chat messages are now guaranteed to arrive on server</li>
+        <li>Fixed profile settings not working</li>
+        <li>Fixed link on profile selection screen</li>
+        <li>Fixed &quot;List out of bounds&quot; error if profile was deleted and used</li>
+        <li>Fixed game not saving some settings when started with &quot;-start&quot; parameter</li>
+        <li>Fixed Spas-12 reload issues</li>
+        <li>Fixed soldier doesn't play grenade animations or sounds if can't throw grenade</li>
+        <li>Fixed reload sound stops if player dies, throws out or changes weapon</li>
+        <li>Fixed player could not get up with default key if reloading</li>
+        <li>Fixed gun jammed when fired quickly after weapon change</li>
+        <li>Fixed player couldn't lose weapon if crouching or prone and other no weapon issues</li>
+        <li>Fixed double Spas-12 reload sound</li>
+        <li>Fixed Spas-12 shooting at self sometimes on client</li>
+        <li>Fixed M79 throwing out tons of shells bug</li>
+        <li>Fixed player can roll now when reloading</li>
+        <li>Fixed player could not get up if had no weapon</li>
+        <li>Fixed jumping backwards</li>
+        <li>Fixed player fired after clicking vote map or kick</li>
+        <li>Fixed weapons being more accurate when shot down-right or up-left</li>
+        <li>Fixed stationary gun flying bug</li>
+        <li>Fixed player losing weapon if picked up gun while changing weapons</li>
+        <li>Fixed weapon created with no force applied on client</li>
+        <li>Fixed time display in players menu</li>
+        <li>Fixed spawn effect team color</li>
+        <li>Fixed wrong message displayed on top of players list if there was a tie in team games</li>
+        <li>Fixed clanmatch option</li>
+        <li>Fixed player death animaton issues on client</li>
+        <li>Fixed player could not play idle animations if had no weapon</li>
+        <li>Fixed cursor player info not showing if team player was not standing or dead</li>
+        <li>Fixed player not disconnected if pressed Alt+F4</li>
+        <li>Fixed window not restoring properly after Alt+Tab or minimize</li>
+        <li>Fixed display of names containing character '|' in dedicated server panel</li>
+        <li>Modified functional keys: F4 - screenshot, F8 - record demo, F9 - minimize, F10 - pause</li>
+        <li>Modified player gets point for killing Rambo, player loses point if kills non-Rambo</li>
+        <li>Modified realistic mode field of view, you can not see what is behind you now</li>
+        <li>Modified realistic mode fall damage (only falling hurts, doesn't kill instantly)</li>
+        <li>Modified range of Barret scope increases slowly</li>
+        <li>Modified stationary gun layout on ctf_Kampf</li>
+        <li>Modified jet fuel regenerates 2 times faster when on ground</li>
+        <li>Modified stationary gun overheats after time and is less accurate after while of firing</li>
+        <li>Modified LAW can be fired while prone</li>
+        <li>Modified can use jet boots while rolling</li>
+        <li>Modified flamer does not kill owner</li>
+        <li>Modified flamer has longer distance</li>
+        <li>Modified physics - player speed affects bullets speed</li>
+        <li>Modified physics - player speed is not limited (1.0xb M79 tricks possible)</li>
+        <li>Modified bullets have more power impact on bodies (head shots are more spectacular)</li>
+        <li>Modified hit point power ratio:<br>head shot was: 110% is: 120%<br>torso shot is: 100%<br>leg shot was: 80% is: 90%</li>
+        <li>Modified weapons stats:<br>Auto weapons: power increased slightly<br>FN Minimi: reload time decreased<br>M79: speed increased by 5%<br>LAW: shorter reload time, can be fired only from full crouch or prone, 1 second delay on start<br>Chainsaw: is stronger and has less ammo</li>
+        <li>Modified respawn time in team games can't be less than 2 seconds to prevent immediate respawn</li>
+        <li>Modified multi kill messages</li>
+        <li>Modified big kill text ('killed by ...') can't be very large</li>
+        <li>Modified cursor does not center on respawn</li>
+        <li>Modified player name can hold 4 more characters</li>
+        <li>Modified background colors on most of the maps</li>
+        <li>Modified M79 bullet is more visible</li>
+        <li>Modified bigger, more brutal blood</li>
+        <li>Modified join and leave player messages are now team color coded</li>
+        <li>Modified chat message color</li>
+        <li>Modified maximum chat message letters</li>
+        <li>Modified stereo sound listener is now on player (you hear what your player hears, like you would be him)</li>
+        <li>Modified vote map and vote kick rules (default 33%+1 players needed to vote on something)</li>
+        <li>Modified team respawn counter sets smaller seconds values</li>
+        <li>Modified remote admins cannot be banned</li>
+        <li>Modified can play now with modified animations over network</li>
+        <li>Modified file logging is disabled by default because of performance issues</li>
+        <li>Modified log files - new format, unified date and time</li>
+        <li>Modified Terminator bot updated with new Terminator 3 quotes!</li>
+    </ul>
+    <strong id="changelog_20">plus Soldat 1.1.5 fix</strong>
+    <ul>
+        <li>Fixed 2 flags bug</li>
+        <li>Fixed bullets and explosions crazy multiplying on lag</li>
+        <li>Fixed weapon lose bug</li>
+        <li>Fixed weapon selection with keyboard if weapons disabled</li>
+        <li>Fixed client kill log file issues</li>
+        <li>Fixed players wrong respawn after map change</li>
+        <li>Fixed stationary gun bullet trail</li>
+        <li>Modified stationary gun bullet explode sound</li>
+        <li>Modified weapon graphics size restrictions</li>
+    </ul>
+    <strong id="changelog_21">1.1.5 (13.07.2003)</strong>
+    <ul>
+        <li>Added stationary gun (M2 machine gun on some maps)</li>
+        <li>Added maps: Krab and ctf_Kampf (old version remake)</li>
+        <li>Added new lethal knife throw</li>
+        <li>Added option to disable USSOCOM, Knife, Chainsaw or LAW</li>
+        <li>Added LAN servers search option</li>
+        <li>Added &quot;Never forward through lobby&quot; for server option in setup</li>
+        <li>Added flames from flame bow</li>
+        <li>Added &quot;Sniper Line&quot; option (line between player and cursor)</li>
+        <li>Added option to easily add admins in dedicated server</li>
+        <li>Added server is now protected from &quot;connect&quot; flooding</li>
+        <li>Added protection against weapon graphics cheat</li>
+        <li>Added protection against animation, objects cheat</li>
+        <li>Fixed various map bugs</li>
+        <li>Fixed weapon losing bugs</li>
+        <li>Fixed flag missing bug when player out of map bounds</li>
+        <li>Fixed secondary weapon cheat</li>
+        <li>Fixed map maker cheat</li>
+        <li>Fixed modem jet cheat</li>
+        <li>Fixed missing and modified map scenery bug</li>
+        <li>Fixed weapons menu not showing when all primary weapons disabled</li>
+        <li>Fixed kills count display on right</li>
+        <li>Fixed bot problems when secondary weapons disabled</li>
+        <li>Modifed weapons menu button locks the menu</li>
+        <li>Modifed LAW reload is slightly faster</li>
+        <li>Modified chainsaw now has reload time and is weaker</li>
+        <li>Modifed jetpack can be used when crouched, prone and parachute on</li>
+        <li>Modifed LAW missile smoke slightly</li>
+        <li>Modified options layout</li>
+        <li>Improved some map visuals and spawn points</li>
+    </ul>
+    <strong id="changelog_22">1.1.4 (13.06.2003)</strong>
+    <ul>
+        <li>Added new anti-lag system</li>
+        <li>Added parachutes (when respawn is high)</li>
+        <li>Added new maps: ctf_Voland, inf_Fortress</li>
+        <li>Added new interface: Storm</li>
+        <li>Added time and number of players displayed in players menu</li>
+        <li>Added new secret player animation</li>
+        <li>Added player raises weapon above teammate when crouching</li>
+        <li>Added modifiable weapon names in 'txt\weaponnames.txt'</li>
+        <li>Added option to choose secondary weapon</li>
+        <li>Added new secondary weapon: Combat Knife</li>
+        <li>Added new secondary weapon: Chainsaw</li>
+        <li>Added new secondary weapon: M72 LAW</li>
+        <li>Added /kill and /brutalkill commands for client</li>
+        <li>Added flames effect when scored in Infiltration</li>
+        <li>Added buttstock hit in close combat</li>
+        <li>Added &quot;points to leader&quot; displayed in players status</li>
+        <li>Added button (default Tab) to open/close weapons menu while dead</li>
+        <li>Added server web page link or admins e-mail displayed in servers lobby page</li>
+        <li>Added possibility to go prone when running fast or off ground (stunts)</li>
+        <li>Added clients can join servers behind firewall forwarded through lobby</li>
+        <li>Added servers list displays server system (Linux or Windows)</li>
+        <li>Added flag capture info in console</li>
+        <li>Fixed &quot;no flag&quot; not displayed in Infiltration</li>
+        <li>Fixed some wrong map version</li>
+        <li>Fixed banned for cheating issues</li>
+        <li>Fixed wrong spawning when out of map bounds</li>
+        <li>Fixed rolling with fists</li>
+        <li>Fixed flames from flamer not showing on client</li>
+        <li>Fixed flamer bonus cheat</li>
+        <li>Fixed &quot;scenery modified&quot; bug when file not present</li>
+        <li>Fixed team chat button disabled in non-team games</li>
+        <li>Fixed flag stays with player when changing teams</li>
+        <li>Fixed bullets and grenades duplicating on client</li>
+        <li>Fixed jet fuel bug on map change</li>
+        <li>Fixed Spas-12 could not be fired while reloading</li>
+        <li>Fixed &quot;Time left&quot; in console minutes count</li>
+        <li>Fixed &quot;2 minutes&quot; warning freeze</li>
+        <li>Improved network gameplay</li>
+        <li>Improved visuals and playability on some maps</li>
+        <li>Changed Ruger 77 is now faster</li>
+        <li>Changed long fall kills in realistic mode</li>
+        <li>Changed map voting starts when first map vote starts</li>
+        <li>Changed console text timings and length</li>
+        <li>Changed points and team score doesn't decrease from self kills</li>
+        <li>Changed and fixed flag capture messages</li>
+    </ul>
+    <strong id="changelog_23">1.1.3 (07.03.2003)</strong>
+    <ul>
+        <li>Fixed spawn point bugs</li>
+        <li>Fixed sliding when lying down</li>
+        <li>Fixed Spas-12 pellets duplicating on network game</li>
+        <li>Fixed desert eagles shooting one bullet on network</li>
+        <li>Fixed Infiltration points counting when paused</li>
+        <li>Fixed music player next function</li>
+        <li>Fixed non-passworded servers checking for password</li>
+        <li>Fixed server settings applying on clients</li>
+        <li>Fixed some connection problem issues</li>
+        <li>Fixed in realistic mode carried flag visible if player isn't</li>
+        <li>Fixed dying being too brutal sometimes in network game</li>
+        <li>Fixed polygon sinking bug</li>
+        <li>Fixed certain scenery element acting as liana in new maps</li>
+        <li>Fixed weapon firing dummy bullet when grenade thrown on clients</li>
+        <li>Fixed bad fire animation, sound coordination with bullet in network</li>
+        <li>Fixed &quot;invalid filename&quot; error coming up when deleted interface</li>
+        <li>Fixed USSOCOM firing on network</li>
+        <li>Fixed config file loosing settings problem</li>
+        <li>Fixed some certain map problems</li>
+        <li>Added deaths counter in players score list</li>
+        <li>Added punching someone knocks out his weapon</li>
+        <li>Added message shown when lobby server is not responding</li>
+        <li>Added game menu click sound</li>
+        <li>Added grenade trail drawing</li>
+        <li>Added bot with favourite weapon = Hands uses only fists</li>
+        <li>Added little dust on bullet ground hit spot</li>
+        <li>Added ALT+X can be used with binded taunts</li>
+        <li>Added Team Chat button (default Y)</li>
+        <li>Changed ping kick not to be so restrictive</li>
+        <li>Changed player hit spots are more important (especially in Realistic Mode)</li>
+        <li>Changed player can walk on some big slopes</li>
+        <li>Changed kill message colors</li>
+    </ul>
+    <strong id="changelog_24">1.1.2 (10.02.2003)</strong>
+    <ul>
+        <li>Fixed connecting problems - &quot;free cam bug&quot;</li>
+        <li>Fixed prone get up, get down bug in network games</li>
+        <li>Fixed roof respawn and collision bug on some maps</li>
+        <li>Fixed game menu displaying</li>
+        <li>Fixed sliding when prone in some situations</li>
+        <li>Added team auto balance option in CTF &amp; Infiltration</li>
+        <li>Added version number to ASE rules</li>
+        <li>Added information in console about Survival or Realistic mode</li>
+        <li>Changed Rambo bow respawn on Bridge map</li>
+        <li>Changed team game servers show max. respawn time on servers lists</li>
+    </ul>
+    <strong id="changelog_25">1.1.1 (05.02.2003)</strong>
+    <ul>
+        <li>Fixed spawning on top of maps</li>
+        <li>Fixed clients crash when host changes team</li>
+        <li>Fixed connection problems on map change and voting</li>
+        <li>Fixed some Anti-Cheat problems</li>
+        <li>Fixed some conflicts with background programs</li>
+        <li>Fixed some map and collision bugs</li>
+        <li>Fixed spawn on death place bug</li>
+        <li>Fixed some file access errors</li>
+        <li>Fixed ASE showing bad respawn time</li>
+        <li>Fixed Soldat removing from process list after Alt+F4</li>
+        <li>Removed intro loading when joining game from param</li>
+        <li>Removed GameStat.txt causing some I/O errors</li>
+        <li>Changed soldier is slightly faster now</li>
+        <li>Improved Ping All on request servers list</li>
+        <li>Added one click on server pings it</li>
+        <li>Added last server placed in favourites list</li>
+        <li>Added registered user name in the exit menu</li>
+        <li>Added File Logging in Setup Performance tab</li>
+    </ul>
+    <strong id="changelog_26">1.1.0 (03.02.2003)</strong>
+    <ul>
+        <li>List of changes wasn't kept. Most important:</li>
+        <li>New game mode: Infiltration</li>
+        <li>New game option: Realistic mode</li>
+        <li>New maps and some re-made old ones</li>
+        <li>New graphics (about 60 new scenery elements)</li>
+        <li>New sounds (also about 60)</li>
+        <li>New music tracks</li>
+        <li>New customizable profiles and interfaces</li>
+        <li>New Anti-Cheat protection</li>
+    </ul>
+    <strong id="changelog_27">1.0.5b (23.08.2002)</strong>
+    <ul>
+        <li>Better network code</li>
+        <li>New servers browser</li>
+        <li>New bonus: Cluster Grenades</li>
+        <li>Bonuses are selectable now</li>
+        <li>New game option: Survival Mode</li>
+        <li>Added Time Limit</li>
+        <li>New customizable player appearance (hair, helmets, chains)</li>
+        <li>Improved corpse bleading</li>
+        <li>New animation and way of throwing grenades</li>
+        <li>Aiming is much harder when moving</li>
+        <li>Slower M79 reload</li>
+        <li>All weapons have more power now except M79 &amp; Barret</li>
+        <li>Fixed little Alt+Tab problem</li>
+        <li>New idle animations</li>
+        <li>Berserker powers your weapons x4 now</li>
+        <li>Clanmatch option</li>
+        <li>Dedicated server doesn't use the whole CPU now</li>
+        <li>Dedicated server can be minimized to the tray</li>
+        <li>New editable server welcome message</li>
+        <li>Dedicated server can communicate with the game players now</li>
+        <li>Dedicated server can run from a parameter now</li>
+        <li>Number of players in team are shown when selecting a team</li>
+        <li>Restart game and nextmap option</li>
+        <li>Players ban option</li>
+        <li>You can turn off the changing bonus screen color (ATI problem)</li>
+        <li>Respawn time is 2 times longer after suicide</li>
+        <li>You get -1 points after suicide and teamkill in Pointmatch, CTF and Teammatch</li>
+        <li>Option for showing real lag on objects</li>
+        <li>Taking screenshots is now available</li>
+        <li>Soldat Map Maker 1.0.1b (fixed some minor bugs, added grid option)</li>
+        <li>New music track (Gore)</li>
+    </ul>
+    <strong id="changelog_28">1.0.4b (06.08.2002)</strong>
+    <ul>
+        <li>Added defensive obstacles</li>
+        <li>Player names under cursor</li>
+        <li>New map: ctf_Laos</li>
+        <li>Improved font visibility</li>
+        <li>Improved grenade and bullets visibility</li>
+        <li>Desert Eagle Akimbo</li>
+        <li>Major weapon tweaking</li>
+        <li>Multikill Combos in Pointmatch</li>
+        <li>Bonus time decreased for 5 seconds</li>
+        <li>Improved dedicated server</li>
+        <li>Fixed some major network bugs</li>
+        <li>Fixed repeating messages problem</li>
+        <li>Fixed network bugs with flags</li>
+        <li>Fixed some possible cheats in network game</li>
+        <li>Fixed bug with vanishing grenades</li>
+        <li>Window size doesn't change anymore when Large Fonts is on</li>
+        <li>New sound for picking up the vest</li>
+        <li>Jetpack has more fuel now but loads slower</li>
+        <li>Added Soldat Map Maker 1.0b</li>
+    </ul>
+    <strong id="changelog_29">1.0.3b (29.07.2002)</strong>
+    <ul>
+        <li>Major weapon modifications</li>
+        <li>Fixed bug with clones</li>
+        <li>Fixed bug in the servers list (&quot;out of bounds&quot;)</li>
+        <li>Fixed some bugs in a network game (&quot;access violation&quot;)</li>
+        <li>Fixed bug with flags in network game</li>
+        <li>New dedicated server</li>
+    </ul>
+    <strong id="changelog_30">1.0.2b (28.07.2002)</strong>
+    <ul>
+        <li>Added new bonuses: Predator, Flame God, Bulletproof Vest, Berserker</li>
+        <li>Fixed network code (working guaranteed packets)</li>
+        <li>Fixed lots of bugs in a network game</li>
+        <li>Option to name the server</li>
+        <li>New sounds</li>
+        <li>Minigun has smaller recoil</li>
+        <li>Player with the BarretM82A1 can see 10% more</li>
+        <li>Teamchat option</li>
+        <li>Force software mode option</li>
+    </ul>
+    <strong id="changelog_31">1.0.1b (24.07.2002)</strong>
+    <ul>
+        <li>Added sound device configuration</li>
+        <li>Added video device configuration</li>
+        <li>Fixed bug caused by bad host address</li>
+        <li>You can return to the game after pressing Alt+Tab now</li>
+        <li>Fixed Options (Respawn Time &amp; Mouse Sensitivity)</li>
+        <li>More balanced weapons</li>
+        <li>New animations</li>
+        <li>Lobby Servers support</li>
+        <li>Favourite servers option</li>
+        <li>Player bleeds when hurt</li>
+        <li>Added option to change port in Join Game</li>
+        <li>Chat always appears in console in a network game now</li>
+    </ul>
+    <strong id="changelog_32">1.0.0b</strong>
+    <ul>
+        <li>2 new maps: Cambodia &amp; Arena3</li>
+        <li>2 new CTF maps: ctf_Run &amp; ctf_Death</li>
+        <li>Drasticly improved network code</li>
+        <li>Better play on high pings</li>
+        <li>Colored dot Lag-o-meter</li>
+        <li>Improved bot navigation on maps</li>
+        <li>Camera shows the winner of the game now</li>
+        <li>Weapon tweaking</li>
+        <li>Spas-12 has a recoil now</li>
+        <li>More blood and other ornaments</li>
+        <li>Improved dedicated server</li>
+        <li>Added arrow that shows the player after respawn</li>
+        <li>New two-colored gradient backgrounds</li>
+        <li>Added players limit option</li>
+        <li>Added maps list option</li>
+        <li>Optimized maps</li>
+        <li>Soldat Manual</li>
+        <li>Added intro with music</li>
+        <li>Added music during the game</li>
+        <li>Improved sounds (new fly sound)</li>
+    </ul>
+    <strong id="changelog_33">0.9.9b (29.06.2003)  third public beta</strong>
+    <ul>
+        <li>Added kill limit option</li>
+        <li>New game mode : Teammatch</li>
+        <li>New game mode : Capture the Flag</li>
+        <li>Added changeable skin color</li>
+        <li>Added players and team status</li>
+        <li>3 new small maps : Fest, Mikra &amp; Bunker</li>
+        <li>2 new CTF maps : ctf_Kampf &amp; ctf_Viet</li>
+        <li>Improved medikits and grenade boxes</li>
+        <li>Added scene Antialiasing option</li>
+        <li>New Select Weapon menu</li>
+    </ul>
+    <strong id="changelog_34">0.9.7b (14.06.2002)  second public beta</strong>
+    <ul>
+        <li>New network code base on UDP</li>
+        <li>New game mode : Rambo Style</li>
+        <li>Added 2 Bow types in Rambo Style</li>
+        <li>2 new maps : Karh &amp; Cave</li>
+        <li>Added scenery graphics (grass, rubble, wood etc.)</li>
+        <li>Changed weapon M4-Carbine to Steyr-AUG</li>
+        <li>Better gameplay (more health)</li>
+        <li>Weapon tweaking</li>
+        <li>Added medikits and grenade boxes</li>
+        <li>Maximum 6 grenades</li>
+        <li>Soldat Config</li>
+        <li>Added Ceasefire Time after respawn</li>
+        <li>Removed the quit game problem</li>
+        <li>Ready taunts option in Taunts.txt file</li>
+        <li>Added controls change option</li>
+        <li>Added server password option</li>
+        <li>Added dedicated server option</li>
+        <li>Removed shortcut problem (caused no sound)</li>
+        <li>Bots are much smarter: they run away from grenades etc.</li>
+        <li>Bots can talk and have their own opinions for life</li>
+    </ul>
+    <strong id="changelog_35">0.9.4b (09.05.2002)  first public beta</strong>
+    <ul>
+        <li>7 maps</li>
+        <li>2 game modes : Deathmatch &amp; Pointmatch</li>
+        <li>Network code based on Directplay</li>
+    </ul>
+    <strong id="changelog_36">0.0.0  Soldat doesn't exist</strong>
+    <hr style="margin-bottom:4em;">
+</body>
+</html>

@@ -1,0 +1,91 @@
+html {max-width:1380px;margin:0;}
+body {margin:0;background:#cacec9 url('../images/bak.gif');font-family:Courier;font-size:14px;}
+a {color:#167E1B;text-decoration:none;}
+a:hover {color:#178F2C;text-decoration:underline;}
+hr {background:transparent url('../images/line.png') no-repeat;background-size:640px 5px;
+    margin:1em 0;border:0;height:5px;box-sizing:content-box;clear:both;}
+h1,h2 {font-size:x-large;margin:1.8em 0;}
+h1 {margin-top:1em;}
+h3 {font-size:large;margin:2.5em 0 0;color:#de0000;text-transform:uppercase;font-style:italic;}
+h4 {font-size:inherit;font-weight:bold;margin:1em 0 1em;}
+h5 {font-size:inherit;font-weight:normal;text-decoration:underline;margin:1em 0 1em;}
+p.indent {text-indent:2.5em;}
+ul,ol {list-style:none;padding:0;margin:0;}
+ul > li {position:relative;margin-left:1.2em;}
+ul > li:before {content:'-';position:absolute;left:-1.2em;}
+ol {counter-reset:counter;}
+ol > li {position:relative;margin-left:1.5em;counter-increment:counter;}
+ol > li:before {content:counter(counter, lower-alpha) ')';position:absolute;left:-1.5em;}
+table {border-collapse:collapse;background:rgba(255,255,255,0.3);}
+table td {border:1px solid #666;padding:0.5em;vertical-align:top;}
+table td:first-child {font-weight:bold;white-space:nowrap;}
+table.cmdline td:first-child {font-weight:normal;}
+table.cmdline td:first-child span {font-size:smaller;}
+
+img {max-width:800px;}
+
+body {padding-top:0px;margin-left:350px;}
+body>nav {background:#211e1e;position:fixed;left:0;top:0;bottom:0;width:300px;padding:4px;z-index:1;
+    box-shadow:0 0 10px rgba(0,0,0,0.4);letter-spacing:0.75px;font-family:Arial;font-size:13px;
+    color:#ccc;overflow:hidden;}
+body>nav>img {display:block;width:300px;}
+body>nav>ul {position:absolute;left:4px;right:0;top:64px;bottom:50px;line-height:2em;margin-top:1em;
+    overflow:auto;}
+body>nav>ul>li>ul {display:none;}
+body>nav>ul>li>a.active + ul {display:block;}
+body>nav>ul>li>ul>li:before {display:none;content:'';}
+body>nav>ul>li:before {display:none;content:'';}
+body>nav a {color:inherit;text-shadow:#000 1px 0 10px;}
+body>nav a:hover {color:inherit;}
+body>nav>div {position:absolute;background:#211e1e;z-index:1;left:0;right:0;bottom:0;line-height:50px;
+    font-size:10px;box-shadow:0 0 10px rgba(0,0,0,0.4);white-space:nowrap;text-align:center;}
+h3:before {content:'';display:block;position:relative;width:0;height:2.5em;margin-top:-2.5em;}
+
+.header {text-align:center;}
+.header ul {list-style:none;padding:0;margin:0 0 1.8em;}
+.header li {margin:0;}
+.header li:before {content:'';}
+.header hr {background-position:center;margin:0;}
+.start {margin:1em 0;}
+.flat li {margin:0;}
+.flat li:before {content:'';}
+.modes {counter-reset:modes-counter;}
+.modes img {float:left;margin-right:1em;margin-bottom:0.5em;}
+.modes li {clear:both;counter-increment:modes-counter;margin-top:3em;min-height:75px;}
+.modes li:first-child {margin-top:1em;}
+.modes h4:before {content:counter(modes-counter) '. ';}
+.options > li {margin-top:1em;}
+.options ul ul > li strong {font-style:italic;}
+ol.numeric-list {padding-left:2.5em;list-style:decimal outside;}
+ol.numeric-list li {margin-left:0;}
+ol.numeric-list li:before {content:'';}
+ol.weapons {padding-left:2.5em;list-style:decimal outside;}
+ol.weapons li {margin-top:1em;margin-left:0;font-weight:bold;}
+ol.weapons li p {margin:0;font-weight:normal;}
+ol.weapons li:before {content:'';}
+ul.weapons li {margin-top:1em;font-weight:bold;}
+ul.weapons li p {margin:0;font-weight:normal;}
+.bonuses li {margin-top:1em;margin-left:2em;}
+.bonuses img {position:absolute;left:-2em;width:16px;}
+ol.server {list-style:decimal outside;padding-left:2em;}
+ol.server > li {margin-top:1em;margin-left:0;}
+ol.server > li:before {content:'';}
+ol.anticheat {list-style:upper-roman outside;padding-left:2.5em;}
+ol.anticheat > li {margin-top:1em;margin-left:0;}
+ol.anticheat > li:before {content:'';}
+.license {width:600px;}
+.changelog>ul {margin-bottom:1em;}
+.credits {text-align:center;font-weight:bold;margin:4em 0;}
+
+.ctrl_movement  {background-color:rgb(149,232,151);}
+.advanced_movement {background-color:rgb(111,196,193);}
+.combat     {background-color:rgb(252,198,97);}
+.misc       {background-color:rgb(101,169,135);}
+.alpha      {background-color:rgb(255,74,74);}
+.bravo      {background-color:rgb(89,151,162);}
+.charlie    {background-color:rgb(219,208,72);}
+.delta      {background-color:rgb(149,232,151);}
+.white      {background-color:rgb(255,255,255);}
+.yellow     {background-color:rgb(219,208,72);}
+.black      {background-color:rgb(63,63,63);color:#fff;}
+.soldat     {background-color:rgb(255,74,74);}

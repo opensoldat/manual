@@ -1,0 +1,1368 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>Soldat - Manual</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <img src="images/logo.png">
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#req">Requirements</a></li>
+            <li>
+                <a href="#start">Getting Started</a>
+                <ul>
+                    <li><a href="#start-singleplayer">Singleplayer</a></li>
+                    <li><a href="#start-multiplayer">Multiplayer</a></li>
+                    <li><a href="#start-joining">Joining a Network Game</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#controls">Default Controls</a>
+                <ul>
+                    <li><a href="#controls-movement">Movement Controls</a></li>
+                    <li><a href="#controls-advanced-movement">Advanced Movement</a></li>
+                    <li><a href="#controls-combat">Combat Controls</a></li>
+                    <li><a href="#controls-misc">Misc</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#modes">Game Modes</a>
+                <ul>
+                    <li><a href="#modes-dm">Deathmatch</a></li>
+                    <li><a href="#modes-pm">Pointmatch</a></li>
+                    <li><a href="#modes-rm">Rambomatch</a></li>
+                    <li><a href="#modes-tm">Teammatch</a></li>
+                    <li><a href="#modes-ctf">Capture the Flag</a></li>
+                    <li><a href="#modes-inf">Infiltration</a></li>
+                    <li><a href="#modes-htf">Hold the Flag</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#options">In-Game Settings</a>
+                <ul>
+                    <li><a href="#options-start">Start Game Menu</a></li>
+                    <li><a href="#options-join">Join Game Menu</a></li>
+                    <li><a href="#options-menu">Options Menu</a></li>
+                    <li><a href="#options-player">Player Menu</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#config">Config.exe Settings</a>
+                <ul>
+                    <li><a href="#config-graphics">Graphics</a></li>
+                    <li><a href="#config-sound">Sound</a></li>
+                    <li><a href="#config-performance">Performance</a></li>
+                    <li><a href="#config-network">Network</a></li>
+                    <li><a href="#config-more">More</a></li>
+                    <li><a href="#config-language">Language</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#screen">Game Screen</a>
+                <ul>
+                    <li><a href="#screen-hud">The Soldat HUD</a></li>
+                    <li><a href="#screen-player-status">Player Status</a></li>
+                    <li><a href="#screen-custom-interfaces">Custom Interfaces</a></li>
+                    <li><a href="#screen-team-score">Score Counters</a></li>
+                    <li><a href="#screen-flag">Missing Flag Indicator</a></li>
+                    <li><a href="#screen-ping">Ping Dot</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#weapons">Weapons</a>
+                <ul>
+                    <li><a href="#weapons-primary">Primary Weapons</a></li>
+                    <li><a href="#weapons-secondary">Secondary Weapons</a></li>
+                    <li><a href="#weapons-other">Additional Weapons</a></li>
+                </ul>
+            </li>
+            <li><a href="#bonuses">Bonuses</a></li>
+            <li>
+                <a href="#commands">Commands</a>
+                <ul>
+                    <li><a href="#commands-player">Player Commands</a></li>
+                    <li><a href="#commands-server">Server Commands</a></li>
+                    <li><a href="#commands-client-server">Client-Server Commands</a></li>
+                    <li><a href="#commands-cmdline-client">Command Line Arguments (soldat.exe)</a></li>
+                    <li><a href="#commands-cmdline-server">Command Line Arguments (soldatserver)</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#chat">Chat</a>
+                <ul>
+                    <li><a href="#chat-taunts">Taunts</a></li>
+                    <li><a href="#chat-teamchat">Teamchat</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#server">Dedicated Server</a>
+                <ul>
+                    <li><a href="#server-admin">Remote Administration</a></li>
+                    <li><a href="#server-ports">Game Ports</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#guides">Community Guides</a>
+                <ul>
+                    <li><a href="https://wiki.soldat.pl/index.php/First_Server" target="_blank">Run your first server!</a></li>
+                    <li><a href="https://wiki.soldat.pl/index.php/Soldat%27s_Comprehensive_Movement_Tutorial" target="_blank">Movement Tutorial</a></li>
+                    <li><a href="https://wiki.soldat.pl/index.php/Soldat%27s_Comprehensive_Competitive_CTF_Tutorial" target="_blank">Competitive CTF Tutorial</a></li>
+                    <li><a href="http://www.sctfl.net/forums/index.php?topic=56550.0" target="_blank">Advanced CTF Tutorial</a></li>
+                    <li><a href="https://wiki.soldat.pl/index.php/Soldat_on_macOS_and_Linux" target="_blank">Running Soldat on MacOS or Linux</a></li>
+                    <li><a href="https://wiki.soldat.pl/index.php/Creating_Modifications" target="_blank">Creating Modifications for Soldat</a></li>
+                </ul>
+            </li>
+            <li><a href="changelog.html#changelog">Version History</a></li>
+            <li><a href="#license">License and Distribution</a></li>
+            <li>
+                <a href="#credits">Credits</a>
+                <ul>
+                    <li><a href="#credits-devteam">Developement Team</a></li>
+                    <li><a href="#credits-lobby">Lobby Maintenance</a></li>
+                    <li><a href="#credits-wm">Weapon Mod Team</a></li>
+                    <li><a href="#credits-music">Game Music</a></li>
+                    <li><a href="#credits-translations">Translations</a></li>
+                    <li><a href="#credits-beta">Beta Team</a></li>
+                    <li><a href="#credits-manual">Soldat Manual Team</a></li>
+                    <li><a href="#credits-thanks">Special Thanks</a></li>
+                </ul>
+            </li>
+            <li><a href="#tools">Development Tools</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div>SOLDAT 1.7.1 © 2001-2018 Michal Marcinkowski</div>
+    </nav>
+    <script type="text/javascript">
+        Array.prototype.forEach.call(document.querySelectorAll("body>nav>ul>li>a"), function(element) {
+            element.addEventListener("click", function() {
+                Array.prototype.forEach.call(document.querySelectorAll("body>nav>ul>li>a.active"), function(active) {
+                    if (active !== element)
+                        active.classList.remove("active");
+                });
+                element.classList.toggle("active");
+            });
+        });
+
+        var active = document.querySelector("body>nav>ul>li>a[href='" + window.location.hash + "']");
+        if (active)
+            active.classList.add("active");
+    </script>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="intro">Introduction</h3>
+        <p><b>Soldat</b> is a unique 2D (side-view) multiplayer action game for Windows<b>*</b>. It has been influenced by the best of games such as Liero, Worms, Quake, and Counter-Strike and provides a fast-paced gaming experience with tons of blood and flesh. Soldiers fight against each other in 2D battle arenas using a deadly arsenal of military weapons, across 7 default game modes. The game is free to play, with optional registration unlocking mainly cosmetic features, such as colored jet flames and customizable interfaces.</p>
+        <p><b>*</b> The game is not officially ported but may run on Mac &amp; Linux with 3rd party programs. <a href="https://wiki.soldat.pl/index.php/Soldat_on_macOS_and_Linux" alt="Soldat on MacOS &amp; Linux Tutorial" target="blank"><b>Read more</b></a>.</p>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="req">Requirements</h3>
+        <h4>Minimum requirements:</h4>
+        <ul>
+            <li><b>Equipment:</b> Computer, Keyboard, Mouse, Monitor</li>
+            <li><b>OS:</b> Windows XP</li>
+            <li><b>Processor:</b> 333mhz</li>
+            <li><b>Memory:</b> 32 MB RAM</li>
+            <li><b>Graphics:</b> OpenGL 2.1 Support (or higher)</li>
+            <li><b>Network:</b> Broadband Internet Connection</li>
+            <li><b>Storage:</b> 250 MB available space (installation file included)</li>
+        </ul>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="start">Getting Started</h3>
+        <h4 id="start-singleplayer">Singleplayer</h4>
+            <p>The easiest way to start your very own first game is to use the in-game <b>START GAME</b> menu. Select the desired Game Style (aka <a href="#modes"><b>Game Mode</b></a>). In case you're unfamiliar with the mode's goal, it's shown there as well.</p>
+            <p> One second before that, make sure you know the <a href="#controls"><b>Default Controls</b></a> of the game (Note: some key binds are changeable on the Player menu)</p>
+            <p>You can pick between solo based modes such as: Deathmatch, Pointmatch &amp; Rambomatch, or team based modes such as: Capture the Flag, Teammatch, Infiltration &amp; Hold the Flag.</p>
+            <p>Once you're done doing that, there are a few settings you can adjust to reach the desired game format:</p>
+            <ul>
+                <li><b><u>Kill/Point/Capture Limit (game mode dependent)</u>:</b> How many kills/points/flag-captures are required for a player or a team to win a round (map).</li>
+                <li><b><u>Survival / Realistic / Advance Modes</u>:</b> Check to toggle each mode.</li>
+                <li><b><u>Time Limit</u>:</b> In case the Kill/Point/Capture limit is not met, the round will end upon the set Time Limit.</li>
+                <li><b><u>Maps</u>:</b> Pick the map(s) you want to play. Loop option serves as a repeater, so after a finished map it won't exit to the main menu.</li>
+                <li><b><u>Bots</u>:</b> Pick bots or random bots for your local match. In team game modes there'll be additional box with bots per team.</li>
+            </ul>
+            <p><i><b>Now, click the [Start Game] big green button and start shooting, Soldier!</b></i></p>
+        <br>
+
+        <h4 id="start-multiplayer">Multiplayer</h4>
+            <p>In order to start a multiplayer server at your own server (meaning people will join your session), follow these steps:</p>
+            <ol class="numeric-list">
+                <li>Click the in-game <b>OPTIONS</b> Menu.</li>
+                <li>In the Network box set the connection type to Internet.</li>
+                <li>Set the online players limit (Max Players).</li>
+                <li>Set register in lobby servers (If you want it to be seen on the lobby's servers list - others will be able to find your game in the <b>JOIN GAME</b> menu.</li>
+                <li>Do all of the settings choices like you did in the Singleplayer.</li>
+            </ol>
+        <br>
+
+        <h4 id="start-joining">Joining a Network Game</h4>
+            <p>Using the in-game <b>JOIN GAME</b> menu, you can join other servers. If you already know the IP, Port &amp; Password of the server, you can already fill each in the respective text field. If you want to search for active servers in the internet or LAN, click the "Request Servers" button.</p>
+            <p>Once you found the desirable server to join, click Join Game and start slaying!</p>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="controls">Default Controls</h3>
+        <h4 id="controls-movement">Movement Controls</h4>
+            <ul class="flat">
+                <li><span class="ctrl_movement"><b>[A]</b></span> - Run left</li>
+                <li><span class="ctrl_movement"><b>[D]</b></span> - Run right</li>
+                <li><span class="ctrl_movement"><b>[W]</b></span> - Jump</li>
+                <li><span class="ctrl_movement"><b>[S]</b></span> - Crouch</li>
+                <li><span class="ctrl_movement"><b>[X]</b></span> - Prone position</li>
+                <li><span class="ctrl_movement"><b>[RMB]</b></span> - Jet (Fly)</li>
+            </ul>
+        <br>
+
+        <h4 id="controls-advanced-movement">Advanced Movement</h4>
+            <ul class="flat">
+                <li><b><span class="advanced_movement">Backflip</span></b> - Jump backwards and press the Jet button.</li>
+                <li><b><span class="advanced_movement">Late Backflip</span></b> - If you are making a jump to the left or to the right, and keep <b>[W]</b> pressed, then you can make a backflip in air at any time. e.g <b>[D+W] [W+A+Jet Button]</b> - remember to keep the jump button active.</li>
+                <li><b><span class="advanced_movement">Roll</span></b> - <b>[Directional + S]</b> - Rolls in a particular direction. Can be performed while standing, or out of the prone position.</li>
+            </ul>
+        <br>
+
+        <h4 id="controls-combat">Combat Controls</h4>
+            <ul class="flat">
+                <li><span class="combat"><b>[LMB]</b></span> - Fire</li>
+                <li><span class="combat"><b>[Tab]</b></span> - Toggle weapons menu while waiting for re-spawn</li>
+                <li><span class="combat"><b>[E]</b></span> - Hold down or release after a while to throw grenade</li>
+                <li><span class="combat"><b>[F]</b></span> - Throwaway current weapon <b>/</b> Throw a knife (the more you hold, the further it throws)</li>
+                <li><span class="combat"><b>[Q]</b></span> - Change weapon to secondary</li>
+                <li><span class="combat"><b>[R]</b></span> - Reload weapon</li>
+                <li><span class="combat"><b>[1]</b></span> - <u>Pick Primary Weapon</u>: Desert Eagles</li>
+                <li><span class="combat"><b>[2]</b></span> - <u>Pick Primary Weapon</u>: HK-MP5</li>
+                <li><span class="combat"><b>[3]</b></span> - <u>Pick Primary Weapon</u>: AK-74</li>
+                <li><span class="combat"><b>[4]</b></span> - <u>Pick Primary Weapon</u>: Steyr-AUG</li>
+                <li><span class="combat"><b>[5]</b></span> - <u>Pick Primary Weapon</u>: Spas-12</li>
+                <li><span class="combat"><b>[6]</b></span> - <u>Pick Primary Weapon</u>: Ruger-77</li>
+                <li><span class="combat"><b>[7]</b></span> - <u>Pick Primary Weapon</u>: M79</li>
+                <li><span class="combat"><b>[8]</b></span> - <u>Pick Primary Weapon</u>: Barret M82A1</li>
+                <li><span class="combat"><b>[9]</b></span> - <u>Pick Primary Weapon</u>: FN Minimi</li>
+                <li><span class="combat"><b>[0]</b></span> - <u>Pick Primary Weapon</u>: XM214 MiniWeapon</li>
+                <li><span class="combat"><b>[CTRL+1]</b></span> - <u>Pick Secondary Weapon</u>: USSOCOM</li>
+                <li><span class="combat"><b>[CTRL+2]</b></span> - <u>Pick Secondary Weapon</u>: Combat Knife</li>
+                <li><span class="combat"><b>[CTRL+3]</b></span> - <u>Pick Secondary Weapon</u>: Chainsaw</li>
+                <li><span class="combat"><b>[CTRL+4]</b></span> - <u>Pick Secondary Weapon</u>: M72 LAW</li>
+                <li><span class="combat"><b>[ALT + F2]</b></span> - Toggle sniper line</li>
+            </ul>
+        <br>
+
+        <h4 id="controls-misc">Misc</h4>
+            <ul class="flat">
+                <li><span class="misc"><b>[W+S] (Hold jump key + Crouch key)</b></span> - Flagthrow - You can also bind a single key for this (recommended), but then you can’t change back to <b>[W+S]</b></li>
+                <li><span class="misc"><b>[T]</b></span> - Chat</li>
+                <li><span class="misc"><b>[Y]</b></span> - Teamchat</li>
+                <li><span class="misc"><b>[/]</b></span> - Command console (Read also: In-game Commands)</li>
+                <li><span class="misc"><b>[ALT] + A,B,C... or 1,2,3...0 keys</b></span> - Chat Taunts or commands</li>
+                <li><span class="misc"><b>[CTRL+ALT] + [+/-]</b></span> - Increase mouse sensitivity 5% / Decrease mouse sensitivity 5%</li>
+                <li><span class="misc"><b>[SHIFT] + [+/-]</b></span> - Increase volume 10% <b>/</b> Decrease volume 10%</li>
+                <li><span class="misc"><b>[Pg Up/Pg Down]</b></span> - Scroll through Scoreboard nicknames (in case it's very long)</li>
+                <li><span class="misc"><b>[F1]</b></span> - Scoreboard and players list <b>/</b> <span class="misc"><b>[ALT + F1]</b></span> - Toggle hide players' names</li>
+                <li><span class="misc"><b>[F2]</b></span> - Show weapon statistic for the current round <b>/</b> <span class="misc"><b>[ALT + F2]</b></span> - Toggle sniper line</li>
+                <li><span class="misc"><b>[F3]</b></span> - Toggle minimap <b>/</b> <span class="misc"><b>[ALT + F3]</b></span> - Toggle performance statistics (FPS, ping, network bandwidth)</li>
+                <li><span class="misc"><b>[F4]</b></span> - Take screenshot (saves it to Soldat\Screens)</li>
+                <li><span class="misc"><b>[F5]</b></span> - Toggle music playback</li>
+                <li><span class="misc"><b>[F6]</b></span> - Previous music track</li>
+                <li><span class="misc"><b>[F7]</b></span> - Next music track</li>
+                <li><span class="misc"><b>[F8]</b></span> - Record/stop demo <b>/</b> Fast forward while playing demo</li>
+                <li><span class="misc"><b>[F9]</b></span> - Minimize game</li>
+                <li><span class="misc"><b>[F10]</b></span> - Pause game (Singeplayer only)</li>
+                <li><span class="misc"><b>[ESC]</b></span> - Toggle Game-Menu</li>
+            </ul>
+
+        <p><i><b>Some of the above keys can be changed in the <u>PLAYER</u> in-game menu.</b></i></p>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="modes">Game Modes</h3>
+        <ul class="flat modes">
+            <li>
+                <img src="images/deathmatch.jpg">
+                <h4 id="modes-dm">Deathmatch</h4>
+                <p>As the name implies, Deathmatch (often abbreviated: <b>DM</b>) is one of the seven default main game-modes in which the sole purpose is to kill everything that moves!</p>
+                <p>The player with the most frags, wins the match! The amount of frags can be checked with the <b>[F1]</b> button (Toggle scoreboard).</p>
+                <p><u>Recommended Respawn Time</u>: 3-6 Seconds</p>
+            </li>
+            <li>
+                <img src="images/pointmatch.jpg">
+                <h4 id="modes-pm">Pointmatch</h4>
+                <p>Pointmatch (often abbreviated: <b>PM</b>) is one of the seven default main game-modes. It's very similar to Deathmatch, however there's a <span class="charlie">yellow</span> flag in this game-mode. A player that holds the flag will be awarded with multiplied points (also for getting double/triple/multi kills/etc).</p>
+                <p>The player with the most points, wins the match!</p>
+                <p><u>Recommended Respawn Time</u>: 3-6 Seconds</p>
+            </li>
+            <li>
+                <img src="images/rambomatch.jpg">
+                <h4 id="modes-rm">Rambomatch</h4>
+                <p>Rambomatch (often abbreviated: <b>RM</b>) is one of the seven default main game-modes. It is very similar to Deathmatch with one main tweak: There's a a Rambo Bow. The Bow spawns in a pre-set location in each map.</p>
+                <p>Points can be obtained solely by the player who's holding that weapon. The Bow has 1 mode with regular arrows, and by switching weapon (default button <b>[Q]</b>) it can shoot deadly flaming arrows. The flaming arrows explode upon hitting targets.</p>
+                <p>The player with the most frags, wins the match!</p>
+                <p><u>Recommended Respawn Time</u>: 6-10 Seconds</p>
+            </li>
+            <li>
+                <img src="images/teammatch.jpg">
+                <h4 id="modes-tm">Teammatch</h4>
+                <p>Teammatch or Team Deathmatch (often abbreviated: <b>TM</b> or <b>TDM</b>) is one of the seven default main game-mode in which the sole purpose is for each team to kill as many players as possible from the other teams! There's a maximum of four teams to this game-mode: <b><span class="alpha">Alpha</span></b>, <b><span class="bravo">Bravo</span></b>, <b><span class="charlie">Charlie</span></b> and <b><span class="delta">Delta</span></b>.</p>
+                <p>Each team's score is consisting of the sum of kills from all its players. In case Friendly Fire (FF) is on, points are not awarded for killing teammates.</p>
+            </li>
+            <li>
+                <img src="images/ctf.jpg">
+                <h4 id="modes-ctf">Capture the Flag</h4>
+                <p>Capture The Flag (often abbreviated: <b>CTF</b>) is one of the seven default main game-modes in which there are two teams: <b><span class="alpha">Alpha</span></b> &amp; <b><span class="bravo">Bravo</span></b>. The goal is for each team to steal the enemy's flag and bring it to your own flag. The winner of each map is determined either by reaching Capture Limit (the amount of caps needed to finish a match before the time limit ends), or by having the most caps by the end of the round. There are 32 default CTF maps available in Soldat and hundreds of custom maps.</p>
+            </li>
+            <li>
+                <img src="images/infiltration.jpg">
+                <h4 id="modes-inf">Infiltration</h4>
+                <p>Infiltration (often abbreviated: <b>INF</b>) is one of the seven default main game-modes in which there are two teams: <b><span class="alpha">Alpha</span></b> &amp; <b><span class="bravo">Bravo</span></b>.</p>
+                <p>The goal of the Alpha Team is to steal the <span class="black">black</span> flag from Bravo Team's base, and bring it to the <span class="white">white</span> flag (usually near the reds spawn place). Alpha team will be rewarded 30 points for each retrieved <span class="black">black</span> flag.</p>
+                <p>The goal of the Bravo Team is to defend it. As long as the team manages to keep the <span class="black">black</span> flag at their base, they'll be rewarded 1 point every 5 seconds.</p>
+            </li>
+            <li>
+                <img src="images/htf.jpg">
+                <h4 id="modes-htf">Hold the flag</h4>
+                <p>Hold The Flag (often abbreviated: <b>HTF</b>) is one of the seven default main game-modes in which there are two teams: <b><span class="alpha">Alpha</span></b> &amp; <b><span class="bravo">Bravo</span></b>. It is a very similar concept to Pointmatch but in a team-based format. The team that holds the <span class="charlie">yellow</span> flag gets points every couple of seconds.</p>
+            </li>
+        </ul>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="options">In-Game Settings</h3>
+        <h4 id="options-start">Start Game Menu</h4>
+            <p><img src="images/ingame-startgame.png"></p>
+            <ul>
+                <li><b>Kill Limit or Point Limit:</b> When a players Kills or Points reach this number the round ends. In Teammatch the team score must reach it.</li>
+                <li><b>Capture Limit:</b> Flag captures limit in Capture the Flag mode.</li>
+                <li><b>Time Limit:</b> Amount of time that the round is played in minutes (unless kill, point or capture limit is reached first).</li>
+                <li><b>Survival Mode:</b> Enable/Disable Survival.</li>
+                <li><b>Realistic Mode:</b>Enable/Disable Realistic.</li>
+                <li><b>Advance Mode:</b> Enable/Disable Advance.</li>
+                <li><b>Loop:</b> Loops the map list. If not checked the game ends after the maps are finished.</li>
+                <li><b>Random Bots:</b> The number of random bots that will play the game. In team games this option is next to the team name.</li>
+            </ul>
+        <br>
+
+        <h4 id="options-join">Join Game Menu</h4>
+            <p><a href="images/ingame-joingame.png" target="_blank"><img src="images/ingame-joingame.png" width="642"></a></p>
+            <h5>Marked Server Information</h5>
+                <ul>
+                    <li><b>Game Server IP:</b> IP address of the requested game server.</li>
+                    <li><b>Port:</b> Port of the requested game server.</li>
+                    <li><b>Password:</b> Key to the requested game server.</li>
+                    <li><b>Spectator:</b> If checked, the client will join the requested game server as a spectator.</li>
+                </ul>
+
+            <h5>Action Buttons</h5>
+                <ul>
+                    <li><b>Join Game:</b> Click to connect and join a server.</li>
+                    <li><b>Disconnect:</b> Cancel current connection attempt (for example when files downloading is still loading).</li>
+                    <li><b>Favourites Add / Delete:</b> Bookmarks servers info into the IP line (click the down-facing arrow button).</li>
+                    <li><b>Request Servers:</b> Loads a list of servers from Soldat's lobby.</li>
+                    <li><b>Cancel:</b> Cancels previous request of servers.</li>
+                    <li><b>Ping All:</b> Refresh to get latest ping values from all servers, in the Ping column.</li>
+                    <li><b>Internet/Local:</b> Chose between online and local servers search.</li>
+                </ul>
+
+            <h5>Servers List</h5>
+                <p>The list includes columns which allow you to sort the game by desired order, for example: Clicking the Name column title will arrange servers by name.</p>
+                <p>Additionally there are flags on the left hand side to indicate in which country every server is hosted.</p>
+                <p>Columns available: Name, Map, Players, Max (Players), Game Type, Ping, Speed, Dedicated, Password, Bots, Respawn Time, Bonuses, Realistic, System, IP, Port, Anti-Cheat.</p>
+
+            <h5>Filters</h5>
+                <p>Allows user to see only servers with desired values.</p>
+                <ul>
+                    <li><b>Players:</b> All / Not Full / Not Empty / Not Full and Not Empty</li>
+                    <li><b>Game Type:</b> Deathmatch / Pointmatch / Teammatch / Capture the Flag / Rambomatch / Infiltration / Hold the Flag</li>
+                    <li><b>Is dedicated:</b> Find only dedicated servers.</li>
+                    <li><b>Not passworded:</b> Find only servers which do not require a key to join.</li>
+                    <li><b>No bots:</b> Find only servers in which bots will not be found.</li>
+                    <li><b>Survival Mode:</b> Find only servers in which Survival mode is enabled.</li>
+                    <li><b>Realistic Mode:</b> Find only servers in which Realistic mode is enabled.</li>
+                    <li><b>No Bonuses:</b> Find only servers in which Bonus kits are disabled</li>
+                    <li><b>Advance Mode:</b> Find only servers in which Advance mode is enabled.</li>
+                    <li><b>Weapons Mod:</b> Find only servers in which a custom Weapon Mod is applied.</li>
+                    <li><b>Anti-Cheat Secure:</b> Find only servers which are secured by an anti-cheat (currently irrelevant).</li>
+                </ul>
+        <br>
+
+        <h4 id="options-menu">Options Menu</h4>
+            <p><img src="images/ingame-options.png"></p>
+            <h5>Game</h5>
+                <ul>
+                    <li><b>Normal Respawn:</b> Time, in seconds, that you remain dead until your next respawn. Used in Deathmatch, Pointmatch and Rambomatch.</li>
+                    <li><b>Maximum Time in Team Games:</b> In team games (Teammatch, Capture the Flag, Infiltration) the re-spawn system is called "Wave Respawn". During the game there is set a global re-spawn timer for all players. It's cycle depends on the number of players in the game. When it goes to zero everybody that have been killed before - re-spawn and the timer starts again. For example: When there is 20 players (10 in each team) the timer will reach zero every 40 seconds. Every 40 seconds everyone that died in that time will re-spawn. Maximum Time in Team Games is used so that this time isn't too long, it shortens it to the value you set.</li>
+                    <li><b>Bonuses:</b> Option to turn off bonus kits (Berserker, Predator, Flame God, Cluster, Vest).</li>
+                    <li><b>Frequency:</b> Frequency of bonuses appearing (0 = Never, 5 = Very Frequent).</li>
+                    <li><b>Weapons:</b> Option to turn off weapons. If you disable a weapon it will not appear at all in your server.</li>
+                    <li><b>Maximum Grenades:</b> The maximum amount of grenades you can carry. It is also the number of grenades you pick-up in the boxes. On respawn you get half of this amount.</li>
+                    <li><b>Friendly Fire:</b> If checked you can kill your teammates.</li>
+                    <li><b>Bullet Time:</b> When all players are nearby (on one screen) and someone is killed the game goes into bullet time mode which is a cinematic slow motion effect.</li>
+                    <li><b>Mouse Sensitivity:</b> The sensitivity of mouse cursor movement. It can be also modified mid-game with <b>CTRL+ALT+[NUM+/-]</b> (adds or reduces 5%).</li>
+                </ul>
+
+            <h5>Network</h5>
+                <ul>
+                    <li><b>Connection:</b> The type of network game you want to play (LAN/Internet).</li>
+                    <li><b>Maximum Players:</b> Maximum number of players that can join your server.</li>
+                    <li><b>Register in Lobby Servers:</b> If checked, when you start a server it'll register in the lobby server, so people can find it in servers list in the <b>JOIN GAME</b> menu </li>
+                    <li><b>Game Name:</b> The name of your game server. It will be shown in the servers list.</li>
+                    <li><b>Game Password:</b> Type a password for your server if desired. Only players with the password can join.</li>
+                    <li><b>Balance Teams:</b> Players that join the server will be forced to join the team with less players. Works in CTF and Infiltration.</li>
+                </ul>
+
+            <h5>Visuals</h5>
+                <ul>
+                    <li><b>Interface Style:</b> You can change the style of the game interface. Interface Style changes the graphics, cursor, position of statistics and more.</li>
+                    <li><b>Player Indicator:</b> If it's on you will see a little arrow above your player, so you know which one is yours.</li>
+                    <li><b>Sniper Line:</b> Draws a line between the player and the cursor which helps aiming on far distances. Note that this feature is turned off in most servers.</li>
+                </ul>
+
+            <h5>Bots</h5>
+                <ul>
+                    <li><b>Difficulty:</b> Affects bots accuracy and behaviour.</li>
+                    <li><b>Chat:</b> If on the bots talk from time to time.</li>
+                </ul>
+
+            <h5>Sound</h5>
+                <ul>
+                    <li><b>Sound Volume:</b> The sound volume in percents. Also affects the music player volume. Sound volume can be adjusted mid-game with <b>SHIFT+[NUM+/-]</b> (adds or reduces 10%).</li>
+                    <li><b>Music Volume:</b> The volume of the Game Music in percents.</li>
+                    <li><b>Explosion Effect:</b> The effect that happens when something explodes near your player (you become "deaf" for a few seconds and hear a whistle soundq).</li>
+                    <li><b>Distant Battle:</b> Turns on/off distant battle sounds.</li>
+                    <li><b>Game Music:</b> Original game music that can be played during the game. Related keys: <b>[F5]</b> - Toggle music on/off, <b>[F6]</b> - Previous music track, <b>[F7]</b> - Next music track.</li>
+                </ul>
+        <br>
+
+        <h4 id="options-player">Player Menu</h4>
+            <p><img src="images/ingame-player.png"></p>
+            <ul>
+                <li><b>Player Name:</b> Choose a nickname for your Soldat profile (maximum 24 chars).</li>
+                <li><b>Player Colors:</b> Color for the Shirt, Pants, Hair, Jet Flames's of the character. Shoes color can also be externally edited (See: here).</li>
+                <li><b>Skin:</b> Skin color of the Soldat character. Additional skin colors can be set with SSCC.</li>
+                <li><b>Hair:</b> Hairstyle of the Soldat character.</li>
+                <li><b>Headgear:</b> Helmet, Hat, None.</li>
+                <li><b>Chain Style:</b> None, Dog Tags, Gold.</li>
+                <li><b>Secondary Weapon:</b> Choose your default secondary weapon.</li>
+                <li><b>Force Backgr ound Color:</b> Allows picking a solid/gradient background color to your choice (instead of the maps default color).</li>
+                <li><b>Control:</b> Shows adjustable game controls (Read also: Default Controls).</li>
+            </ul>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="config">Config.exe Settings</h3>
+        <p><b>All major configuration edits for Soldat can be made in config.exe (in Soldat's installation folder).</b></p>
+
+        <h4 id="config-graphics">Graphics</h4>
+            <p><img src="images/config_graphics.png"></p>
+            <h5>Vertical Sync</h5>
+            <p>Vertical Sync (VSync) is used to synchronische the output of your graphics card (GPU) with the display of your monitor. When your graphics card has finished rendering the next frame, it waits for the monitor to finish displaying the current frame, before switching to a new one. This means that the maximum frame-rate achievable will be equal to the refresh rate of the monitor (60hz/75hz/85hz/100z/120hz/144hz/165hz/180hz/200hz/240hz).</p>
+            <p>If Vsync is disabled then your graphics card will continuously render without waiting for the last frame to be displayed in its entirety. With fast graphics cards this means that your monitor may switch to a new frame halfway down the screen. This effect is known as tearing as there appears to be a visible line separating two different halves.</p>
+            <p>(Note: Using this at the same time as FPS limiter, may cause FPS issues).</p>
+
+            <h5>Animated Scenery</h5>
+            <p>Allows seeing animated scenery on maps that use animated scenery.</p>
+
+            <h5>Dithering</h5>
+            <p>It creates a dissolving effect when fading between neighbor colors. It can help remove gradients banding in the background.</p>
+
+            <h5>Antialiasing</h5>
+            <p>Its purpose is to smoothen hard pixel-ish polygon edges. However it doesn’t work anymore after Soldat upgraded to HD graphics. Use your graphic card settings to further smoothen edges if desired.</p>
+
+            <h5>Window Mode</h5>
+            <p>Choose between Windowed / Fullscreen / Windowed Fullscreen.</p>
+
+            <h5>FPS Limit</h5>
+            <p>Limits FPS (Frames Per Second). Some players have reported that this setting can reduce stutter issues. Some others need to disable it to get a smooth experience. Try both.</p>
+            <p>(Note: Using this at the same time as Vertical Sync, may cause FPS issues).</p>
+
+            <h5>Bitrate</h5>
+            <p>Sets the color depth of the game.</p>
+
+            <h5>Refresh rate</h5>
+            <p>If you're using full-screen and don't have compatibility mode enabled then the refresh rate is being picked up and stuffed into DirectX.</p>
+            <p>Note: Bitrate &amp; Refresh rate values are not used in the game, therefore it is not possible to change it in config.exe anymore. Effective bitrate is decided by video driver. Soldat will use 32bit textures regardless.</p>
+
+            <h5>Resolution</h5>
+            <ul class="flat">
+                <li><b>4:3 Resolutions:</b> 640x480 / 800x600 / 1024x768 / 1280x1024 / 1600x1200</li>
+                <li><b>16:10 Resolutions:</b> 768x480 / 1280x800 / 1440x900 / 1680x1050 / 1920x1200 / 2560x1600</li>
+                <li><b>16:9 Resolutions:</b> 854x480 / 1024x576 / 1280x720 / 1600x900 / 1920x1080 / 2048x1152 / 2560x1440</li>
+                <li><b>Desktop:</b> Adjusts to your screen resolution</li>
+            </ul>
+
+            <h5>Scale Interface</h5>
+            <p>Scales the interface images to your screen's resolution.</p>
+        <br>
+
+        <h4 id="config-sound">Sound</h4>
+            <p><img src="images/config_sound.png"></p>
+            <h5>Sound Quality</h5>
+            <p>Select sound quality for the game. It affects overall quality of each and every sound heard in game (Note: Low Quality level can may help improve performance in some cases).</p>
+
+            <h5>Sound Driver List</h5>
+            <p>DirectSound will determine the driver by itself. No sound if you want Soldat to not have sound at all.</p>
+
+            <h5>Sound Output Type</h5>
+            <p>Select with Sound Device and Drivers Soldat should use to output all Game sounds.</p>
+        <br>
+
+        <h4 id="config-performance">Performance</h4>
+            <p><img src="images/config_performance.png"></p>
+            <h5>Particles on screen</h5>
+            <p>Limits the particles showing on screen. There's also a setting in <b>soldat.ini</b> where you can set the number of particles even lower than 'Even less'. If you set it at its lowest (Max_Particles=43) you will sometimes not see jetpacks or explosion images if there's a lot of action going on (Note: Better left at default).</p>
+
+            <h5>Render bullet trails</h5>
+            <p>Renders a trail after a projectile, making it easier to see the projectile trajectory (doesn't apply to knives).</p>
+
+            <h5>Render weather effects</h5>
+            <p>Enables rain, snow and wind visuals. (Note: If turned off you will still hear the sound of weather effects).</p>
+
+            <h5>Render smooth polygons</h5>
+            <p>Draws edges around polygons when enabled. The edges images used are located in Soldat\textures\edges, and has the same name as the texture used for the map.</p>
+
+            <h5>Render background scenery</h5>
+            <p>Turns on drawing of scenery set behind players and polygons. Might hide essential scenery on unofficial game modes and unofficial maps.</p>
+
+            <h5>File logging</h5>
+            <p>Saves log files of in-game occurrences.</p>
+
+            <h5>Auto record</h5>
+            <p>Automatically records and saves a demo of every map you play into Soldat\demos. Usage: mandatory in the competitive scene to assure fair play, movie making purposes and tactics assessment.</p>
+
+            <h5>Show Death Console</h5>
+            <p>Shows a list of of kills and deaths on the upper right side of the screen. One can also customize the length of it in <b>soldat.ini</b> with the KillConsole_Length=7 value.</p>
+
+            <p>(Note: Since the rendering of fonts is slow in soldat, turning it off can result in an increase of FPS. However, this one's a major advantage for game-play so not very recommended).</p>
+        <br>
+
+        <h4 id="config-network">Network</h4>
+            <p><img src="images/config_network.png"></p>
+            <p>These Settings affect only Local Server hosting.</p>
+
+            <h5>Internet Connection Speed</h5>
+            <p>Select the type of connection the computer uses (Note: this option doesn't do anything beside putting different icon in speed tab in Lobby).</p>
+
+            <h5>Game Port</h5>
+            <p>Select the Port that you are going to use. More info about ports in the Ports page</p>
+
+            <h5>Max Player Ping</h5>
+            <p>Select the maximum ping that users can play with on your server before getting kicked.</p>
+
+            <p>If the player's ping value will be continuously higher than the set value, he'll get ping kicked.</p>
+
+            <h5>Server Message</h5>
+            <p>Write a greeting message sent upon joining of other users to your server.</p>
+
+            <h5>Server Link</h5>
+            <p>Write here a webpage or an email in which players can contact you.</p>
+
+            <h5>Never Forward Clients (firewall with open ports)</h5>
+            <p>This feature is broken at the moment.</p>
+        <br>
+
+        <h4 id="config-more">More</h4>
+            <p><img src="images/config_more.png"></p>
+            <h5>Video Compatibility</h5>
+            <p>This function may improve performance for older GPUs. It forces OpenGL to use "fixed pipeline" (meaning no shaders).</p>
+
+            <h5>Fix black screen during power-ups (ATI cards)</h5>
+            <p>Old ATI graphics cards would sometimes draw the bonus overlay for Berserker, flame god, and predator without the alpha (transparency) value, making the screen appear blank. This option disables drawing it completely.</p>
+
+            <h5>Texture Filters</h5>
+            <p>Changes how the pixels of the map texture are interpolated when the textures are stretched (Note: Better left at default unless you're running on a low-end computer).</p>
+
+            <p>In this case "Texture" actually covers all images rendered (map, scenery, sprites, interface, etc).</p>
+
+            <h5>Mipmapping</h5>
+            <p>Generate pre-filtered versions of texture or scenery, so that when you render it at a smaller size, it has both good looks and fast performance.</p>
+
+            <h5>Resolution filters</h5>
+            <p>Changes how pixels of the render target texture are interpolated when the texture is stretched over a screen area that has a different resolution than the resolution of the texture itself (Note: Better left at default).</p>
+
+            <h5>Play Intro</h5>
+            <p>Plays intro.sdm demo on startup.</p>
+
+            <h5>Clanmatch</h5>
+            <p>Team colors are based on first player in team</p>
+
+            <h5>Automatically take screenshot of final game score</h5>
+            <p>Mandatory in some leagues such as SCTFL.</p>
+
+            <h5>ActionSnap</h5>
+            <p>Press F5 after Killing/Dying and you can view+save that special moment!</p>
+        <br>
+
+        <p><img src="images/config_language.png"></p>
+        <h4 id="config-language">Language</h4>
+            <p>Pick requested language translation for the game.</p>
+            <br>
+            <p><em><b>Non-standard options are available in the <b>"soldat.ini"</b> file.</b></em></p>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="screen">Game Screen</h3>
+        <h4 id="screen-hud">The Soldat HUD:</h4>
+            <p><img src="images/HUD.png"></p>
+            <p>The Bars in the bottom of the screen are:</p>
+            <ul>
+                <li><u>Red Bar</u>: Health Indicator</li>
+                <li><u>Yellow Bar</u>: Ammunition Indicator or Reload-Time. The Number on the left is bullets left.</li>
+                <li><u>"Empty Bar"</u>: Right below the ammo indicator. It indicates Fire-Interval of the weapon.</li>
+                <li><u>Blue Bar</u>: Jetpack Fuel Indicator.</li>
+            </ul>
+        <br>
+
+        <h4 id="screen-player-status">Player Status (Right hand-side on the image)</h4>
+            <ul>
+                <li><u>Green Number (Upper)</u>: Your ranking in the server out of all the players in the server.</li>
+                <li><u>Red Number (Middle)</u>: Indication of the Kills/Points, in brackets the points different between you and the leader.</li>
+                <li><u>Purple: Purple Number (Lower)</u>: Kill Limit/Point Limit/Capture Limit in the game.</li>
+            </ul>
+        <br>
+
+        <h4 id="screen-custom-interfaces">Custom Interfaces</h4>
+            <p>Additionally to the default HUD, there are custom interfaces installed with the game. They are selectable for registered users in the Options Menu. <b><u>List of custom interfaces</u>:</b></p>
+            <ul>
+                <li>Cabbage</li>
+                <li>Classic</li>
+                <li>Lacey V2</li>
+                <li>Micro1</li>
+                <li>Military</li>
+                <li>Predator</li>
+                <li>Soldat Style</li>
+                <li>Storm</li>
+                <li>Tech</li>
+                <li>Text</li>
+            </ul>
+        <br>
+
+        <h4 id="screen-team-score">Score Counters</h4>
+            <p><img src="images/teamscore.png"></p>
+            <p>In Capture the Flag and Infiltration modes, there's a red number indicating <span class="alpha">Alpha's</span> score, and a blue number indicating <span class="alpha">Bravo's</span> score.</p>
+            <p>In a Teammatch game the scores counter will show two additional number: yellow for <span class="charlie">Charlie's</span> score and green for <span class="delta">Delta's</span> score.</p>
+        <br>
+
+        <h4 id="screen-flag">Missing Flag Indicator</h4>
+            <p><img src="images/flags.png"></p>
+            <p>When a flag is out of the default flag-spot, there'll be a missing flag indicator (see the blue flag icon on the lower right hand side of the image).</p>
+        <br>
+
+        <h4 id="screen-ping">Ping Dot</h4>
+            <p><img src="images/ping.png"></p>
+            <p>In a network game a ping indicator in the shape of the dot is placed on the upper right hand side of the screen. The bigger it is, the higher the ping is. It is color coded as well.</p>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="weapons">Weapons</h3>
+        <p><img src="images/guns.png"></p>
+        <p>There are overall 21 different weapons split into 3 groups at each player's disposal in Soldat.</p>
+        <p>To select a weapon rapidly while waiting for re-spawn, use the numerical buttons <b>1-9, 0</b> for primary weapons, and use <b>CTRL+1/2/3/4</b> for secondary weapons.</p>
+        <p>It is possible to throw a weapon and pickup another. You can carry two weapons (Primary &amp; Secondary / Primary &amp; Primary).</p>
+        <p>It's possible to set your default secondary on the in-game <b>PLAYER</b> menu. Useful if you have an overall preferred one.</p>
+
+        <h5 id="weapons-primary">Primary Weapons</h5>
+            <ol class="weapons">
+                <li>
+                    Desert Eagles
+                    <p>The Desert Eagles or in their full name IMI Desert Eagles (IMI - Israeli Military Industries) is a semi automatic hand-gun that can break a man's arm. In Soldat it's an Akimbo weapon! It has a unique feature of firing two shots at a time.</p>
+                </li>
+                <li>
+                    HK MP5
+                    <p>The HK MP5 (The Heckler &amp; Koch MP5) is one of the most popular submachine-gun in the world (from German: Maschinenpistole 5, meaning Submachine gun 5). Fast and furious. In short ranges it can defeat heavy weapons. It is a 9mm submachine gun of German design, developed in the 1960s by a team of engineers from the German small arms manufacturer Heckler &amp; Koch GmbH (H&amp;K) of Oberndorf am Neckar.</p>
+                </li>
+                <li>
+                    AK-74
+                    <p>The AK-74 (Russian: Автомат Калашникова образца 1974 года or "Kalashnikov automatic rifle model 1974") Modified version by Russian designer Mikhail Kalashnikov as the replacement for the earlier AKM (itself a refined version of the AK-47). Weapon of terrorists and most of world's army forces. The best assault rifle in the world for the past 50 years. It uses a smaller 5.45×39mm cartridge, replacing the 7.62×39mm chambering of earlier Kalashnikov-pattern weapons.</p>
+                </li>
+                <li>
+                    Steyr AUG
+                    <p>The Steyr AUG (Armee-Universal-Gewehr — "universal army rifle") is an Austrian 5.56×45mm NATO bullpup assault rifle, designed in the 1960s by Steyr-Daimler-Puch. It may look like a toy, but try it and you'll realize quickly enough, it sure isn't. With great speed it spits out bullets killing everything in a fast attack.</p>
+                </li>
+                <li>
+                    Spas-12
+                    <p>The Franchi Spas-12 is a combat shotgun manufactured by Italian firearms company Franchi from 1979 to 2000. It is capable of creating massacre with its 12-Gauge bullets. The best weapon for close-contact. The SPAS-12 was sold to military and police users worldwide on the civilian market and has been featured in many movies, TV shows, and video games.</p>
+                </li>
+                <li>
+                    Ruger-77
+                    <p>The Ruger-77 is a hunting rifle. Very fast and accurate. Good for hunting deers and people. It has a removable rotary magazine which allows the magazine to fit flush with the bottom of the stock.</p>
+                </li>
+                <li>
+                    M79
+                    <p>The M79 is the famous US grenade launcher, first used in the Vietnam War. The Viet-Cong quickly ran to the bushes when they heard its characteristic sound. The 40mm grenade can blast anyone into pieces even after a shot behind a hill. Because of its distinctive report, it has earned the nicknames of "Thumper", "Thump-Gun", "Bloop Tube", "Big Ed", and "Blooper" among American soldiers as well as "Can Cannon" in reference to the grenade size; Australian units referred to it as the "Wombat Gun".</p>
+                </li>
+                <li>
+                    Barret M82A1
+                    <p>The Barrett M82A1 is a sniper rifle with incredible power. It is a recoil-operated, semi-automatic anti-materiel rifle developed by the American Barrett Firearms Manufacturing company. It was designed to pierce tank armor. The military didn't even plan to use it against people. But who cares?</p>
+                </li>
+                <li>
+                    M249 (FN Minimi)
+                    <p>The FN MinimiFN Minimi (M249) (short for French: Mini Mitrailleuse; "mini machine gun") is a Belgian 5.56mm Squad Automatic Weapon, first introduced in the late 1970. is the best machine gun with great firepower. Can be very helpful for backing-up your team.</p>
+                </li>
+                <li>
+                    XM214 Minigun
+                    <p>The XM214 Minigun is an American prototype 5.56 mm rotary-barreled machine gun. It is the famous "O'll Painless" from the movie Predator. This chaingun is mounted on army helicopters. It uses a tremendous amount of ammo and can kill the same amount of enemies. Also known as the Microgun, the XM214 was a scaled-down i.e. physically substantially smaller and lighter version of the M134 "minigun", firing M193 5.56×45mm ammunition.</p>
+                </li>
+            </ol>
+        <br>
+
+        <h5 id="weapons-secondary">Secondary Weapons</h5>
+            <ol class="weapons">
+                <li>
+                    USSOCOM
+                    <p>The USSOCOM is a semi-automatic large-frame pistol chambered in .45 ACP. designed specifically to be an offensive pistol. The USSOCOM MK23 was adopted by the United States Special Operations Command (USSOCOM) for special operations units beating out the nearest competitor, Colt's OHWS. <b>It is the default secondary weapon in Soldat</b>. You can change the default secondary in the in-game <b>PLAYER</b> menu.</p>
+                </li>
+                <li>
+                    Combat Knife
+                    <p>The Combat Knife a Standard infantry knife. A combat knife is a fighting knife designed solely for military use and primarily intended for hand-to-hand or close combat fighting. One direct hit with this little thing eliminates the enemy at once. In Soldat it is widely used as a throwing weapon and it is very deadly from most angles. The longer you'll hold the throw weapon button (Default Key: <b>[F]</b>), the further the knife will go. There's even a whole community dedicated to playing Knife Only.</p>
+                </li>
+                <li>
+                    Chainsaw
+                    <p>The Chainsaw may seem at first as a useless weapon, but with the adequate set of skills and mastering of Soldat's movement mechanics, it can serve as a very deadly secondary weapon and provide a quick kill.</p>
+                </li>
+                <li>
+                    M72 LAW
+                    <p>The M72 LAW (Light Anti-Tank Weapon) is a portable one-shot 66-mm unguided anti-tank weapon. It fires an explosive missile. Can be used only from the crouch position (deafult button: <b>[C]</b>).</p>
+                </li>
+            </ol>
+        <br>
+
+        <h5 id="weapons-other">Additional Weapons</h5>
+            <ul class="weapons">
+                <li>
+                    <strong>Fragmentation Grenade</strong><br>
+                    <p>Every player is pre-equipped with Frag Grenades. These can be used for blasting your enemies or for boosting on various colliders to gain speed. The grenade amount can be limited between: 0 to 5.</p>
+                </li>
+                <li>
+                    <strong>Cluster Grenade</strong><br>
+                    <p>The Cluster Grenade will release additional charges in a small radius and cause a chain of explosions upon its detonation. This weapon is an additional weapon and can be obtained only through the Cluster Grenade bonus kit.</p>
+                </li>
+                <li>
+                    <strong>Flamethrower</strong><br>
+                    <p>The Flamethrower is a mechanical incendiary device designed to project a long, controllable stream of fire. They were first used by the Greeks in the 1st century AD. In modern times, they were used during World War I, and more widely in World War II. This weapon is an additional weapon and can be obtained only through the Flame God bonus kit (if bonuses are enabled).</p>
+                </li>
+                <li>
+                    <strong>Rambow Bow</strong><br>
+                    <p>Rambo Bow is the famous Bow of John Rambo available in Rambomatch mode. Great for stealth operations. Silent, fast as lightning and lethal. You can change to exploding arrows (default key: <b>[Q]</b>).</p>
+                </li>
+                <li>
+                    <strong>Flames Arrows</strong><br>
+                    <p>Flamed Arrows are creating an explosion upon hitting targets. It is available in Rambomatch game-mode. In order to use it, one must first obtain the Rambo Bow and change to the "Secondary" of this weapon (default key: <b>[Q]</b>).</p>
+                </li>
+                <li>
+                    <strong>Stationary Gun</strong><br>
+                    <p>The Stationary Gun (M2 MG) is a fully automatic heavy machine gun bound to specific locations in the maps. It serves mostly for defensive purposes. The stat-guns are featured only in a small portion of maps, and they're bound to specific pre-made locations in those maps. The stat-guns are turned on by default on your local settings in the in-game <b>OPTIONS</b> menu, you can also disable it there</p>
+                </li>
+            </ul>
+        <br>
+
+        <p>Weapons settings are modifiable by editing the file <b>"weapons.ini"</b>.</p>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="bonuses">Bonuses</h3>
+        <p>If bonuses are enabled in the game's Options or <b>"soldat.ini"</b>, a player may obtain the following bonuses:</p><br>
+        <ul class="flat bonuses">
+            <li>
+                <img src="images/medikit.png">
+                <strong>Medikit</strong>
+                <p>Regenerates health to the maximum level.</p>
+            </li>
+            <li>
+                <img src="images/grenadekit.png">
+                <strong>Grenades</strong>
+                <p>Grants the maximum amount of frag grenades one can carry (1-5).</p>
+            </li>
+            <li>
+                <img src="images/clusterkit.png">
+                <strong>Cluster Grenades</strong>
+                <p>3 grenades that release additional charges in a small radius and cause a chain of explosions upon its detonation.</p>
+            </li>
+            <li>
+                <img src="images/vestkit.png">
+                <strong>Bulletproof Vest</strong>
+                <p>Personal armor. Basically an addition of 100% health points.</p>
+            </li>
+            <li>
+                <img src="images/flamerkit.png">
+                <strong>Flame God</strong>
+                <p>Grants Flamethrower weapon and immortality. <u>Duration</u>: 10 seconds.</p>
+            </li>
+            <li>
+                <img src="images/berserkerkit.png">
+                <strong>Berserker</strong>
+                <p>Massacre! Berserker makes your weapons four times stronger. <u>Duration</u>: 15 seconds.</p>
+            </li>
+            <li>
+                <img src="images/predatorkit.png">
+                <strong>Predator</strong>
+                <p>Invisibility. Enemies can still hear sounds you make, and blood makes you more visible. <u>Duration</u>: 25 seconds.</p>
+            </li>
+        </ul>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="commands">Commands</h3>
+        <p>After pressing the &quot;/&quot; key you can enter one of the following commands:</p>
+        <h4 id="commands-player">Player Commands:</h4>
+        <table>
+            <tr>
+                <td>KILL</td>
+                <td>Harakiri.</td>
+            </tr>
+            <tr>
+                <td>BRUTALKILL</td>
+                <td>Very harakiri.</td>
+            </tr>
+            <tr>
+                <td>SMOKE</td>
+                <td>Player lights or ends a cigar.</td>
+            </tr>
+            <tr>
+                <td>TABAC</td>
+                <td>Player chews tobacco.</td>
+            </tr>
+            <tr>
+                <td>TAKEOFF</td>
+                <td>Player takes headgear.</td>
+            </tr>
+            <tr>
+                <td>VICTORY</td>
+                <td>Player cheers.</td>
+            </tr>
+            <tr>
+                <td>PAUSE/UNPAUSE</td>
+                <td>Toggle Game-Pause</td>
+            </tr>
+        </table>
+        <br>
+        <h4 id="commands-server">Server Commands:</h4>
+        <table>
+            <tr>
+                <td>ADDBOT bots name</td>
+                <td>Adds a new bot to the game.</td>
+            </tr>
+            <tr>
+                <td>KICK players name or players number</td>
+                <td>Removes a player/bot from the game.</td>
+            </tr>
+            <tr>
+                <td>BAN players name or players number</td>
+                <td>Bans the player on the server so he can't join in again.</td>
+            </tr>
+            <tr>
+                <td>BANIP IP number</td>
+                <td>Bans the IP number.</td>
+            </tr>
+            <tr>
+                <td>UNBAN IP number</td>
+                <td>Unbans the IP number.</td>
+            </tr>
+            <tr>
+                <td>MAP map name</td>
+                <td>Changes the map.</td>
+            </tr>
+            <tr>
+                <td>RESTART</td>
+                <td>Resets the current match.</td>
+            </tr>
+            <tr>
+                <td>NEXTMAP</td>
+                <td>Changes the map to the next one in the list.</td>
+            </tr>
+            <tr>
+                <td>ADM players name</td>
+                <td>Adds the player to the Remote Admins list.</td>
+            </tr>
+            <tr>
+                <td>ADMIP IP number</td>
+                <td>Adds the IP number to the Remote Admins list.</td>
+            </tr>
+            <tr>
+                <td>UNADM IP number</td>
+                <td>Removes the IP number from the Remote Admins list.</td>
+            </tr>
+            <tr>
+                <td>KICKLAST</td>
+                <td>Kicks the last player that entered the game.</td>
+            </tr>
+            <tr>
+                <td>RESPAWNTIME seconds</td>
+                <td>Changes the respawn time.</td>
+            </tr>
+            <tr>
+                <td>MAXRESPAWNTIME seconds</td>
+                <td>Changes the maximum respawn time in team games.</td>
+            </tr>
+            <tr>
+                <td>LIMIT number</td>
+                <td>Changes the current kill/point/capture limit.</td>
+            </tr>
+            <tr>
+                <td>TIMELIMIT minutes</td>
+                <td>Changes the current time limit.</td>
+            </tr>
+            <tr>
+                <td>PASSWORD text</td>
+                <td>Changes the game server password (temporarily).</td>
+            </tr>
+            <tr>
+                <td>SETTEAMx player number</td>
+                <td>Forces the player to join team x.</td>
+            </tr>
+            <tr>
+                <td>ADDBOTx bots name</td>
+                <td>Adds a bot to team x.</td>
+            </tr>
+            <tr>
+                <td>FRIENDLYFIRE 0/1</td>
+                <td>Friendly fire on or off.</td>
+            </tr>
+            <tr>
+                <td>VOTE% 0-100</td>
+                <td>Changes the percentage of players needed to vote something.</td>
+            </tr>
+            <tr>
+                <td>BONUS 0-5</td>
+                <td>Frequency of bonuses 0-none, 5- lots.</td>
+            </tr>
+            <tr>
+                <td>MAXPLAYERS 1-32</td>
+                <td>Maximum players allowed on server.</td>
+            </tr>
+            <tr>
+                <td>LOADCON</td>
+                <td>Reloads soldat.ini server settings.</td>
+            </tr>
+            <tr>
+                <td>LOADLIST xxx</td>
+                <td>Loads the mapslist from xxx.txt.</td>
+            </tr>
+            <tr>
+                <td>LOADWEP xxx</td>
+                <td>Reloads weapons.ini weapon settings or from file xxx.ini.</td>
+            </tr>
+            <tr>
+                <td>GAMEMODE 0-6</td>
+                <td>Changes the gamemode (0 DM, 1 PM, 2 TM, 3 CTF, 4 RM, 5 INF, 6 HTF).</td>
+            </tr>
+            <tr>
+                <td>REALISTIC 0/1</td>
+                <td>Switches realistic mode.</td>
+            </tr>
+            <tr>
+                <td>ADVANCE 0/1</td>
+                <td>Switches advance mode.</td>
+            </tr>
+            <tr>
+                <td>SURVIVAL 0/1</td>
+                <td>Switches survival mode.</td>
+            </tr>
+            <tr>
+                <td>KILL players name or players number</td>
+                <td>Kills/punishes the player.</td>
+            </tr>
+            <tr>
+                <td>BANLAST</td>
+                <td>Like /kicklast, bans for 1 hour the last player that joined.</td>
+            </tr>
+            <tr>
+                <td>UNBANLAST</td>
+                <td>Unbans the last player that was banned.</td>
+            </tr>
+            <tr>
+                <td>LOBBY</td>
+                <td>Reregisters the server in the lobby.</td>
+            </tr>
+            <tr>
+                <td>SAY text</td>
+                <td>Sends a text message to all players on the server.</td>
+            </tr>
+        </table>
+        <br>
+        <h4 id="commands-client-server">Client-Server Commands:</h4>
+        <table>
+            <tr>
+                <td>ADMINLOG password</td>
+                <td>Used to login as game server admin.</td>
+            </tr>
+            <tr>
+                <td>INFO</td>
+                <td>Retrieves useful information from the server.</td>
+            </tr>
+            <tr>
+                <td>MUTE players name or players number</td>
+                <td>Mutes the player so you don't see his chat.</td>
+            </tr>
+            <tr>
+                <td>UNMUTE players name or players number</td>
+                <td>Unmutes the player.</td>
+            </tr>
+            <tr>
+                <td>MUTEALL</td>
+                <td>Mutes all players.</td>
+            </tr>
+            <tr>
+                <td>RECORD name</td>
+                <td>Records a demo stored in the Soldat\Demos folder.</td>
+            </tr>
+            <tr>
+                <td>STOP</td>
+                <td>Stops the recording of a demo.</td>
+            </tr>
+        </table>
+        <br>
+        <h4 id="commands-cmdline-client">Command Line Arguments for Soldat Client (soldat.exe):</h4>
+        <p>These are the parameters that can be used when running Soldat.exe:</p>
+        <ul>
+            <li>
+                Soldat.exe <strong>-dedicated</strong>
+                <p>Starts a Soldat dedicated server.</p><br>
+            </li>
+            <li>
+                Soldat.exe <strong>-start</strong>
+                <p>Starts the game without entering the menu.</p><br>
+            </li>
+            <li>
+                Soldat.exe <strong>-dedicated -start</strong>
+                <p>Runs the dedicated server automatically.</p><br>
+            </li>
+            <li>
+                Soldat.exe <strong>-join IPnumber (port password)</strong>
+                <p>Runs the game and connects to <em>IPnumber</em>, <em>port</em> and <em>password</em> are optional.</p>
+                <p><u>Example</u>:<br>Soldat.exe -join 192.168.0.1<br>Soldat.exe -join 127.0.0.1 23073 tikikaka</p><br>
+            </li>
+            <li>
+                Soldat.exe <strong>-demo name (freecam speed notexts extract)</strong>
+                <p>Runs the game and plays the demo specified by <em>name</em>. Optional paramaters are:</p>
+                <ul class="flat">
+                    <li>freecam (0/1) - the user can freely change the camera (default 1)</li>
+                    <li>speed (0-...%)- how quick the playback will be specified in percents (default 100%)</li>
+                    <li>notexts (0/1) - no texts, menus or cursor will be displayed during playback (default 0)</li>
+                    <li>extract (0/1) - extracts the demo to BMP files (default 0). Later they can be used to make an AVI file in a program like &quot;Bmp2Avi&quot;.</li>
+                </ul>
+                <p><i>The sound can be extracted with a program like &quot;Total Recorder&quot;. Please note that this can take time and is not recommended on slower systems. For better results specify lower speed (like 50%).</i></p>
+                <p><u>Example</u>:<br>Soldat.exe -demo demo12<br>Soldat.exe -demo demo19 1 200 1 0</p><br>
+            </li>
+            <li>
+                Soldat.exe <strong>-mod xxx</strong>
+                <p>Starts the game with a Soldat mod located in Soldat\Mods\xxx</p><br>
+            </li>
+        </ul>
+        <h4 id="commands-cmdline-server">Command Line Arguments for Soldat Server:</h4>
+        <p>When running your server from the command line, you can take advantage of what is known as command line arguments.This is, basically, sending data to the binary on-the-fly from the interpreter (shell), such as MS-DOS or bash.</p>
+        <table class="cmdline">
+            <tr>
+                <td><b>-d</b><br><span>./soldatserver -d</span></td>
+                <td>Starts your server as a Daemon (runs in the background, even when you log off). Linux only.</td>
+            </tr>
+            <tr>
+                <td><b>-pid</b><br><span>./soldatserver -pid soldatserver.pid</span></td>
+                <td>Sets the Process ID file name. Located in the /logs/ folder (soldatserver.pid by default).</td>
+            </tr>
+            <tr>
+                <td><b>-m</b><br><span>./soldatserver -m xx.txt</span></td>
+                <td>Sets the default mapslist file to xx.txt (mapslist.txt by default).</td>
+            </tr>
+            <tr>
+                <td><b>-c</b><br><span>./soldatserver -c x.ini</span></td>
+                <td>Sets the default configuration file to x.ini (Soldat.ini by default).</td>
+            </tr>
+            <tr>
+                <td><b>-p</b><br><span>./soldatserver -p 23073</span></td>
+                <td>Start the server on a specific port.</td>
+            </tr>
+            <tr>
+                <td><b>-l</b><br><span>./soldatserver -l 12</span></td>
+                <td>Limits the number of players that can join the server.</td>
+            </tr>
+            <tr>
+                <td><b>-k</b><br><span>./soldatserver -k "my clan only"</span></td>
+                <td>Sets a password that will be required by anyone who tries to join.</td>
+            </tr>
+            <tr>
+                <td><b>-b</b><br><span>./soldatserver -b "72.232.225.66"</span></td>
+                <td>Binds the server to a specific IP Address. Use with caution! You cannot bind to an IP that isn't assigned to your network card!</td>
+            </tr>
+            <tr>
+                <td><b>-s</b><br><span>./soldatserver -s #</span></td>
+                <td>Enable/Disable the SoldatServer Scripting Engine. #: 1 = enabled, 0 = disabled.</td>
+            </tr>
+            <tr>
+                <td><b>-safe</b><br><span>./soldatserver -safe #</span></td>
+                <td>Enable/Disable Safe Mode for Scripts (On by default). #: 1 = enabled, 0 = disabled.</td>
+            </tr>
+            <tr>
+                <td><b>-lock</b><br><span>./soldatserver -lock #</span></td>
+                <td>Enable/Disable Locked Mode (Off by default). When Locked Mode is enabled, admins will not be able to type /loadcon, /password or /maxplayers. #: 1 = enabled, 0 = disabled.</td>
+            </tr>
+            <tr>
+                <td><b>-disallow</b><br><span>./soldatserver -disallow "GetURL,ReadFile"</span></td>
+                <td>Disable certain script functions from being used by scripts. Note that this will cause any scripts that use these functions to crash with an "unknown identifier GetURL" error.</td>
+            </tr>
+            <tr>
+                <td><b>-debug</b><br><span>./soldatserver -debug #</span></td>
+                <td>Enable/Disable Debug Mode (See Debug_Mode in soldat.ini). #: 0 = No Debug, 1 = Lobby Debug, 2 = Advanced Debug, 3 = Script Core Debug If you find a bug and report it, please use Debug Mode 2. It helps us alot.</td>
+            </tr>
+            <tr>
+                <td><b>-ns</b><br><span>./soldatserver -ns 192.168.2.1</span></td>
+                <td>Set the Nameserver your Soldat Server will use to resolve the Lobby DNS. Only use this if you know what you are doing! The server should automatically detect what Nameserver your computer uses!</td>
+            </tr>
+            <tr>
+                <td><b>-ls</b><br><span>./soldatserver -ls #</span></td>
+                <td>Set the maximum number of scripts which can be loaded by this server.</td>
+            </tr>
+        </table>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="chat">Chat</h3>
+        <p>The default button  for Chat function is <b>[T]</b> (for team chat <b>[Y]</b>), to send it press <em>ENTER</em>.</p>
+        <h4 id="chat-taunts">Taunts</h4>
+        <p>You can use ready taunts from the file <b>taunts.txt</b> (placed in the Soldat folder or your profile folder) by using the <em>ALT</em> button + alpha-numeric keyboard buttons.</p>
+        <h4 id="chat-teamchat">Teamchat</h4>
+        <p>If you want your chat text to appear in the console only for your teammates insert &quot;^&quot; before the text, like this: ^Whats up!</p>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="server">Dedicated Server</h3>
+        <p>A dedicated server is used to run a faster Soldat server without a player in it.</p>
+        <p><u>You can do this in two ways</u>:</p>
+        <ol class="server">
+            <li>In the <b>"soldat.ini"</b> file, section <em>NETWORK</em>, find <em>Dedicated=0</em>, change it to <em>Dedicated=1</em>.</li>
+            <li>
+                Run the game with the parameter -dedicated (Soldat.exe -dedicated). You can use the shortcuts in the Start Menu.
+                <p>If you want the server to start the game automatically do this:</p>
+                <ul>
+                    <li>Run the game normally and enter the menu. Set all the game options (game mode, time limit, map list etc.)</li>
+                    <li>Quit the game and the settings will be saved</li>
+                    <li>Run Soldat with parameters -dedicated -start</li>
+                </ul>
+            </li>
+        </ol>
+        <br>
+
+        <h4 id="server-admin">Remote Administration</h4>
+        <p>Players from outside the server can control it. To give this option to a player add him to the Remote Admins list. The commands for this are described here <a href="#commands"><b>COMMANDS</b></a>.</p>
+        <br>
+
+        <h4 id="server-ports">Game Ports</h4>
+        <p><b>Important!</b> - If you have a firewall you should open the UDP game ports<br><b>Default Port:</b> 23073 for the server (can be changed in Soldat Setup) , client uses a default port: 23083 (can't be changed)<br>There is an option to join firewall servers without opening the ports, but only through the lobby server (through the server list - forwarding).</p>
+        <p><u>The Soldat server uses the following ports</u>:<br><b>UDP:</b> game port (default 23073)<br><b>TCP/IP:</b> admin port = game port (default 23073)<br><b>TCP/IP:</b> files port = game port + 10 (default 23083)</p>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="license">License and distribution</h3>
+        <h4 class="license">Copyright Information</h4>
+            <p>Soldat and all the file formats the program produces are Copyright © 2001-2018 Michal Marcinkowski. All rights reserved.</p>
+        <h4>License</h4>
+            <p>Soldat is a freeware application. It is fully playable for free. Although, you can register for extra features. If you like the game please consider registering.</p>
+        <h5>Unregistered Copy of Soldat</h5>
+            <p>Provided that you verify that you are distributing the Shareware Version you are hereby licensed to:
+                <br><b>1.</b> make as many copies of the Shareware version of this software and documentation as you wish
+                <br><b>2.</b> give exact copies of the original Shareware version to anyone
+                <br><b>3.</b> distribute the Shareware version of the software and documentation in its unmodified form via electronic means (e-mail, web page, diskette, CD including magazine Cover CDs)<br><br>There is no charge for any of the above.
+            </p>
+        <h5>Registered Copy of Soldat</h5>
+            <p>You may not, for any purpose, distribute copies of registered versions of this software, documentation or related materials to any third-parties.</p>
+        <h4>LEGAL</h4>
+            <p>No portion of this software may be disassembled, reverse engineered, decompiled, modified or altered.<br><br>All graphics and sounds may be modified except maps and scenery files. Modified graphics and sounds can be distributed for free as game MODs.<br><br>This Software is supplied &quot;AS IS&quot; and no liability will be accepted by Michal Marcinkowski or any legal vendors of this software for any damage incurred by the use of this software.<br><br>Neither directly nor indirectly you cannot rent or sell by any means this software.</p>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="credits">Credits</h3>
+        <h4 id="credits-devteam">Developement Team</h4>
+            <ul class="flat">
+                <li><b>Michał Marcinkowski</b> (MM) - Inventor and owner of Soldat</li>
+                <li><b>Gregor. A. Cieslak</b> (Shoozza)</li>
+                <li><b>Jacob Lindberg</b> (Fryer)</li>
+                <li>Chris GreenBank (ChrisGBK)</li>
+                <li>Daniel Forssten (Skoskav)</li>
+                <li>Joe Gillotti (jrgp)</li>
+                <li>Mariano Cuatrin (urraka)</li>
+                <li>Michael Himing (tmtgr)</li>
+                <li>Maciek (Mighty)</li>
+                <li>Nick Cooper (EnEsCe)</li>
+                <li>Oliver Kuckertz (Mr)</li>
+                <li>Paweł Drzazga (helloer)</li>
+                <li>Reko Tiira (reko_t)</li>
+                <li>Tomasz Kołosowski (Falcon)</li>
+                <li>Tony Libell (zakath)</li>
+                <li>Umut Karakas (ExHunter)</li>
+            </ul>
+        <br>
+
+        <h4 id="credits-lobby">Lobby Maintenance</h4>
+            <ul class="flat">
+                <li><b>Joe Gillotti</b> (jrgp)</li>
+                <li>Ryan Rawdon (FliesLikeABrick)</li>
+            </ul>
+        <br>
+
+        <h4 id="credits-wm">Weapon Mod Team</h4>
+            <ul class="flat">
+                <li><b>Torben Schmidt</b> (darDar)</li>
+                <li>Daniel Forssten (Skoskav)</li>
+                <li>alexoner</li>
+                <li>bernadinho</li>
+                <li>DragonSlayer</li>
+                <li>Freeman</li>
+                <li>Kenix</li>
+                <li>Mittsu</li>
+                <li>voDKa</li>
+                <li>voltex</li>
+                <li>Zero Static</li>
+            </ul>
+        <br>
+
+        <h4 id="credits-music">Game Music</h4>
+            <ul class="flat">
+                <li>Bloody Soil, Gore, Necromancide by BSG (Guitar Pro <a href="https://soldat.pl/downloads/tabs.zip"><b>tabulatures</b></a>)</li>
+            </ul>
+        <br>
+
+        <h4 id="credits-translations">Translations</h4>
+            <p>Thanks to all the translators, I couldn't keep track who made what part of the translation, a big thanks for all who helped out the local communities and who I forgot to mention.</p>
+            <ul class="flat">
+                <li><b>Belarusian</b> by ?</li>
+                <li><b>Brazilian Portuguese</b> by Felipe Augusto (t3chn0k), Prodigyx, deguix &amp; Hex</li>
+                <li><b>Catalan</b> by ?</li>
+                <li><b>Chinese (Traditional)</b> by cobrass</li>
+                <li><b>Croatian</b> by Wol&amp;, filip2322, Croat &amp; _Freeman_</li>
+                <li><b>Czech</b> by cApOnE, |SB|Scroow &amp; rOy</li>
+                <li><b>Dutch</b> by DutchFlame</li>
+                <li><b>Estonian</b> by Xdada &amp; Guile</li>
+                <li><b>Finnish</b> by Eskhata, Jerkington XIII, Draculazla &amp; Reko Tiira (reko_t)</li>
+                <li><b>French</b> by Kaze, Colonel ONeill, VinceBros &amp; Bistoufly</li>
+                <li><b>German</b> by Gregor A. Cieslak (Shoozza), rumpel, voDKa` &amp; Vermithrax</li>
+                <li><b>Greek</b> by Leo</li>
+                <li><b>Hebrew</b> by Red Ninja, nosejj &amp; Pavliko</li>
+                <li><b>Hungarian</b> by PsychoHUN &amp; Kaimelar</li>
+                <li><b>Italian</b> by PANTERA, Lumberjack &amp; DarkSpread</li>
+                <li><b>Japanese</b> by sanada</li>
+                <li><b>Korean</b> by Kzya &amp; elite</li>
+                <li><b>Lithuanian</b> by Honest</li>
+                <li><b>Norwegian</b> by evhO, Snu5_Mum12 &amp; RamboViking</li>
+                <li><b>Polish</b> by machina, Beowulf, Agate, freestyler &amp; Bonecrusher</li>
+                <li><b>Russian</b> by SyavX &amp; n0b-</li>
+                <li><b>Slovak</b> by cApOnE, M[a]nny &amp; Roy</li>
+                <li><b>Spanish</b> by Fujifabric</li>
+                <li><b>Swedish</b> by Jacob Lindberg (Fryer) &amp; Tony Libell (zakath)</li>
+                <li><b>Thai</b> by ?</li>
+                <li><b>Turkish</b> by XmRipper, verbeia &amp; tjutg</li>
+                <li><b>Ukrainian</b> by SyavX</li>
+            </ul>
+        <br>
+
+        <h4 id="credits-beta">Beta Team</h4>
+            <ul class="flat">
+                <li>alexoner, As de Espada, Beowulf Agate, bernadinho, Bistoufly (Haste), Bonecrusher, cobrass, darDar, Denacke, Draculazla, DragonSlayer (DS), ds dude, Freeman, freestyler, Fujifabric, Furai, homerofgods (evhO), Honest, iAmBullet, jackwade69, Kaze, Kenix, Leo, L[0ne]R, machina, Mighty, miketh2005, Mittsu, mtk, M[a]nny, Nanouk, PANTERA, pavliko, Petterkowski, sanada, squiddy, SyavX, t3chn0k, VinceBros, Viral, voDKa, voltex, Xadhoom (TheRedDeaTh), xmRipper</li>
+            </ul>
+        <br>
+
+        <h4 id="credits-manual">Soldat Manual Team</h4>
+            <ul class="flat">
+                <li>nosejj &amp; urraka - Content, edit, photos, re-design</li>
+            </ul>
+        <br>
+
+        <h4 id="credits-thanks">Special Thanks to</h4>
+            <ul>
+                <li>The whole <b>Soldat Community</b>! Everybody that mailed me and talked about Soldat on message boards, giving me good advice and motivating me.</li>
+                <li>Warsztat (<a href="warsztat.pac.pl"><b>http://warsztat.pac.pl</b></a>) - for their help in testing the former betas.</li>
+                <li><b>Thomasa Jakobsen</b> from IO Interactive for his wonderful article (http://www.teknikus.dk/tj/gdc2001.htm).</li>
+                <li><b>Number27</b> for his tutorials (I don't have the address).</li>
+                <li><b>FliesLikeABrick</b> for hosting and administering Soldat Forums (<a href="http://forums.soldat.pl"><b>forums.soldat.pl</b></a>) and all the forum moderators.</li>
+                <li><b>DNA.Styx</b> for administrating the old Soldat Forums.</li>
+                <li><u>The Soldat Community members, especially</u>: <b>Ardaen</b> for helping with the Anti-Cheat and network code, <b>b00stA</b> for the URL shortcut and scripts, <b>Hercules Poirot</b> for the polygon bugs project and people who helped him.</li>
+                <li><b>Dolny</b> for hosting the first official web site, promotion and ideas.</li>
+                <li><b>TRSSam</b> for providing the first lobby server.</li>
+                <li>Special, special thanks for all those that tested Soldat and made it a better game (yes it's you)!</li>
+                <li>In a short version I thank: the electricity company, my computers, my keyboard, start menu, John Pascal (or whatever his name is), John 'god' Carmack, Bill G., Sylvester S., Arnold S. ...</li>
+                <li>To those who should be here but didn't remind me that they should be here!</li>
+            </ul>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="tools">Development Tools and Components Used</h3>
+        <h4>Development Tools used for future version (Differences only)</h4>
+            <h5>Building</h5>
+            <ul>
+                <li>Vagrant</li>
+                <li>Inno Setup or NSIS for Windows Installer</li>
+                <li>MSYS2 for build scripts on Windows</li>
+            </ul>
+            <h5>Sound</h5>
+            <ul>
+                <li>SDL_mixer</li>
+            </ul>
+            <h5>Input</h5>
+            <ul>
+                <li>SDL</li>
+            </ul>
+        <br>
+
+        <h4>Development Tools used for Soldat 1.7.1</h4>
+            <h5>Building</h5>
+            <ul>
+                <li>Delphi 7 for Windows</li>
+                <li>Vagrant + FPC/Lazarus for Linux Server</li>
+                <li>FPC/Lazarus for Windows Server</li>
+                <li>Inno Setup for Installer</li>
+                <li>Bash for project file generation</li>
+                <li>Cygwin for build scripts on Windows</li>
+            </ul>
+            <h5>Version Control</h5>
+            <ul>
+                <li>Git for code</li>
+                <li>Subversion for assets</li>
+                <li>Gogs</li>
+            </ul>
+            <h5>GUI/Menus</h5>
+            <ul>
+                <li>Flatstyle</li>
+                <li>Tnt Unicode Controls</li>
+            </ul>
+            <h5>Graphics</h5>
+            <ul>
+                <li>OpenGL</li>
+                <li>stb_image</li>
+                <li>FreeType</li>
+            </ul>
+            <h5>Sound</h5>
+            <ul>
+                <li>FMOD</li>
+            </ul>
+            <h5>Input</h5>
+            <ul>
+                <li>DirectInput</li>
+            </ul>
+            <h5>Networking</h5>
+            <ul>
+                <li>Indy10 for TCP on Client and TCP and UDP on Server</li>
+                <li>BlackUDP for UDP on Client</li>
+                <li>zlib</li>
+                <li>DCPcrypt</li>
+            </ul>
+            <h5>Scripting</h5>
+            <ul>
+                <li>Pascal Script</li>
+            </ul>
+        <br>
+    <hr>
+
+    <!-- *************************************************************************************** -->
+    <h3 id="contact">Contact</h3>
+        <br>
+        <ul>
+            <li><b>E-mail: <a href="michal.marcinkowski@gmail.com">michal.marcinkowski&lt;at&gt;gmail.com</a></b></li>
+            <li><b>E-mail (registration support): <a href="support@thd.vg">support&lt;at&gt;thd.vg</a></b></li>
+            <li><b>Soldat Website: <a href="https://soldat.pl">https://soldat.pl</a></b></li>
+            <li><b>Soldat Forums: <a href="https://forums.soldat.pl">https://forums.soldat.pl</a></b></li>
+            <li><b>Soldat Discord Server: <a href="http://gather.soldat.pl/discord">http://gather.soldat.pl/discord</a></b></li>
+        </ul>
+    <hr style="margin-bottom:4em;">
+</body>
+</html>
