@@ -810,12 +810,28 @@
         <h4 id="commands-player">Player Commands:</h4>
         <table>
             <tr>
-                <td>KILL</td>
-                <td>Harakiri.</td>
+                <td>BRUTALKILL</td>
+                <td>Very harakiri.</td>
             </tr>
             <tr>
                 <td>BRUTALKILL</td>
                 <td>Very harakiri.</td>
+            </tr>
+            <tr>
+                <td>KILL</td>
+                <td>Harakiri.</td>
+            </tr>
+            <tr>
+                <td>MERCY</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>PISS</td>
+                <td>Player takes a leak.</td>
+            </tr>
+            <tr>
+                <td>PWN</td>
+                <td>Player dances.</td>
             </tr>
             <tr>
                 <td>SMOKE</td>
@@ -838,43 +854,19 @@
         <h4 id="commands-server">Server Commands:</h4>
         <table>
             <tr>
-                <td>PAUSE/UNPAUSE</td>
-                <td>Toggle Game-Pause</td>
-            </tr>
-            <tr>
-                <td>ADDBOT bots name</td>
+                <td>ADDBOT bot's name</td>
                 <td>Adds a new bot to the game.</td>
             </tr>
             <tr>
-                <td>KICK players name or players number</td>
-                <td>Removes a player/bot from the game.</td>
+                <td>ADDBOTx bot's name</td>
+                <td>Adds a bot to team x.</td>
             </tr>
             <tr>
-                <td>BAN players name or players number</td>
-                <td>Bans the player on the server so he can't join in again.</td>
+                <td>ADDMAP map's name (with prefix if needed - Example: "ctf_")</td>
+                <td>Adds a map to the server's map-poll.</td>
             </tr>
             <tr>
-                <td>BANIP IP number</td>
-                <td>Bans the IP number.</td>
-            </tr>
-            <tr>
-                <td>UNBAN IP number</td>
-                <td>Unbans the IP number.</td>
-            </tr>
-            <tr>
-                <td>MAP map name</td>
-                <td>Changes the map.</td>
-            </tr>
-            <tr>
-                <td>RESTART</td>
-                <td>Resets the current match.</td>
-            </tr>
-            <tr>
-                <td>NEXTMAP</td>
-                <td>Changes the map to the next one in the list.</td>
-            </tr>
-            <tr>
-                <td>ADM players name</td>
+                <td>ADM player's name</td>
                 <td>Adds the player to the Remote Admins list.</td>
             </tr>
             <tr>
@@ -882,56 +874,64 @@
                 <td>Adds the IP number to the Remote Admins list.</td>
             </tr>
             <tr>
-                <td>UNADM IP number</td>
-                <td>Removes the IP number from the Remote Admins list.</td>
+                <td>ADVANCE 0/1</td>
+                <td>Toggles Advance Mode.</td>
+            </tr>
+            <tr>
+                <td>BALANCE</td>
+                <td>Balances the teams.</td>
+            </tr>
+            <tr>
+                <td>BAN player's name or player's number</td>
+                <td>Bans the player on the server so he can't join in again.</td>
+            </tr>
+            <tr>
+                <td>BANDWITH</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>BANHW Hardware-ID</td>
+                <td>Bans player's Hardware-ID (HWID).</td>
+            </tr>
+            <tr>
+                <td>BANIP IP number</td>
+                <td>Bans the IP number.</td>
+            </tr>
+			<tr>
+                <td>BANLAST</td>
+                <td>Like /kicklast, bans for 1 hour the last player that joined.</td>
+            </tr>
+            <tr>
+                <td>BONUS 0-5</td>
+                <td>Frequency of bonuses: 0- none, 5-lots.</td>
+            </tr>
+			<tr>
+                <td>DELMAP map's name (with prefix if needed - Example: "ctf_")</td>
+                <td>Deletes a map to the server's map-poll.</td>
+            </tr>
+            <tr>
+                <td>FRIENDLYFIRE 0/1</td>
+                <td>Toggles Friendly fire.</td>
+            </tr>
+            <tr>
+                <td>GAMEMODE 0-6</td>
+                <td>Changes the gamemode (0 DM, 1 PM, 2 TM, 3 CTF, 4 RM, 5 INF, 6 HTF).</td>
+            </tr>
+            <tr>
+                <td>GMUTE/UNGMUTE player's id</td>
+                <td>Globally (un)mutes a player for everyone on this server.</td>
+            </tr>
+            <tr>
+                <td>KICK player's name or player's number</td>
+                <td>Removes a player/bot from the game.</td>
             </tr>
             <tr>
                 <td>KICKLAST</td>
                 <td>Kicks the last player that entered the game.</td>
             </tr>
             <tr>
-                <td>RESPAWNTIME seconds</td>
-                <td>Changes the respawn time.</td>
-            </tr>
-            <tr>
-                <td>MAXRESPAWNTIME seconds</td>
-                <td>Changes the maximum respawn time in team games.</td>
-            </tr>
-            <tr>
-                <td>LIMIT number</td>
-                <td>Changes the current kill/point/capture limit.</td>
-            </tr>
-            <tr>
-                <td>TIMELIMIT minutes</td>
-                <td>Changes the current time limit.</td>
-            </tr>
-            <tr>
-                <td>PASSWORD text</td>
-                <td>Changes the game server password (temporarily).</td>
-            </tr>
-            <tr>
-                <td>SETTEAMx player number</td>
-                <td>Forces the player to join team x.</td>
-            </tr>
-            <tr>
-                <td>ADDBOTx bots name</td>
-                <td>Adds a bot to team x.</td>
-            </tr>
-            <tr>
-                <td>FRIENDLYFIRE 0/1</td>
-                <td>Friendly fire on or off.</td>
-            </tr>
-            <tr>
-                <td>VOTE% 0-100</td>
-                <td>Changes the percentage of players needed to vote something.</td>
-            </tr>
-            <tr>
-                <td>BONUS 0-5</td>
-                <td>Frequency of bonuses 0-none, 5- lots.</td>
-            </tr>
-            <tr>
-                <td>MAXPLAYERS 1-32</td>
-                <td>Maximum players allowed on server.</td>
+                <td>KILL player's name or player's number</td>
+                <td>Kills/punishes the player.</td>
             </tr>
             <tr>
                 <td>LOADCON</td>
@@ -946,40 +946,108 @@
                 <td>Reloads weapons.ini weapon settings or from file xxx.ini.</td>
             </tr>
             <tr>
-                <td>GAMEMODE 0-6</td>
-                <td>Changes the gamemode (0 DM, 1 PM, 2 TM, 3 CTF, 4 RM, 5 INF, 6 HTF).</td>
+                <td>LOBBY</td>
+                <td>Reregisters the server in the lobby.</td>
+            </tr>
+            <tr>
+                <td>LIMIT number</td>
+                <td>Changes the current kill/point/capture limit.</td>
+            </tr>
+            <tr>
+                <td>MAP map name</td>
+                <td>Changes the map.</td>
+            </tr>
+            <tr>
+                <td>MAXGRENADES</td>
+                <td>Sets the amount of maximum grenades (gained by grenades-kit).</td>
+            </tr>
+            <tr>
+                <td>MAXPLAYERS 1-32</td>
+                <td>Maximum players allowed on server.</td>
+            </tr>
+            <tr>
+                <td>MAXRESPAWNTIME seconds</td>
+                <td>Changes the maximum respawn time in team games.</td>
+            </tr>
+            <tr>
+                <td>NEXTMAP</td>
+                <td>Changes the map to the next one in the list.</td>
+            </tr>
+            <tr>
+                <td>PAUSE/UNPAUSE</td>
+                <td>Toggle Game-Pause</td>
+            </tr>
+            <tr>
+                <td>PASSWORD text</td>
+                <td>Changes the game server password (temporarily).</td>
+            </tr>
+            <tr>
+                <td>PM player's number text</td>
+                <td>Sends a private message to a specific player.</td>
             </tr>
             <tr>
                 <td>REALISTIC 0/1</td>
                 <td>Switches realistic mode.</td>
             </tr>
             <tr>
-                <td>ADVANCE 0/1</td>
-                <td>Switches advance mode.</td>
+                <td>RESPAWNTIME seconds</td>
+                <td>Changes the respawn time.</td>
             </tr>
             <tr>
-                <td>SURVIVAL 0/1</td>
-                <td>Switches survival mode.</td>
-            </tr>
-            <tr>
-                <td>KILL players name or players number</td>
-                <td>Kills/punishes the player.</td>
-            </tr>
-            <tr>
-                <td>BANLAST</td>
-                <td>Like /kicklast, bans for 1 hour the last player that joined.</td>
-            </tr>
-            <tr>
-                <td>UNBANLAST</td>
-                <td>Unbans the last player that was banned.</td>
-            </tr>
-            <tr>
-                <td>LOBBY</td>
-                <td>Reregisters the server in the lobby.</td>
+                <td>RESTART</td>
+                <td>Resets the current match.</td>
             </tr>
             <tr>
                 <td>SAY text</td>
                 <td>Sends a text message to all players on the server.</td>
+            </tr>
+            <tr>
+                <td>SCRIPTING 0/1</td>
+                <td>Toggles the ability of the server to use scripting.</td>
+            </tr>
+            <tr>
+                <td>SETTEAMx player's number</td>
+                <td>Forces the player to join team x.</td>
+            </tr>
+            <tr>
+                <td>SURVIVAL 0/1</td>
+                <td>Toggles Survival Mode.</td>
+            </tr>
+            <tr>
+                <td>TEMPBAN player's id or player's name</td>
+                <td>Temporary bans a player.</td>
+            </tr>
+            <tr>
+                <td>TIMELIMIT minutes</td>
+                <td>Changes the current time limit.</td>
+            </tr>
+            <tr>
+                <td>UNADM IP number</td>
+                <td>Removes the IP number from the Remote Admins list.</td>
+            </tr>
+            <tr>
+                <td>UNBAN IP number</td>
+                <td>Unbans the IP number.</td>
+            </tr>
+            <tr>
+                <td>UNBANLAST</td>
+                <td>Unbans the last banned player.</td>
+            </tr>
+            <tr>
+                <td>UNBANHW Hardware-ID</td>
+                <td>Unbans player's Hardware-ID (HWID).</td>
+            </tr>
+            <tr>
+                <td>VOTE% 0-100</td>
+                <td>Changes the percentage of players needed to vote something.</td>
+            </tr>
+            <tr>
+                <td>WEAPONON/WEAPONOFF</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>WELCOME 1 / WELCOME 2 / WELCOME 3</td>
+                <td>Sets the welcome message(s). Welcome 1 will appear first and so on...</td>
             </tr>
         </table>
         <br>
@@ -998,11 +1066,7 @@
                 <td>Mutes the player so you don't see his chat.</td>
             </tr>
             <tr>
-                <td>UNMUTE players name or players number</td>
-                <td>Unmutes the player.</td>
-            </tr>
-            <tr>
-                <td>MUTEALL</td>
+                <td>MUTE ALL</td>
                 <td>Mutes all players.</td>
             </tr>
             <tr>
@@ -1013,6 +1077,14 @@
                 <td>STOP</td>
                 <td>Stops the recording of a demo.</td>
             </tr>
+            <tr>
+                <td>UNMUTE players name or players number</td>
+                <td>Unmutes the player.</td>
+            </tr>
+            <tr>
+                <td>VOTEMAP  map's name (with prefix if needed - Example: "ctf_")</td>
+                <td>Creates a vote to change current map.</td>
+            </tr>
         </table>
         <br>
         <h4 id="commands-cmdline-client">Command Line Arguments for Soldat Client (soldat.exe):</h4>
@@ -1021,10 +1093,6 @@
             <li>
                 Soldat.exe <strong>-dedicated</strong>
                 <p>Starts a Soldat dedicated server.</p><br>
-            </li>
-            <li>
-                Soldat.exe <strong>-start</strong>
-                <p>Starts the game without entering the menu.</p><br>
             </li>
             <li>
                 Soldat.exe <strong>-dedicated -start</strong>
@@ -1041,6 +1109,14 @@
                 <p><u>Example</u>:<br>Soldat.exe -joinurl soldat://127.0.0.1:23073/tikikaka</p><br>
             </li>
             <li>
+                Soldat.exe <strong>-mod xxx</strong>
+                <p>Starts the game with a Soldat mod located in Soldat\Mods\xxx</p><br>
+            </li>
+            <li>
+                Soldat.exe <strong>-start</strong>
+                <p>Starts the game without entering the menu.</p><br>
+            </li>
+            <li>
                 Soldat.exe <strong>-demo name (freecam speed notexts extract)</strong>
                 <p>Runs the game and plays the demo specified by <em>name</em>. Optional paramaters are:</p>
                 <ul class="flat">
@@ -1051,10 +1127,6 @@
                 </ul>
                 <p><i>The sound can be extracted with a program like &quot;Total Recorder&quot;. Please note that this can take time and is not recommended on slower systems. For better results specify lower speed (like 50%).</i></p>
                 <p><u>Example</u>:<br>Soldat.exe -demo demo12<br>Soldat.exe -demo demo19 1 200 1 0</p><br>
-            </li>
-            <li>
-                Soldat.exe <strong>-mod xxx</strong>
-                <p>Starts the game with a Soldat mod located in Soldat\Mods\xxx</p><br>
             </li>
         </ul>
         <h4 id="commands-cmdline-server">Command Line Arguments for Soldat Server:</h4>
