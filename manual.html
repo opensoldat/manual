@@ -249,8 +249,8 @@
                 <li><span class="combat"><b>[CTRL+3]</b></span> - <u>Pick Secondary Weapon</u>: Chainsaw</li>
                 <li><span class="combat"><b>[CTRL+4]</b></span> - <u>Pick Secondary Weapon</u>: M72 LAW</li>
                 <li><span class="combat"><b>[ALT + F2]</b></span> - Toggle sniper line</li>
-                <p>* Picking weapon buttons are available only when the weapons menu is visible.</p>
             </ul>
+            <p>* Picking weapon buttons are available only when the weapons menu is visible.</p>
         <br>
 
         <h4 id="controls-misc">Misc</h4>
@@ -258,7 +258,7 @@
                 <li><span class="misc"><b>[W+S] (Hold jump key + Crouch key)</b></span> - Flagthrow - You can also bind a single key for this (recommended), but then you can’t change back to <b>[W+S]</b></li>
                 <li><span class="misc"><b>[T]</b></span> - Chat</li>
                 <li><span class="misc"><b>[Y]</b></span> - Teamchat</li>
-                <li><span class="misc"><b>[/]</b></span> - Command console (Read also: In-game Commands)</li>
+                <li><span class="misc"><b>[/]</b></span> - Command console (Read also: <a href="#commands">In-game Commands</a>)</li>
                 <li><span class="misc"><b>[ALT] + A,B,C... or 1,2,3...0 keys</b></span> - Chat Taunts or commands</li>
                 <li><span class="misc"><b>[CTRL+ALT] + [+/-]</b></span> - Increase mouse sensitivity 5% / Decrease mouse sensitivity 5%</li>
                 <li><span class="misc"><b>[SHIFT] + [+/-]</b></span> - Increase volume 10% <b>/</b> Decrease volume 10%</li>
@@ -833,14 +833,14 @@
                 <td>VICTORY</td>
                 <td>Player cheers.</td>
             </tr>
-            <tr>
-                <td>PAUSE/UNPAUSE</td>
-                <td>Toggle Game-Pause</td>
-            </tr>
         </table>
         <br>
         <h4 id="commands-server">Server Commands:</h4>
         <table>
+            <tr>
+                <td>PAUSE/UNPAUSE</td>
+                <td>Toggle Game-Pause</td>
+            </tr>
             <tr>
                 <td>ADDBOT bots name</td>
                 <td>Adds a new bot to the game.</td>
@@ -1034,6 +1034,11 @@
                 Soldat.exe <strong>-join IPnumber (port password)</strong>
                 <p>Runs the game and connects to <em>IPnumber</em>, <em>port</em> and <em>password</em> are optional.</p>
                 <p><u>Example</u>:<br>Soldat.exe -join 192.168.0.1<br>Soldat.exe -join 127.0.0.1 23073 tikikaka</p><br>
+            </li>
+            <li>
+                Soldat.exe <strong>-joinurl server_url</strong>
+                <p>Runs the game and connects to server_url, which should have a format of Soldat URI (soldat://ip_address:port/password).</p>
+                <p><u>Example</u>:<br>Soldat.exe -joinurl soldat://127.0.0.1:23073/tikikaka</p><br>
             </li>
             <li>
                 Soldat.exe <strong>-demo name (freecam speed notexts extract)</strong>
